@@ -149,7 +149,6 @@ public class DataReceiver extends Thread {
 				while (dis.read(bytes) != -1) {
 					// fill the bytes with byte where the end is 0x0D 0x0A
 					buff[j++] = bytes[0];
-					ret += bytesToHexString(bytes) + "";
 					// the problem return the result with char so change to the
 					// byte
 					// instrutct the car imme code friom byte
@@ -163,7 +162,6 @@ public class DataReceiver extends Thread {
 						bos.write(response);
 						bos.flush();
 						// doSomething(ret);
-						ret = "";
 						buff = new byte[MAX_PACKAGR_LEN];
 					}
 				}
@@ -209,18 +207,23 @@ public class DataReceiver extends Thread {
 			byte[] response = new byte[] {};
 			byte protocolcode = buff[3];
 			switch (protocolcode & 0xff) {
+			//GT710登录包
 			case 0x01:
 				response = doLogin(buff);
 				break;
+			//GT710 数据校验把包
 			case 0x8a:
 				response = dochecktime(buff);
 				break;
+			//GT710 心跳包
 			case 0x23:
 				response = doheartbeat(buff);
 				break;
+			//GT710 Loc包
 			case 0x28:
 				response = doLBSRequest(buff);
 				break;
+			//GT710GPS包
 			case 0x22:
 				response = doGps(buff);
 				break;
