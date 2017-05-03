@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans
+	xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+	http://www.springframework.org/schema/beans/spring-beans-3.1.xsd
+	http://www.springframework.org/schema/aop 
+	http://www.springframework.org/schema/aop/spring-aop-3.1.xsd 
+	http://www.springframework.org/schema/tx 
+	http://www.springframework.org/schema/tx/spring-tx.xsd" 	
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	
+>
+
+	<bean id ="UserDao" class="com.carPature.daoimpl.UsersDAOImp">
+		<property name="sessionfactory" ref="sessionFactory"></property>
+	</bean>
+	<bean id="DeviceStatusDAO" class="com.carPature.daoimpl.DeviceStatusDAOImpl">
+		<property name="sessionfactory" ref="sessionFactory"></property>
+	</bean>
+	<bean id="DeviceLocationInfoDAO" class="com.carPature.daoimpl.DeviceLocationInfoDAOImpl">
+		<property name="sessionfactory" ref="sessionFactory"></property>
+	</bean>
+	
+	<bean id="dataBean" 
+		class="org.apache.commons.dbcp.BasicDataSource">
+		<property name="url"
+			value="jdbc:mysql://127.0.0.1:3306/carPature">
+		</property>
+		<property name="username" value="root"></property>
+		<property name="password" value="root"></property>
+	</bean>
+	<bean id="sessionFactory"
+		class="org.springframework.orm.hibernate4.LocalSessionFactoryBean">
+		<property name="dataSource">
+			<ref bean="dataBean" />
+		</property>
+		<property name="hibernateProperties">
+			<props>
+				<prop key="hibernate.dialect">
+					org.hibernate.dialect.MySQLDialect
+				</prop>
+			</props>
+		</property>
+		<property name="annotatedClasses">
+			<list>
+				<value>com.carPature.entity1.DeviceLocationInfo</value>
+				<value>com.carPature.entity1.Users</value>
+				<value>com.carPature.entity1.DeviceStatus</value></list>
+		</property></bean>
+	<bean id="transactionManager"
+		class="org.springframework.orm.hibernate4.HibernateTransactionManager">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	
+	<!--  定义事务通知    --> 
+	<tx:advice id="txAdvice" transaction-manager="transactionManager">	 
+	  <tx:attributes>	 
+	  		<tx:method name="*" propagation="REQUIRED" /> 
+	  </tx:attributes>
+	</tx:advice>
+	
+    <!--定义切面，并将事务通知和切面组合（定义哪些方法应用事务规则） -->
+    <aop:config>
+        <!-- 对com.restrant.biz包下的所有类的所有方法都应用事务规则 -->
+    	<aop:pointcut id="bizMethods" expression="execution(* com.wisemedi.biz.*.*(..))" />
+        <aop:pointcut id="daoMethods" expression="execution(* com.carPature.dao.*.*(..))"/>
+    	<!--  将事务通知和切面组合   --> 
+    	<aop:advisor advice-ref="txAdvice" pointcut-ref="bizMethods" /> 
+    	<aop:advisor advice-ref="txAdvice" pointcut-ref="daoMethods" /> 
+    </aop:config>
+	<tx:annotation-driven transaction-manager="transactionManager" /></beans>

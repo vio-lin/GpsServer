@@ -27,12 +27,14 @@ import java.util.concurrent.*;
 
 import javax.swing.RepaintManager;
 
+import org.apache.log4j.Logger;
 import org.junit.Test;
 
 import com.carcarPature.utils.GenCRC;
 import com.carcarPature.utils.Utils;
 
 public class DataReceiver extends Thread {
+	Logger logger = Logger.getLogger(DataReceiver.class);
 	// 设置服务器的端口
 	private int port = 81;
 	private ServerSocket serverSocket;
@@ -83,7 +85,7 @@ public class DataReceiver extends Thread {
 		// Runtime的availableProcessor()方法返回当前系统的CPU数目.
 		executorService = Executors.newFixedThreadPool(Runtime.getRuntime()
 				.availableProcessors() * POOL_SIZE);
-		System.out.println("服务器启动");
+		logger.info("服务器启动");
 	}
 
 	@Override
@@ -107,7 +109,7 @@ public class DataReceiver extends Thread {
 
 	class Handler implements Runnable {
 		private Socket socket;
-
+		private String IMEI;
 		public Handler(Socket socket) {
 			this.socket = socket;
 		}
@@ -128,9 +130,8 @@ public class DataReceiver extends Thread {
 
 		public void run() {
 			try {
-				System.out.println("New connection accepted "
-						+ socket.getInetAddress() + ":" + socket.getPort()
-						+ "socketContent:" + socket.toString());
+				logger.info("New connection accepted "
+						+ socket.getInetAddress() + ":" + socket.getPort());
 				// 装饰流BufferedReader封装输入流（接收客户端的流）
 				BufferedInputStream bis = new BufferedInputStream(
 						socket.getInputStream());
@@ -154,11 +155,10 @@ public class DataReceiver extends Thread {
 					// instrutct the car imme code friom byte
 
 					if (dis.available() == 0) { // 一个请求
-						System.out.println("接受结果：" + bytesToHexString(buff));
+						logger.info("接受结果：" + bytesToHexString(buff));
 						byte[] response = solve(buff, j);
 						j = 0;
-						System.out
-								.println("返回结果：" + bytesToHexString(response));
+						logger.info("返回结果：" + bytesToHexString(response));
 						bos.write(response);
 						bos.flush();
 						// doSomething(ret);
@@ -187,7 +187,7 @@ public class DataReceiver extends Thread {
 			// first do the rc code check
 			byte[] data = new byte[length - 6];
 			System.arraycopy(buff, 2, data, 0, length - 6);
-			System.out.println("数据位" + bytesToHexString(data));
+			logger.info("数据位" + bytesToHexString(data));
 			char ch = GenCRC.getCrc16(data);
 			// Cyclic Redundancy Check code is the last 4 byte of the buff
 			// check the msaggele
@@ -201,7 +201,7 @@ public class DataReceiver extends Thread {
 			System.out.println("初次校验" + c + "=" + a);
 			// 拿到Crc 中的byte数组 转换成int
 			if (!c.equals(a)) {
-				System.out.println("校验失败 消息损坏");
+				logger.error("校验失败 消息损坏");
 				return "exception".getBytes();
 			}
 			byte[] response = new byte[] {};
@@ -240,19 +240,17 @@ public class DataReceiver extends Thread {
 			// 终端id 的号码解析
 			byte[] IMEI = new byte[8];
 			System.arraycopy(buff, 4, IMEI, 0, 8);
-			System.out.println("IME码ID" + bytesToHexString(IMEI));
+			logger.info("IME码ID" + bytesToHexString(IMEI));
 			byte[] type = new byte[2];
 			System.arraycopy(buff, 12, type, 0, 2);
-			System.out.println("类型识别码:" + bytesToHexString(type));
+			logger.info("类型识别码:" + bytesToHexString(type));
 			byte[] timezoo = new byte[2];
 			System.arraycopy(buff, 14, timezoo, 0, 2);
 			byte high = timezoo[0];
 			byte low = timezoo[1];
 			int west = low & 0x3;
 			int qu = ((high & 0xff) * 16 + (low >>> 4)) / 100;
-
 			System.out.println(west == 1 ? "西时区" : "东时区" + qu + "区域");
-
 			System.out.println("处理结果或过程中的一些结果");
 			StringBuilder strb = new StringBuilder();
 			strb.append("7878");
