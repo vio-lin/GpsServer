@@ -27,7 +27,7 @@
 	<bean id="dataBean" 
 		class="org.apache.commons.dbcp.BasicDataSource">
 		<property name="url"
-			value="jdbc:mysql://127.0.0.1:3306/carPature">
+			value="jdbc:mysql://127.0.0.1:3306/carfencing">
 		</property>
 		<property name="username" value="root"></property>
 		<property name="password" value="root"></property>

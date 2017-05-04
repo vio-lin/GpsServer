@@ -18,6 +18,7 @@ import java.nio.CharBuffer;
 import java.nio.charset.Charset;
 import java.nio.charset.CharsetEncoder;
 import java.nio.charset.CoderResult;
+import java.sql.Timestamp;
 import java.util.Arrays;
 import java.util.BitSet;
 import java.util.Calendar;
@@ -29,7 +30,13 @@ import javax.swing.RepaintManager;
 
 import org.apache.log4j.Logger;
 import org.junit.Test;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+import org.springframework.dao.support.DaoSupport;
 
+import com.carPature.dao.DeviceLocationInfoDAO;
+import com.carPature.dao.DeviceStatusDAO;
+import com.carPature.dao.UsersDAO;
+import com.carPature.entity1.DeviceLocationInfo;
 import com.carcarPature.utils.GenCRC;
 import com.carcarPature.utils.Utils;
 
@@ -43,6 +50,10 @@ public class DataReceiver extends Thread {
 
 	public static final int MAX_PACKAGR_LEN = 4096;
 	public static int sequence = 0;
+	public DeviceLocationInfoDAO locationdao;
+	public DeviceStatusDAO statusdao;
+	public UsersDAO userdao;
+	
 	// GT202的协议报
 	public static byte[] PEOTOCAL_CODE = new byte[] { 0x01,// login information
 			0x22,// location information
@@ -81,6 +92,9 @@ public class DataReceiver extends Thread {
 	};
 
 	public DataReceiver() throws IOException {
+		ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
+		locationdao = (DeviceLocationInfoDAO) context.getBean("DeviceLocationInfoDAO");
+		statusdao = (DeviceStatusDAO) context.getBean("DeviceStatusDAO");
 		serverSocket = new ServerSocket(port);
 		// Runtime的availableProcessor()方法返回当前系统的CPU数目.
 		executorService = Executors.newFixedThreadPool(Runtime.getRuntime()
@@ -155,7 +169,7 @@ public class DataReceiver extends Thread {
 					// instrutct the car imme code friom byte
 
 					if (dis.available() == 0) { // 一个请求
-						logger.info("接受结果：" + bytesToHexString(buff));
+						logger.info("接受结果：" + bytesToHexString(buff,j));
 						byte[] response = solve(buff, j);
 						j = 0;
 						logger.info("返回结果：" + bytesToHexString(response));
@@ -209,22 +223,27 @@ public class DataReceiver extends Thread {
 			switch (protocolcode & 0xff) {
 			//GT710登录包
 			case 0x01:
+				logger.info("登录包");
 				response = doLogin(buff);
 				break;
 			//GT710 数据校验把包
 			case 0x8a:
+				logger.info("数据校验包");
 				response = dochecktime(buff);
 				break;
 			//GT710 心跳包
 			case 0x23:
+				logger.info("心跳包");
 				response = doheartbeat(buff);
 				break;
 			//GT710 Loc包
 			case 0x28:
+				logger.info("基站定位包");
 				response = doLBSRequest(buff);
 				break;
 			//GT710GPS包
 			case 0x22:
+				logger.info("GPS定位包");
 				response = doGps(buff);
 				break;
 			default:
@@ -260,8 +279,8 @@ public class DataReceiver extends Thread {
 			char ch = GenCRC.getCrc16(hexStringToBytes("05010005"));
 			String Crc = Integer.toHexString(ch + 0).toUpperCase();
 			strb.append(Crc);
-			System.out.println("生成的CRC:" + Crc);
 			strb.append("0D0A");
+			logger.info("开始登录了");
 			byte[] response = hexStringToBytes(strb.toString());
 			return response;
 		}
@@ -270,6 +289,23 @@ public class DataReceiver extends Thread {
 	public static void doSomething(String ret) {
 		System.out.println(new Date(System.currentTimeMillis())
 				+ "one message :" + ret + " ");
+	}
+
+	public String bytesToHexString(byte[] src, int j) {
+		// TODO Auto-generated method stub
+		StringBuilder stringBuilder = new StringBuilder("");
+		if (src == null || src.length <= 0) {
+			return null;
+		}
+		for (int i = 0; i < j; i++) {
+			int v = src[i] & 0xFF;
+			String hv = Integer.toHexString(v);
+			if (hv.length() < 2) {
+				stringBuilder.append(0);
+			}
+			stringBuilder.append(hv);
+		}
+		return stringBuilder.toString();
 	}
 
 	public byte[] doLBSRequest(byte[] buff) {
@@ -381,30 +417,36 @@ public class DataReceiver extends Thread {
 		// instruct thr IMME code from byte
 		//pass the crc check and do next
 		//终端id 的号码解析 
+		DeviceLocationInfo gps = new DeviceLocationInfo();
 		byte[] time = new byte[6];
 		System.arraycopy(buff, 4, time, 0, 6);
-		int year = time[0] & 0x00ff + 2000;
+		int year = (time[0] & 0x00ff) + 2000;
+		System.out.println(time[0]+0);
 		int month = time[1] & 0x00ff ;
 		int date = time[2] & 0x00ff ;
 		int hour = time[3] & 0x00ff ;
 		int minute = time[4] & 0x00ff ;
 		int second = time[5] & 0x00ff ;
-		System.out.println("日期时间:"+year+"年"+month+"月"+date+"日       "+hour+"：" +minute+":" +second);
+		Timestamp stamp = new Timestamp(year, month-1, date, hour, minute, second, 0) ;
+		logger.info("日期时间:"+year+"年"+month+"月"+date+"日       "+hour+"：" +minute+":" +second);
+		gps.setDate(stamp);
 		byte[] GPSNo = new byte[1];
 		System.arraycopy(buff, 10, GPSNo, 0, 1);
 		System.out.println("GPS信息长度:"+ ((GPSNo[0]&0x00f0)>>>4) +"   GPS信息卫星数:"+ (GPSNo[0]&0x000f));
+		gps.setGpssstat(GPSNo);
 		byte[] lat = new byte[4];
 		System.arraycopy(buff, 11, lat, 0, 4);
 		double latNum =  Integer.parseInt(bytesToHexString(lat), 16)/1800000.0;
-//		System.out.println("纬度:"+bytesToHexString(lat));
-		System.out.println("纬度:"+latNum);
+		gps.setLatitude(latNum);
+		logger.info("纬度:"+latNum);
 		byte[] lng = new byte[4];
 		System.arraycopy(buff, 15, lng, 0, 4);
 		double lngNum =  Integer.parseInt(bytesToHexString(lng), 16)/1800000.0;
-//		System.out.println("经度:"+bytesToHexString(lng));
-		System.out.println("经度:"+lngNum);
+		gps.setLongtitude(lngNum);
+		logger.info("经度:"+lngNum);
 		byte[] speed = new byte[1];
 		System.arraycopy(buff, 19, speed, 0, 1);
+		gps.setSpeed((float) ((speed[0] & 0x00ff)*1.0));
 		System.out.println("速度:"+ (speed[0] & 0x00ff));
 		byte[] course = new byte[2];
 		System.arraycopy(buff, 20, course, 0, 2);
@@ -428,28 +470,32 @@ public class DataReceiver extends Thread {
 			courseS.append("南纬、");
 		courseS.append("航向"+direction+"°");
 //		System.out.println("航向状态:"+bytesToHexString(course));
-		System.out.println("航向状态:" + courseS);
-
+		logger.info("航向状态:" + courseS);
+		gps.setOrienStat(bytesToHexString(course));
 		byte[] MCC = new byte[2];
 		System.arraycopy(buff, 22, MCC, 0, 2);
 		int MCCNum = Integer.parseInt(bytesToHexString(MCC), 16);
 //		System.out.println("国家代码:"+bytesToHexString(MCC));
-		System.out.println("国家代码:"+MCCNum);
+		logger.info("国家代码:"+MCCNum);
+		gps.setMcc(MCCNum);
 		byte[] MNC = new byte[1];
 		System.arraycopy(buff, 24, MNC, 0, 1);
 		int MNCNum = Integer.parseInt(bytesToHexString(MNC), 16);
 //		System.out.println("移动网号码:"+bytesToHexString(MNC));
 		System.out.println("移动网号码:"+MNCNum);
+		gps.setMnc(MNCNum);
 		byte[] LAC = new byte[2];
 		System.arraycopy(buff, 25, LAC, 0, 2);
 		int LACNum = Integer.parseInt(bytesToHexString(LAC), 16);
 //		System.out.println("位置区码:"+bytesToHexString(LAC));
 		System.out.println("位置区码:"+LACNum);
+		gps.setLac(LACNum);
 		byte[] Cell_ID = new byte[3];
 		System.arraycopy(buff, 27, Cell_ID, 0, 3);
 		int Cell_IDNum = Integer.parseInt(bytesToHexString(Cell_ID), 16);
 //		System.out.println("移动基站:"+bytesToHexString(Cell_ID));
-		System.out.println("移动基站:"+Cell_IDNum);
+		logger.info("移动基站:"+Cell_IDNum);
+		gps.setCellId(Cell_IDNum);
 		byte[] ACC = new byte[1];
 		System.arraycopy(buff, 30, ACC, 0, 1);
 		if((ACC[0] & 0x0001) == 0x0001)
@@ -457,6 +503,7 @@ public class DataReceiver extends Thread {
 		else
 			System.out.println("ACC状态:低");
 //		System.out.println("ACC状态:"+bytesToHexString(ACC));
+		gps.setAcc((ACC[0] & 0x0001) == 0x0001);
 		byte[] mode = new byte[1];
 		System.arraycopy(buff, 31, mode, 0, 1);
 		switch(mode[0]){
@@ -475,25 +522,26 @@ public class DataReceiver extends Thread {
 		default:
 			break;
 		}
+		gps.setOploadMode((mode[0]&0xff)+"");
 //		System.out.println("数据上报模式:"+bytesToHexString(mode));
 		byte[] GPStype = new byte[1];
 		System.arraycopy(buff, 32, GPStype, 0, 1);
 		switch(GPStype[0]){
-		case 0x0000 : System.out.println("GPS实时补传:实时上传");
+		case 0x0000 : logger.info("GPS实时补传:实时上传");
 			break;
-		case 0x0001 : System.out.println("GPS实时补传:补传");
+		case 0x0001 : logger.info("GPS实时补传:补传");
 			break;
 		default:
 			break;
 		}
+		gps.setRealNot(GPStype[0]==0x0000);
 //		System.out.println("GPS实时补传:"+bytesToHexString(GPStype));
 		byte[] mileage = new byte[4];
 		System.arraycopy(buff, 33, mileage, 0, 4);
 		int mileageNum = Integer.parseInt(bytesToHexString(mileage), 16);
 //		System.out.println("里程统计:"+bytesToHexString(mileage));
-		System.out.println("里程统计:"+mileageNum);
-		
-		System.out.println("处理结果或过程中的一些结果");
+		logger.info("里程统计:"+mileageNum);
+		locationdao.insertLocation(gps);
 		StringBuilder strb = new StringBuilder();
 		strb.append("7878");
 		strb.append("0501");
