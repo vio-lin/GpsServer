@@ -34,9 +34,11 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.dao.support.DaoSupport;
 
 import com.carPature.dao.DeviceLocationInfoDAO;
+import com.carPature.dao.DeviceLocationLbsInfoDAO;
 import com.carPature.dao.DeviceStatusDAO;
 import com.carPature.dao.UsersDAO;
 import com.carPature.entity1.DeviceLocationInfo;
+import com.carPature.entity1.DeviceLocationLbsInfo;
 import com.carcarPature.utils.GenCRC;
 import com.carcarPature.utils.Utils;
 
@@ -312,18 +314,64 @@ public class DataReceiver extends Thread {
 		// TODO Auto-generated method stub
 		byte[] request = new byte[] {};
 		// 无需回复
+		DeviceLocationLbsInfo info = new DeviceLocationLbsInfo();
 		String date = + (buff[4]+2000)+"年"  +  buff[5]+"月" + buff[6]+ "日" +buff[7] + "小时"
 				+  buff[8] + "分" +buff[9]+ "秒" ;
+		info.setDate( new Timestamp(buff[4]+100, buff[5]-1, buff[6], buff[7],  buff[8], buff[8], 0));
 		// 移动用户所属国家代号
-		String MCC = (buff[10] & 0xff) * 256 + buff[11] + " ";
+		String MCC = (buff[10] & 0xff) * 256 + (buff[11]& 0xff) + "";
 		// 移动网号码Mobile Network Code(MNC)
-		String MNC = (buff[12] & 0xff) + " ";
+		String MNC = (buff[12] & 0xff) + "";
+		logger.info("国家代码号" + MCC + "时间" + date + "移动网号码" + MNC);
+		info.setMcc(Integer.valueOf(MCC));
+		info.setMnc(Integer.valueOf(MNC));
 		// LAC移动号码
-		String LAC = (buff[13] & 0xff) * 256 + buff[14] + " ";
+		String LAC = (buff[13] & 0xff) * 256 + (buff[14]& 0xff) + "";
 		// 基站地址 CI
-		String CI = buff[15] + " " + buff[16] + "" + buff[17];
-		String RSSI = buff[18] + "";
-		System.out.println("国家代码号" + MCC + "时间" + date + "移动网号码" + MNC);
+		String CI = (buff[15]& 0xff) * 256 * 256+ (buff[16]& 0xff)* 256 + (buff[17]& 0xff)+"";
+		// 小区信号强度RSSI
+		String RSSI = (buff[18]& 0xff) + "";
+		logger.info("基站0     位置区码(LAC)："+LAC+ "  移动基站(CI)："+CI+"  小区信号强度(RSSI):"+RSSI);
+		info.setCi1(Integer.valueOf(CI));
+		info.setLac1(Integer.valueOf(LAC));
+		info.setRssi(Integer.valueOf(RSSI));
+		String[] NLAC = new String[6];
+		String[] NCI = new String[6];
+		String[] NRSSI = new String[6];
+		for(int i = 0; i < 6; i++){
+			NLAC[i] = (buff[19 + i * 6] & 0xff) * 256 + (buff[20 + i * 6]& 0xff) + "";
+			NCI[i] = (buff[21 + i * 6]& 0xff) * 256 * 256 + (buff[22 + i * 6]& 0xff)* 256 + (buff[23 + i * 6]& 0xff)+"";
+			NRSSI[i] = (buff[24 + i * 6]& 0xff) + "";
+			logger.info("基站"+(i+1)+"     位置区码(LAC)："+NLAC[i]+ "  移动基站(CI)："+NCI[i]+"  小区信号强度(RSSI):"+NRSSI[i]);	
+		}
+		info.setCi2(Integer.valueOf(Integer.valueOf(NLAC[0])));
+		info.setCi3(Integer.valueOf(Integer.valueOf(NLAC[1])));
+		info.setCi4(Integer.valueOf(Integer.valueOf(NLAC[2])));
+		info.setCi5(Integer.valueOf(Integer.valueOf(NLAC[3])));
+		info.setCi6(Integer.valueOf(Integer.valueOf(NLAC[4])));
+		info.setCi7(Integer.valueOf(Integer.valueOf(NLAC[5])));
+		info.setLac2(Integer.valueOf(Integer.valueOf(NCI[0])));
+		info.setLac3(Integer.valueOf(Integer.valueOf(NCI[1])));
+		info.setLac4(Integer.valueOf(Integer.valueOf(NCI[2])));
+		info.setLac5(Integer.valueOf(Integer.valueOf(NCI[3])));
+		info.setLac6(Integer.valueOf(Integer.valueOf(NCI[4])));
+		info.setLac7(Integer.valueOf(Integer.valueOf(NCI[5])));
+		info.setRssi2(Integer.valueOf(Integer.valueOf(NRSSI[0])));
+		info.setRssi3(Integer.valueOf(Integer.valueOf(NRSSI[1])));
+		info.setRssi4(Integer.valueOf(Integer.valueOf(NRSSI[2])));
+		info.setRssi5(Integer.valueOf(Integer.valueOf(NRSSI[3])));
+		info.setRssi6(Integer.valueOf(Integer.valueOf(NRSSI[4])));
+		info.setRssi7(Integer.valueOf(Integer.valueOf(NRSSI[5])));
+		int TA = buff[55] & 0x00ff;
+		logger.info("时间提前量："+TA);
+		info.setTimebefore(TA);
+		int langue = buff[57] & 0x00ff;
+		info.setLanguage((short)langue);
+		if(langue == 1)
+			System.out.println("语言为中文");
+		else if(langue == 2)
+			System.out.println("语言为英文");
+		logger.info(langue==1?"语言为中文":"语言为英文");
 		return request;
 	}
 
