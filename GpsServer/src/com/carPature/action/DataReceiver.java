@@ -250,13 +250,12 @@ public class DataReceiver extends Thread {
 			byte low = timezoo[1];
 			int west = low & 0x3;
 			int qu = ((high & 0xff) * 16 + (low >>> 4)) / 100;
-
 			System.out.println(west == 1 ? "西时区" : "东时区" + qu + "区域");
-
 			System.out.println("处理结果或过程中的一些结果");
 			StringBuilder strb = new StringBuilder();
 			strb.append("7878");
 			strb.append("0501");
+			//返回的是 一个序列的信息 现在写死了
 			strb.append("0005");
 			// char ch = GenCRC.getCrc16(hexStringToBytes("05011122460"));
 			char ch = GenCRC.getCrc16(hexStringToBytes("05010005"));
@@ -269,11 +268,6 @@ public class DataReceiver extends Thread {
 		}
 	}
 
-	public static void doSomething(String ret) {
-		System.out.println(new Date(System.currentTimeMillis())
-				+ "one message :" + ret + " ");
-	}
-
 	public byte[] doLBSRequest(byte[] buff) {
 		// TODO Auto-generated method stub
 		byte[] request = new byte[] {};
@@ -281,15 +275,33 @@ public class DataReceiver extends Thread {
 		String date = + (buff[4]+2000)+"年"  +  buff[5]+"月" + buff[6]+ "日" +buff[7] + "小时"
 				+  buff[8] + "分" +buff[9]+ "秒" ;
 		// 移动用户所属国家代号
-		String MCC = (buff[10] & 0xff) * 256 + buff[11] + " ";
+		String MCC = (buff[10] & 0xff) * 256 + (buff[11]& 0xff) + " ";
 		// 移动网号码Mobile Network Code(MNC)
 		String MNC = (buff[12] & 0xff) + " ";
-		// LAC移动号码
-		String LAC = (buff[13] & 0xff) * 256 + buff[14] + " ";
-		// 基站地址 CI
-		String CI = buff[15] + " " + buff[16] + "" + buff[17];
-		String RSSI = buff[18] + "";
 		System.out.println("国家代码号" + MCC + "时间" + date + "移动网号码" + MNC);
+		// LAC移动号码
+		String LAC = (buff[13] & 0xff) * 256 + (buff[14]& 0xff) + "";
+		// 基站地址 CI
+		String CI = (buff[15]& 0xff) * 256 * 256+ (buff[16]& 0xff)* 256 + (buff[17]& 0xff)+"";
+		// 小区信号强度RSSI
+		String RSSI = (buff[18]& 0xff) + "";
+		System.out.println("基站0     位置区码(LAC)："+LAC+ "  移动基站(CI)："+CI+"  小区信号强度(RSSI):"+RSSI);
+		String[] NLAC = new String[6];
+		String[] NCI = new String[6];
+		String[] NRSSI = new String[6];
+		for(int i = 0; i < 6; i++){
+			NLAC[i] = (buff[19 + i * 6] & 0xff) * 256 + (buff[20 + i * 6]& 0xff) + "";
+			NCI[i] = (buff[21 + i * 6]& 0xff) * 256 * 256 + (buff[22 + i * 6]& 0xff)* 256 + (buff[23 + i * 6]& 0xff)+"";
+			NRSSI[i] = (buff[24 + i * 6]& 0xff) + "";
+			System.out.println("基站"+(i+1)+"     位置区码(LAC)："+NLAC[i]+ "  移动基站(CI)："+NCI[i]+"  小区信号强度(RSSI):"+NRSSI[i]);	
+		}
+		int TA = buff[55] & 0x00ff;
+		System.out.println("时间提前量："+TA);
+		int langue = buff[57] & 0x00ff;
+		if(langue == 1)
+			System.out.println("语言为中文");
+		else if(langue == 2)
+			System.out.println("语言为英文");
 		return request;
 	}
 
@@ -494,7 +506,6 @@ public class DataReceiver extends Thread {
 		int mileageNum = Integer.parseInt(bytesToHexString(mileage), 16);
 //		System.out.println("里程统计:"+bytesToHexString(mileage));
 		System.out.println("里程统计:"+mileageNum);
-		
 		System.out.println("处理结果或过程中的一些结果");
 		StringBuilder strb = new StringBuilder();
 		strb.append("7878");
