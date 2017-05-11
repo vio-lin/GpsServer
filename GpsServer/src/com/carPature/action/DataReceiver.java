@@ -39,6 +39,7 @@ import com.carPature.dao.DeviceStatusDAO;
 import com.carPature.dao.UsersDAO;
 import com.carPature.entity1.DeviceLocationInfo;
 import com.carPature.entity1.DeviceLocationLbsInfo;
+import com.carPature.entity1.DeviceStatus;
 import com.carcarPature.utils.GenCRC;
 import com.carcarPature.utils.Utils;
 
@@ -53,6 +54,7 @@ public class DataReceiver extends Thread {
 	public static final int MAX_PACKAGR_LEN = 4096;
 	public static int sequence = 0;
 	public DeviceLocationInfoDAO locationdao;
+	public DeviceLocationLbsInfoDAO locationlbsdao;
 	public DeviceStatusDAO statusdao;
 	public UsersDAO userdao;
 	
@@ -97,6 +99,8 @@ public class DataReceiver extends Thread {
 		ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
 		locationdao = (DeviceLocationInfoDAO) context.getBean("DeviceLocationInfoDAO");
 		statusdao = (DeviceStatusDAO) context.getBean("DeviceStatusDAO");
+		locationlbsdao = (DeviceLocationLbsInfoDAO) context.getBean("DeviceLocationLbsDAO");
+		
 		serverSocket = new ServerSocket(port);
 		// Runtime的availableProcessor()方法返回当前系统的CPU数目.
 		executorService = Executors.newFixedThreadPool(Runtime.getRuntime()
@@ -259,9 +263,10 @@ public class DataReceiver extends Thread {
 			// instruct thr IMME code from byte
 			// pass the crc check and do next
 			// 终端id 的号码解析
-			byte[] IMEI = new byte[8];
-			System.arraycopy(buff, 4, IMEI, 0, 8);
-			logger.info("IME码ID" + bytesToHexString(IMEI));
+			byte[] IMEI2 = new byte[8];
+			System.arraycopy(buff, 4, IMEI2, 0, 8);
+			logger.info("IME码ID" + bytesToHexString(IMEI2));
+			IMEI = bytesToHexString(IMEI2);
 			byte[] type = new byte[2];
 			System.arraycopy(buff, 12, type, 0, 2);
 			logger.info("类型识别码:" + bytesToHexString(type));
@@ -285,6 +290,364 @@ public class DataReceiver extends Thread {
 			logger.info("开始登录了");
 			byte[] response = hexStringToBytes(strb.toString());
 			return response;
+		}
+		public byte[] doLBSRequest(byte[] buff) {
+			// TODO Auto-generated method stub
+			byte[] request = new byte[] {};
+			// 无需回复
+			DeviceLocationLbsInfo info = new DeviceLocationLbsInfo();
+			String date = + (buff[4]+2000)+"年"  +  buff[5]+"月" + buff[6]+ "日" +buff[7] + "小时"
+					+  buff[8] + "分" +buff[9]+ "秒" ;
+			info.setDate( new Timestamp(buff[4]+100, buff[5]-1, buff[6], buff[7],  buff[8], buff[8], 0));
+			// 移动用户所属国家代号
+			String MCC = (buff[10] & 0xff) * 256 + (buff[11]& 0xff) + "";
+			// 移动网号码Mobile Network Code(MNC)
+			String MNC = (buff[12] & 0xff) + "";
+			logger.info("国家代码号" + MCC + "时间" + date + "移动网号码" + MNC);
+			info.setMcc(Integer.valueOf(MCC));
+			info.setMnc(Integer.valueOf(MNC));
+			// LAC移动号码
+			String LAC = (buff[13] & 0xff) * 256 + (buff[14]& 0xff) + "";
+			// 基站地址 CI
+			String CI = (buff[15]& 0xff) * 256 * 256+ (buff[16]& 0xff)* 256 + (buff[17]& 0xff)+"";
+			// 小区信号强度RSSI
+			String RSSI = (buff[18]& 0xff) + "";
+			logger.info("基站0     位置区码(LAC)："+LAC+ "  移动基站(CI)："+CI+"  小区信号强度(RSSI):"+RSSI);
+			info.setCi1(Integer.valueOf(CI));
+			info.setLac1(Integer.valueOf(LAC));
+			info.setRssi(Integer.valueOf(RSSI));
+			String[] NLAC = new String[6];
+			String[] NCI = new String[6];
+			String[] NRSSI = new String[6];
+			for(int i = 0; i < 6; i++){
+				NLAC[i] = (buff[19 + i * 6] & 0xff) * 256 + (buff[20 + i * 6]& 0xff) + "";
+				NCI[i] = (buff[21 + i * 6]& 0xff) * 256 * 256 + (buff[22 + i * 6]& 0xff)* 256 + (buff[23 + i * 6]& 0xff)+"";
+				NRSSI[i] = (buff[24 + i * 6]& 0xff) + "";
+				logger.info("基站"+(i+1)+"     位置区码(LAC)："+NLAC[i]+ "  移动基站(CI)："+NCI[i]+"  小区信号强度(RSSI):"+NRSSI[i]);	
+			}
+			info.setCi2(Integer.valueOf(Integer.valueOf(NLAC[0])));
+			info.setCi3(Integer.valueOf(Integer.valueOf(NLAC[1])));
+			info.setCi4(Integer.valueOf(Integer.valueOf(NLAC[2])));
+			info.setCi5(Integer.valueOf(Integer.valueOf(NLAC[3])));
+			info.setCi6(Integer.valueOf(Integer.valueOf(NLAC[4])));
+			info.setCi7(Integer.valueOf(Integer.valueOf(NLAC[5])));
+			info.setLac2(Integer.valueOf(Integer.valueOf(NCI[0])));
+			info.setLac3(Integer.valueOf(Integer.valueOf(NCI[1])));
+			info.setLac4(Integer.valueOf(Integer.valueOf(NCI[2])));
+			info.setLac5(Integer.valueOf(Integer.valueOf(NCI[3])));
+			info.setLac6(Integer.valueOf(Integer.valueOf(NCI[4])));
+			info.setLac7(Integer.valueOf(Integer.valueOf(NCI[5])));
+			info.setRssi2(Integer.valueOf(Integer.valueOf(NRSSI[0])));
+			info.setRssi3(Integer.valueOf(Integer.valueOf(NRSSI[1])));
+			info.setRssi4(Integer.valueOf(Integer.valueOf(NRSSI[2])));
+			info.setRssi5(Integer.valueOf(Integer.valueOf(NRSSI[3])));
+			info.setRssi6(Integer.valueOf(Integer.valueOf(NRSSI[4])));
+			info.setRssi7(Integer.valueOf(Integer.valueOf(NRSSI[5])));
+			int TA = buff[55] & 0x00ff;
+			logger.info("时间提前量："+TA);
+			info.setTimebefore(TA);
+			int langue = buff[57] & 0x00ff;
+			info.setLanguage((short)langue);
+			if(langue == 1)
+				System.out.println("语言为中文");
+			else if(langue == 2)
+				System.out.println("语言为英文");
+			logger.info(langue==1?"语言为中文":"语言为英文");
+			locationlbsdao.insertLbsInfo(info);
+			return request;
+		}
+
+		public byte[] doheartbeat(byte[] buff) {
+			// TODO Auto-generated method stub
+			byte[] response;
+			DeviceStatus statu = new DeviceStatus();
+			byte termInfo = buff[4];
+			
+			if ((termInfo & 0x80) ==0x80) {
+				System.out.println("油电断开");
+				statu.setOilelectirc(true);
+			} else {
+				System.out.println("油电接通");
+				statu.setOilelectirc(false);
+			}
+			if ((termInfo & 0x40) == 0x40) {
+				System.out.println("Gps已定位");
+				statu.setGpsstate(true);
+			} else {
+				System.out.println("GPS未定位");
+				statu.setGpsstate(false);
+			}
+			if ((termInfo & 0x01) == 0x01) {
+				System.out.println("设防");
+				statu.setGuard(true);
+			} else {
+				statu.setGuard(false);
+				System.out.println("撤防");
+			}
+			if ((termInfo & 0x02) == 0x02) {
+				statu.setAcc(true);
+				System.out.println("ACC高");
+			} else {
+				statu.setAcc(false);
+				System.out.println("ACC低");
+			}
+			if ((termInfo & 0x04) == 0x04) {
+				statu.setCharging(true);
+				System.out.println("已接电源充电");
+			} else {
+				System.out.println("未接电源充电");
+				statu.setCharging(false);
+			}
+			byte[] butter = new byte[2];
+			System.arraycopy(buff, 5, butter, 0, 2);
+			int v = (butter[0] & 0xff) * 256 + (butter[1] & 0xff);
+			System.out.println("电池的容量是" + v / 100.0);
+			statu.setBattery((float) (v*1.0/100.0));
+			byte Gsm = buff[7];
+			statu.setGsm(Gsm+0);
+			statu.setImei(IMEI);
+			switch (Gsm) {
+			case 0x00:
+				System.out.println("无信号");
+				break;
+			case 0x01:
+				System.out.println("信号极弱");
+				break;
+			case 0x02:
+				System.out.println("信号较弱");
+				break;
+			case 0x03:
+				System.out.println("信号良好");
+				break;
+			case 0x04:
+				System.out.println("信号强");
+				break;
+			default:
+				break;
+			}
+			// 扩展英文状态
+			byte Lan = buff[9];
+			switch (Lan) {
+			case 0x01:
+				System.out.println("中文");
+				statu.setLanguage(true);
+				break;
+			case 0x02:
+				System.out.println("英文");
+				statu.setLanguage(false);
+				break;
+			default:
+				break;
+			}
+			// 重新封装 返回
+			StringBuilder sb = new StringBuilder();
+			sb.append("7878");
+			sb.append("05");
+			sb.append("23");
+			byte[] seq = new byte[2];
+			System.arraycopy(buff, 10, seq, 0, 2);
+			sb.append(bytesToHexString(seq));
+			System.out.println(bytesToHexString(seq));
+			// sb.append("0100");
+			String data = sb.substring(4);
+			System.out.println("校验的位置" + data);
+			char ch = GenCRC.getCrc16(hexStringToBytes(data));
+			String Crc = Integer.toHexString(ch + 0).toUpperCase();
+			sb.append(Crc);
+			sb.append("0D0A");
+			response = hexStringToBytes(sb.toString());
+			statusdao.insertDevice(statu);
+			return response;
+		}
+
+		private byte[] doGps(byte[] buff) {
+			// TODO Auto-generated method stub
+			// instruct thr IMME code from byte
+			//pass the crc check and do next
+			//终端id 的号码解析 
+			DeviceLocationInfo gps = new DeviceLocationInfo();
+			byte[] time = new byte[6];
+			System.arraycopy(buff, 4, time, 0, 6);
+			int year = (time[0] & 0x00ff) + 2000;
+			System.out.println(time[0]+0);
+			int month = time[1] & 0x00ff ;
+			int date = time[2] & 0x00ff ;
+			int hour = time[3] & 0x00ff ;
+			int minute = time[4] & 0x00ff ;
+			int second = time[5] & 0x00ff ;
+			Timestamp stamp = new Timestamp(year-1900, month-1, date, hour, minute, second, 0) ;
+			logger.info("日期时间:"+year+"年"+month+"月"+date+"日       "+hour+"：" +minute+":" +second);
+			gps.setDate(stamp);
+			byte[] GPSNo = new byte[1];
+			System.arraycopy(buff, 10, GPSNo, 0, 1);
+			System.out.println("GPS信息长度:"+ ((GPSNo[0]&0x00f0)>>>4) +"   GPS信息卫星数:"+ (GPSNo[0]&0x000f));
+			gps.setGpssstat(GPSNo);
+			byte[] lat = new byte[4];
+			System.arraycopy(buff, 11, lat, 0, 4);
+			double latNum =  Integer.parseInt(bytesToHexString(lat), 16)/1800000.0;
+			gps.setLatitude(latNum);
+			logger.info("纬度:"+latNum);
+			byte[] lng = new byte[4];
+			System.arraycopy(buff, 15, lng, 0, 4);
+			double lngNum =  Integer.parseInt(bytesToHexString(lng), 16)/1800000.0;
+			gps.setLongtitude(lngNum);
+			logger.info("经度:"+lngNum);
+			byte[] speed = new byte[1];
+			System.arraycopy(buff, 19, speed, 0, 1);
+			gps.setSpeed((float) ((speed[0] & 0x00ff)*1.0));
+			System.out.println("速度:"+ (speed[0] & 0x00ff));
+			byte[] course = new byte[2];
+			System.arraycopy(buff, 20, course, 0, 2);
+			int direction = course[1]+((course[0]&0x0003)<<4);
+			StringBuilder courseS = new StringBuilder();
+			if((course[0] & 0x0020)== 0x0020)
+				courseS.append("差分GPS、");
+			else
+				courseS.append("实时GPS、");
+			if((course[0] & 0x0010)== 0x0010)
+				courseS.append("GPS已定位、");
+			else
+				courseS.append("GPS未定位、");
+			if((course[0] & 0x0008)== 0x0008)
+				courseS.append("西经、");
+			else
+				courseS.append("东经、");
+			if((course[0] & 0x0004)== 0x0004)
+				courseS.append("北纬、");
+			else
+				courseS.append("南纬、");
+			courseS.append("航向"+direction+"°");
+//			System.out.println("航向状态:"+bytesToHexString(course));
+			logger.info("航向状态:" + courseS);
+			gps.setOrienStat(bytesToHexString(course));
+			byte[] MCC = new byte[2];
+			System.arraycopy(buff, 22, MCC, 0, 2);
+			int MCCNum = Integer.parseInt(bytesToHexString(MCC), 16);
+//			System.out.println("国家代码:"+bytesToHexString(MCC));
+			logger.info("国家代码:"+MCCNum);
+			gps.setMcc(MCCNum);
+			byte[] MNC = new byte[1];
+			System.arraycopy(buff, 24, MNC, 0, 1);
+			int MNCNum = Integer.parseInt(bytesToHexString(MNC), 16);
+//			System.out.println("移动网号码:"+bytesToHexString(MNC));
+			System.out.println("移动网号码:"+MNCNum);
+			gps.setMnc(MNCNum);
+			byte[] LAC = new byte[2];
+			System.arraycopy(buff, 25, LAC, 0, 2);
+			int LACNum = Integer.parseInt(bytesToHexString(LAC), 16);
+//			System.out.println("位置区码:"+bytesToHexString(LAC));
+			System.out.println("位置区码:"+LACNum);
+			gps.setLac(LACNum);
+			byte[] Cell_ID = new byte[3];
+			System.arraycopy(buff, 27, Cell_ID, 0, 3);
+			int Cell_IDNum = Integer.parseInt(bytesToHexString(Cell_ID), 16);
+//			System.out.println("移动基站:"+bytesToHexString(Cell_ID));
+			logger.info("移动基站:"+Cell_IDNum);
+			gps.setCellId(Cell_IDNum);
+			byte[] ACC = new byte[1];
+			System.arraycopy(buff, 30, ACC, 0, 1);
+			if((ACC[0] & 0x0001) == 0x0001)
+				System.out.println("ACC状态:高");
+			else
+				System.out.println("ACC状态:低");
+//			System.out.println("ACC状态:"+bytesToHexString(ACC));
+			gps.setAcc((ACC[0] & 0x0001) == 0x0001);
+			byte[] mode = new byte[1];
+			System.arraycopy(buff, 31, mode, 0, 1);
+			switch(mode[0]){
+			case 0x0000 : System.out.println("数据上报模式:定时上报");
+				break;
+			case 0x0001 : System.out.println("数据上报模式:定距上报");
+				break;
+			case 0x0002 : System.out.println("数据上报模式:拐点上传");
+				break;
+			case 0x0003 : System.out.println("数据上报模式:ACC状态改变上传");
+				break;
+			case 0x0004 : System.out.println("数据上报模式:从运动变为静止状态后，补传最后一个定位点");
+				break;
+			case 0x0005 : System.out.println("数据上报模式:网络断开重连后，上报之前最后一个有效上传点");
+				break;
+			default:
+				break;
+			}
+			gps.setOploadMode((mode[0]&0xff)+"");
+//			System.out.println("数据上报模式:"+bytesToHexString(mode));
+			byte[] GPStype = new byte[1];
+			System.arraycopy(buff, 32, GPStype, 0, 1);
+			switch(GPStype[0]){
+			case 0x0000 : logger.info("GPS实时补传:实时上传");
+				break;
+			case 0x0001 : logger.info("GPS实时补传:补传");
+				break;
+			default:
+				break;
+			}
+			gps.setRealNot(GPStype[0]==0x0000);
+//			System.out.println("GPS实时补传:"+bytesToHexString(GPStype));
+			byte[] mileage = new byte[4];
+			System.arraycopy(buff, 33, mileage, 0, 4);
+			int mileageNum = Integer.parseInt(bytesToHexString(mileage), 16);
+//			System.out.println("里程统计:"+bytesToHexString(mileage));
+			logger.info("里程统计:"+mileageNum);
+			locationdao.insertLocation(gps);
+			StringBuilder strb = new StringBuilder();
+			strb.append("7878");
+			strb.append("0501");
+//			char ch = GenCRC.getCrc16(hexStringToBytes("05011122460"));
+			char ch = GenCRC.getCrc16(hexStringToBytes("05010005"));
+			String Crc = Integer.toHexString(ch+0).toUpperCase();
+			strb.append(Crc);
+			System.out.println("生成的CRC:"+Crc);
+			strb.append("0D0A");
+			byte[] response = hexStringToBytes(strb.toString()); 
+			return response;
+		}
+
+		public byte[] dochecktime(byte[] buff) {
+			// TODO Auto-generated method stub
+			byte[] response = null;
+			StringBuilder sb = new StringBuilder();
+			sb.append("7878");
+			sb.append("0B");
+			sb.append("8A");
+			Calendar cal = Calendar.getInstance();
+			// 转换成 byte相关 年（1byte）月（1byte）日（1byte）时（1byte）分（1byte）秒（1byte）（转换为十进制）
+			// 6位的 byte 使用cal进行处理
+			int year = cal.get(Calendar.YEAR);
+			int month = cal.get(Calendar.MONTH);
+			int day = cal.get(Calendar.DAY_OF_MONTH);
+			int hour = cal.get(Calendar.HOUR_OF_DAY);
+			int min = cal.get(Calendar.MINUTE);
+			int second = cal.get(Calendar.SECOND);
+			// 转换为数字
+			String time = appendToByte(Integer.toHexString(year % 2000))
+					+ appendToByte(Integer.toHexString(month + 1))
+					+ appendToByte(Integer.toHexString(day))
+					+ appendToByte(Integer.toHexString(hour))
+					+ appendToByte(Integer.toHexString(min))
+					+ appendToByte(Integer.toHexString(second));
+			sb.append(time);
+			// 转换为10进制
+			String sequence = "0006";
+			// 计算校验码的部分
+			sb.append(sequence);
+			String str = sb.substring(6);
+			System.out.println("校验的位置" + str);
+			char ch = GenCRC.getCrc16(hexStringToBytes("str"));
+			String Crc = Integer.toHexString(ch + 0).toUpperCase();
+			sb.append(Crc);
+			System.out.println("生成的CRC:" + Crc);
+			// 转换date到数
+			sb.append("0D0A");
+			response = hexStringToBytes(sb.toString());
+			return response;
+		}
+
+		public String appendToByte(String str) {
+			if (str.length() < 2) {
+				str = "0" + str;
+			}
+			return str;
 		}
 	}
 
@@ -310,345 +673,7 @@ public class DataReceiver extends Thread {
 		return stringBuilder.toString();
 	}
 
-	public byte[] doLBSRequest(byte[] buff) {
-		// TODO Auto-generated method stub
-		byte[] request = new byte[] {};
-		// 无需回复
-		DeviceLocationLbsInfo info = new DeviceLocationLbsInfo();
-		String date = + (buff[4]+2000)+"年"  +  buff[5]+"月" + buff[6]+ "日" +buff[7] + "小时"
-				+  buff[8] + "分" +buff[9]+ "秒" ;
-		info.setDate( new Timestamp(buff[4]+100, buff[5]-1, buff[6], buff[7],  buff[8], buff[8], 0));
-		// 移动用户所属国家代号
-		String MCC = (buff[10] & 0xff) * 256 + (buff[11]& 0xff) + "";
-		// 移动网号码Mobile Network Code(MNC)
-		String MNC = (buff[12] & 0xff) + "";
-		logger.info("国家代码号" + MCC + "时间" + date + "移动网号码" + MNC);
-		info.setMcc(Integer.valueOf(MCC));
-		info.setMnc(Integer.valueOf(MNC));
-		// LAC移动号码
-		String LAC = (buff[13] & 0xff) * 256 + (buff[14]& 0xff) + "";
-		// 基站地址 CI
-		String CI = (buff[15]& 0xff) * 256 * 256+ (buff[16]& 0xff)* 256 + (buff[17]& 0xff)+"";
-		// 小区信号强度RSSI
-		String RSSI = (buff[18]& 0xff) + "";
-		logger.info("基站0     位置区码(LAC)："+LAC+ "  移动基站(CI)："+CI+"  小区信号强度(RSSI):"+RSSI);
-		info.setCi1(Integer.valueOf(CI));
-		info.setLac1(Integer.valueOf(LAC));
-		info.setRssi(Integer.valueOf(RSSI));
-		String[] NLAC = new String[6];
-		String[] NCI = new String[6];
-		String[] NRSSI = new String[6];
-		for(int i = 0; i < 6; i++){
-			NLAC[i] = (buff[19 + i * 6] & 0xff) * 256 + (buff[20 + i * 6]& 0xff) + "";
-			NCI[i] = (buff[21 + i * 6]& 0xff) * 256 * 256 + (buff[22 + i * 6]& 0xff)* 256 + (buff[23 + i * 6]& 0xff)+"";
-			NRSSI[i] = (buff[24 + i * 6]& 0xff) + "";
-			logger.info("基站"+(i+1)+"     位置区码(LAC)："+NLAC[i]+ "  移动基站(CI)："+NCI[i]+"  小区信号强度(RSSI):"+NRSSI[i]);	
-		}
-		info.setCi2(Integer.valueOf(Integer.valueOf(NLAC[0])));
-		info.setCi3(Integer.valueOf(Integer.valueOf(NLAC[1])));
-		info.setCi4(Integer.valueOf(Integer.valueOf(NLAC[2])));
-		info.setCi5(Integer.valueOf(Integer.valueOf(NLAC[3])));
-		info.setCi6(Integer.valueOf(Integer.valueOf(NLAC[4])));
-		info.setCi7(Integer.valueOf(Integer.valueOf(NLAC[5])));
-		info.setLac2(Integer.valueOf(Integer.valueOf(NCI[0])));
-		info.setLac3(Integer.valueOf(Integer.valueOf(NCI[1])));
-		info.setLac4(Integer.valueOf(Integer.valueOf(NCI[2])));
-		info.setLac5(Integer.valueOf(Integer.valueOf(NCI[3])));
-		info.setLac6(Integer.valueOf(Integer.valueOf(NCI[4])));
-		info.setLac7(Integer.valueOf(Integer.valueOf(NCI[5])));
-		info.setRssi2(Integer.valueOf(Integer.valueOf(NRSSI[0])));
-		info.setRssi3(Integer.valueOf(Integer.valueOf(NRSSI[1])));
-		info.setRssi4(Integer.valueOf(Integer.valueOf(NRSSI[2])));
-		info.setRssi5(Integer.valueOf(Integer.valueOf(NRSSI[3])));
-		info.setRssi6(Integer.valueOf(Integer.valueOf(NRSSI[4])));
-		info.setRssi7(Integer.valueOf(Integer.valueOf(NRSSI[5])));
-		int TA = buff[55] & 0x00ff;
-		logger.info("时间提前量："+TA);
-		info.setTimebefore(TA);
-		int langue = buff[57] & 0x00ff;
-		info.setLanguage((short)langue);
-		if(langue == 1)
-			System.out.println("语言为中文");
-		else if(langue == 2)
-			System.out.println("语言为英文");
-		logger.info(langue==1?"语言为中文":"语言为英文");
-		return request;
-	}
-
-	public byte[] doheartbeat(byte[] buff) {
-		// TODO Auto-generated method stub
-		byte[] response;
-		byte termInfo = buff[4];
-		if ((termInfo & 0x80) ==0x80) {
-			System.out.println("油电断开");
-		} else {
-			System.out.println("油电接通");
-		}
-		if ((termInfo & 0x40) == 0x40) {
-			System.out.println("Gps已定位");
-		} else {
-			System.out.println("GPS未定位");
-		}
-		if ((termInfo & 0x01) == 0x01) {
-			System.out.println("设防");
-		} else {
-			System.out.println("撤防");
-		}
-		if ((termInfo & 0x02) == 0x02) {
-			System.out.println("ACC高");
-		} else {
-			System.out.println("ACC低");
-		}
-		if ((termInfo & 0x04) == 0x04) {
-			System.out.println("已接电源充电");
-		} else {
-			System.out.println("未接电源充电");
-		}
-		byte[] butter = new byte[2];
-		System.arraycopy(buff, 5, butter, 0, 2);
-		int v = (butter[0] & 0xff) * 256 + (butter[1] & 0xff);
-		System.out.println("电池的容量是" + v / 100.0);
-		byte Gsm = buff[7];
-		switch (Gsm) {
-		case 0x00:
-			System.out.println("无信号");
-			break;
-		case 0x01:
-			System.out.println("信号极弱");
-			break;
-		case 0x02:
-			System.out.println("信号较弱");
-			break;
-		case 0x03:
-			System.out.println("信号良好");
-			break;
-		case 0x04:
-			System.out.println("信号强");
-			break;
-		default:
-			break;
-		}
-		// 扩展英文状态
-		byte Lan = buff[9];
-		switch (Lan) {
-		case 0x01:
-			System.out.println("中文");
-			break;
-		case 0x02:
-			System.out.println("英文");
-			break;
-		default:
-			break;
-		}
-		// 重新封装 返回
-		StringBuilder sb = new StringBuilder();
-		sb.append("7878");
-		sb.append("05");
-		sb.append("23");
-		byte[] seq = new byte[2];
-		System.arraycopy(buff, 10, seq, 0, 2);
-		sb.append(bytesToHexString(seq));
-		System.out.println(bytesToHexString(seq));
-		// sb.append("0100");
-		String data = sb.substring(4);
-		System.out.println("校验的位置" + data);
-		char ch = GenCRC.getCrc16(hexStringToBytes(data));
-		String Crc = Integer.toHexString(ch + 0).toUpperCase();
-		sb.append(Crc);
-		sb.append("0D0A");
-		response = hexStringToBytes(sb.toString());
-		return response;
-	}
-
-	private byte[] doGps(byte[] buff) {
-		// TODO Auto-generated method stub
-		// instruct thr IMME code from byte
-		//pass the crc check and do next
-		//终端id 的号码解析 
-		DeviceLocationInfo gps = new DeviceLocationInfo();
-		byte[] time = new byte[6];
-		System.arraycopy(buff, 4, time, 0, 6);
-		int year = (time[0] & 0x00ff) + 2000;
-		System.out.println(time[0]+0);
-		int month = time[1] & 0x00ff ;
-		int date = time[2] & 0x00ff ;
-		int hour = time[3] & 0x00ff ;
-		int minute = time[4] & 0x00ff ;
-		int second = time[5] & 0x00ff ;
-		Timestamp stamp = new Timestamp(year, month-1, date, hour, minute, second, 0) ;
-		logger.info("日期时间:"+year+"年"+month+"月"+date+"日       "+hour+"：" +minute+":" +second);
-		gps.setDate(stamp);
-		byte[] GPSNo = new byte[1];
-		System.arraycopy(buff, 10, GPSNo, 0, 1);
-		System.out.println("GPS信息长度:"+ ((GPSNo[0]&0x00f0)>>>4) +"   GPS信息卫星数:"+ (GPSNo[0]&0x000f));
-		gps.setGpssstat(GPSNo);
-		byte[] lat = new byte[4];
-		System.arraycopy(buff, 11, lat, 0, 4);
-		double latNum =  Integer.parseInt(bytesToHexString(lat), 16)/1800000.0;
-		gps.setLatitude(latNum);
-		logger.info("纬度:"+latNum);
-		byte[] lng = new byte[4];
-		System.arraycopy(buff, 15, lng, 0, 4);
-		double lngNum =  Integer.parseInt(bytesToHexString(lng), 16)/1800000.0;
-		gps.setLongtitude(lngNum);
-		logger.info("经度:"+lngNum);
-		byte[] speed = new byte[1];
-		System.arraycopy(buff, 19, speed, 0, 1);
-		gps.setSpeed((float) ((speed[0] & 0x00ff)*1.0));
-		System.out.println("速度:"+ (speed[0] & 0x00ff));
-		byte[] course = new byte[2];
-		System.arraycopy(buff, 20, course, 0, 2);
-		int direction = course[1]+((course[0]&0x0003)<<4);
-		StringBuilder courseS = new StringBuilder();
-		if((course[0] & 0x0020)== 0x0020)
-			courseS.append("差分GPS、");
-		else
-			courseS.append("实时GPS、");
-		if((course[0] & 0x0010)== 0x0010)
-			courseS.append("GPS已定位、");
-		else
-			courseS.append("GPS未定位、");
-		if((course[0] & 0x0008)== 0x0008)
-			courseS.append("西经、");
-		else
-			courseS.append("东经、");
-		if((course[0] & 0x0004)== 0x0004)
-			courseS.append("北纬、");
-		else
-			courseS.append("南纬、");
-		courseS.append("航向"+direction+"°");
-//		System.out.println("航向状态:"+bytesToHexString(course));
-		logger.info("航向状态:" + courseS);
-		gps.setOrienStat(bytesToHexString(course));
-		byte[] MCC = new byte[2];
-		System.arraycopy(buff, 22, MCC, 0, 2);
-		int MCCNum = Integer.parseInt(bytesToHexString(MCC), 16);
-//		System.out.println("国家代码:"+bytesToHexString(MCC));
-		logger.info("国家代码:"+MCCNum);
-		gps.setMcc(MCCNum);
-		byte[] MNC = new byte[1];
-		System.arraycopy(buff, 24, MNC, 0, 1);
-		int MNCNum = Integer.parseInt(bytesToHexString(MNC), 16);
-//		System.out.println("移动网号码:"+bytesToHexString(MNC));
-		System.out.println("移动网号码:"+MNCNum);
-		gps.setMnc(MNCNum);
-		byte[] LAC = new byte[2];
-		System.arraycopy(buff, 25, LAC, 0, 2);
-		int LACNum = Integer.parseInt(bytesToHexString(LAC), 16);
-//		System.out.println("位置区码:"+bytesToHexString(LAC));
-		System.out.println("位置区码:"+LACNum);
-		gps.setLac(LACNum);
-		byte[] Cell_ID = new byte[3];
-		System.arraycopy(buff, 27, Cell_ID, 0, 3);
-		int Cell_IDNum = Integer.parseInt(bytesToHexString(Cell_ID), 16);
-//		System.out.println("移动基站:"+bytesToHexString(Cell_ID));
-		logger.info("移动基站:"+Cell_IDNum);
-		gps.setCellId(Cell_IDNum);
-		byte[] ACC = new byte[1];
-		System.arraycopy(buff, 30, ACC, 0, 1);
-		if((ACC[0] & 0x0001) == 0x0001)
-			System.out.println("ACC状态:高");
-		else
-			System.out.println("ACC状态:低");
-//		System.out.println("ACC状态:"+bytesToHexString(ACC));
-		gps.setAcc((ACC[0] & 0x0001) == 0x0001);
-		byte[] mode = new byte[1];
-		System.arraycopy(buff, 31, mode, 0, 1);
-		switch(mode[0]){
-		case 0x0000 : System.out.println("数据上报模式:定时上报");
-			break;
-		case 0x0001 : System.out.println("数据上报模式:定距上报");
-			break;
-		case 0x0002 : System.out.println("数据上报模式:拐点上传");
-			break;
-		case 0x0003 : System.out.println("数据上报模式:ACC状态改变上传");
-			break;
-		case 0x0004 : System.out.println("数据上报模式:从运动变为静止状态后，补传最后一个定位点");
-			break;
-		case 0x0005 : System.out.println("数据上报模式:网络断开重连后，上报之前最后一个有效上传点");
-			break;
-		default:
-			break;
-		}
-		gps.setOploadMode((mode[0]&0xff)+"");
-//		System.out.println("数据上报模式:"+bytesToHexString(mode));
-		byte[] GPStype = new byte[1];
-		System.arraycopy(buff, 32, GPStype, 0, 1);
-		switch(GPStype[0]){
-		case 0x0000 : logger.info("GPS实时补传:实时上传");
-			break;
-		case 0x0001 : logger.info("GPS实时补传:补传");
-			break;
-		default:
-			break;
-		}
-		gps.setRealNot(GPStype[0]==0x0000);
-//		System.out.println("GPS实时补传:"+bytesToHexString(GPStype));
-		byte[] mileage = new byte[4];
-		System.arraycopy(buff, 33, mileage, 0, 4);
-		int mileageNum = Integer.parseInt(bytesToHexString(mileage), 16);
-//		System.out.println("里程统计:"+bytesToHexString(mileage));
-		logger.info("里程统计:"+mileageNum);
-		locationdao.insertLocation(gps);
-		StringBuilder strb = new StringBuilder();
-		strb.append("7878");
-		strb.append("0501");
-//		char ch = GenCRC.getCrc16(hexStringToBytes("05011122460"));
-		char ch = GenCRC.getCrc16(hexStringToBytes("05010005"));
-		String Crc = Integer.toHexString(ch+0).toUpperCase();
-		strb.append(Crc);
-		System.out.println("生成的CRC:"+Crc);
-		strb.append("0D0A");
-		byte[] response = hexStringToBytes(strb.toString()); 
-		return response;
-	}
-
-	public byte[] dochecktime(byte[] buff) {
-		// TODO Auto-generated method stub
-		byte[] response = null;
-		StringBuilder sb = new StringBuilder();
-		sb.append("7878");
-		sb.append("0B");
-		sb.append("8A");
-		Calendar cal = Calendar.getInstance();
-		// 转换成 byte相关 年（1byte）月（1byte）日（1byte）时（1byte）分（1byte）秒（1byte）（转换为十进制）
-		// 6位的 byte 使用cal进行处理
-		int year = cal.get(Calendar.YEAR);
-		int month = cal.get(Calendar.MONTH);
-		int day = cal.get(Calendar.DAY_OF_MONTH);
-		int hour = cal.get(Calendar.HOUR_OF_DAY);
-		int min = cal.get(Calendar.MINUTE);
-		int second = cal.get(Calendar.SECOND);
-		// 转换为数字
-		String time = appendToByte(Integer.toHexString(year % 2000))
-				+ appendToByte(Integer.toHexString(month + 1))
-				+ appendToByte(Integer.toHexString(day))
-				+ appendToByte(Integer.toHexString(hour))
-				+ appendToByte(Integer.toHexString(min))
-				+ appendToByte(Integer.toHexString(second));
-		sb.append(time);
-		// 转换为10进制
-		String sequence = "0006";
-		// 计算校验码的部分
-		sb.append(sequence);
-		String str = sb.substring(6);
-		System.out.println("校验的位置" + str);
-		char ch = GenCRC.getCrc16(hexStringToBytes("str"));
-		String Crc = Integer.toHexString(ch + 0).toUpperCase();
-		sb.append(Crc);
-		System.out.println("生成的CRC:" + Crc);
-		// 转换date到数
-		sb.append("0D0A");
-		response = hexStringToBytes(sb.toString());
-		return response;
-	}
-
-	public String appendToByte(String str) {
-		if (str.length() < 2) {
-			str = "0" + str;
-		}
-		return str;
-	}
+	
 
 	/**
 	 * Convert byte[] to hex

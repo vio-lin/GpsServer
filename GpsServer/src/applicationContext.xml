@@ -11,9 +11,11 @@
 	http://www.springframework.org/schema/tx 
 	http://www.springframework.org/schema/tx/spring-tx.xsd" 	
 	xmlns:tx="http://www.springframework.org/schema/tx"
-	
 >
-
+	
+	<bean id="DeviceLocationLbsDAO" class="com.carPature.daoimpl.DeviceLocationLbsInfoDAOImpl">
+		<property name="sessionfactoty" ref="sessionFactory"></property>
+	</bean>
 	<bean id ="UserDao" class="com.carPature.daoimpl.UsersDAOImp">
 		<property name="sessionfactory" ref="sessionFactory"></property>
 	</bean>
