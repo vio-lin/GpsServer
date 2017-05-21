@@ -11,7 +11,6 @@ import javax.persistence.Table;
  */
 @Entity
 @Table(name = "device_status", catalog = "carfencing")
-
 public class DeviceStatus implements java.io.Serializable {
 
 	// Fields
@@ -34,8 +33,9 @@ public class DeviceStatus implements java.io.Serializable {
 	}
 
 	/** full constructor */
-	public DeviceStatus(String imei, Float battery, Integer gsm, Boolean oilelectirc, Boolean gpsstate,
-			Boolean charging, Boolean acc, Boolean guard, Boolean language) {
+	public DeviceStatus(String imei, Float battery, Integer gsm,
+			Boolean oilelectirc, Boolean gpsstate, Boolean charging,
+			Boolean acc, Boolean guard, Boolean language) {
 		this.imei = imei;
 		this.battery = battery;
 		this.gsm = gsm;
@@ -50,9 +50,7 @@ public class DeviceStatus implements java.io.Serializable {
 	// Property accessors
 	@Id
 	@GeneratedValue
-
 	@Column(name = "ID", unique = true, nullable = false)
-
 	public Integer getId() {
 		return this.id;
 	}
@@ -62,7 +60,6 @@ public class DeviceStatus implements java.io.Serializable {
 	}
 
 	@Column(name = "IMEI", length = 15)
-
 	public String getImei() {
 		return this.imei;
 	}
@@ -72,7 +69,6 @@ public class DeviceStatus implements java.io.Serializable {
 	}
 
 	@Column(name = "BATTERY", precision = 12, scale = 0)
-
 	public Float getBattery() {
 		return this.battery;
 	}
@@ -82,7 +78,6 @@ public class DeviceStatus implements java.io.Serializable {
 	}
 
 	@Column(name = "GSM")
-
 	public Integer getGsm() {
 		return this.gsm;
 	}
@@ -92,7 +87,6 @@ public class DeviceStatus implements java.io.Serializable {
 	}
 
 	@Column(name = "OILELECTIRC")
-
 	public Boolean getOilelectirc() {
 		return this.oilelectirc;
 	}
@@ -102,7 +96,6 @@ public class DeviceStatus implements java.io.Serializable {
 	}
 
 	@Column(name = "GPSSTATE")
-
 	public Boolean getGpsstate() {
 		return this.gpsstate;
 	}
@@ -112,7 +105,6 @@ public class DeviceStatus implements java.io.Serializable {
 	}
 
 	@Column(name = "Charging")
-
 	public Boolean getCharging() {
 		return this.charging;
 	}
@@ -122,7 +114,6 @@ public class DeviceStatus implements java.io.Serializable {
 	}
 
 	@Column(name = "ACC")
-
 	public Boolean getAcc() {
 		return this.acc;
 	}
@@ -132,7 +123,6 @@ public class DeviceStatus implements java.io.Serializable {
 	}
 
 	@Column(name = "GUARD")
-
 	public Boolean getGuard() {
 		return this.guard;
 	}
@@ -142,7 +132,6 @@ public class DeviceStatus implements java.io.Serializable {
 	}
 
 	@Column(name = "LANGUAGE")
-
 	public Boolean getLanguage() {
 		return this.language;
 	}
@@ -151,11 +140,4 @@ public class DeviceStatus implements java.io.Serializable {
 		this.language = language;
 	}
 
-	@Override
-	public String toString() {
-		return "DeviceStatus [id=" + id + ", imei=" + imei + ", battery=" + battery + ", gsm=" + gsm + ", oilelectirc="
-				+ oilelectirc + ", gpsstate=" + gpsstate + ", charging=" + charging + ", acc=" + acc + ", guard="
-				+ guard + ", language=" + language + "]";
-	}
-	
 }

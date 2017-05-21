@@ -1,5 +1,6 @@
 package com.carPature.entity1;
 
+import java.sql.Timestamp;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -11,7 +12,6 @@ import javax.persistence.Table;
  */
 @Entity
 @Table(name = "users", catalog = "carfencing")
-
 public class Users implements java.io.Serializable {
 
 	// Fields
@@ -20,6 +20,7 @@ public class Users implements java.io.Serializable {
 	private String name;
 	private String platenumber;
 	private String imei;
+	private Timestamp startdate;
 
 	// Constructors
 
@@ -28,18 +29,18 @@ public class Users implements java.io.Serializable {
 	}
 
 	/** full constructor */
-	public Users(String name, String platenumber, String imei) {
+	public Users(String name, String platenumber, String imei,
+			Timestamp startdate) {
 		this.name = name;
 		this.platenumber = platenumber;
 		this.imei = imei;
+		this.startdate = startdate;
 	}
 
 	// Property accessors
 	@Id
 	@GeneratedValue
-
 	@Column(name = "ID", unique = true, nullable = false)
-
 	public Integer getId() {
 		return this.id;
 	}
@@ -49,7 +50,6 @@ public class Users implements java.io.Serializable {
 	}
 
 	@Column(name = "NAME", length = 20)
-
 	public String getName() {
 		return this.name;
 	}
@@ -59,7 +59,6 @@ public class Users implements java.io.Serializable {
 	}
 
 	@Column(name = "PLATENUMBER", length = 10)
-
 	public String getPlatenumber() {
 		return this.platenumber;
 	}
@@ -69,13 +68,21 @@ public class Users implements java.io.Serializable {
 	}
 
 	@Column(name = "IMEI", length = 15)
-
 	public String getImei() {
 		return this.imei;
 	}
 
 	public void setImei(String imei) {
 		this.imei = imei;
+	}
+
+	@Column(name = "STARTDATE", length = 0)
+	public Timestamp getStartdate() {
+		return this.startdate;
+	}
+
+	public void setStartdate(Timestamp startdate) {
+		this.startdate = startdate;
 	}
 
 }

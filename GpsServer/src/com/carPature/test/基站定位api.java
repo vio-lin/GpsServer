@@ -7,6 +7,9 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.URLEncoder;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;
@@ -22,11 +25,18 @@ import com.carPature.dao.DeviceLocationLbsInfoDAO;
 import com.carPature.entity1.DeviceLocationLbsInfo;
 
 public class 基站定位api {
-    public static void main(String[] args) {
+	public static void main(String[] args) {
+//		List<Integer> ids = new ArrayList<Integer>(Arrays.asList(new Integer[]{21,23,25,27,29,30,32,33,35,38,39,40,41,43,44,47,48,49,50}));
+		for(int i = 77;i<=88;i++){
+			System.out.println("编号"+i+":");
+			System.out.println(getRequest(i));
+		}
+	}
+    public static String getRequest(int id) {
     	String resultString = "http://api.gpsspg.com/bs/?oid=4853&key=3B952D4AF0E59DA44F5EC8A5324AE66A&";
     	ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
         DeviceLocationLbsInfoDAO locationdao = (DeviceLocationLbsInfoDAO) context.getBean("DeviceLocationLbsInfoDAO");
-        DeviceLocationLbsInfo info = locationdao.getSpacificLocation(76);
+        DeviceLocationLbsInfo info = locationdao.getSpacificLocation(id);
     	/** 这边的version 是从文件中读取相应的数据 
         File file = new File("D://data//save.txt");
         StringBuilder sb = new StringBuilder();
@@ -89,12 +99,12 @@ public class 基站定位api {
         resultString += "bs="+sb.toString();
         //        resultString += "bs=460,0,6347,54147,-70%7C460,0,6347,54050,-63%7C460,0,6347,54146,-69";
         resultString += "&output=json&to=1";
-        System.out.println(resultString);
+//        System.out.println(resultString);
         /** 这里采用get方法，直接将参数加到URL上 */
         /** 新建HttpClient */
         HttpClient client = new DefaultHttpClient();
         /** 采用GET方法 */
-        System.out.println(resultString);
+//        System.out.println(resultString);
         HttpGet get = new HttpGet(resultString);
         try {
             /** 发起GET请求并获得返回数据 */
@@ -108,20 +118,25 @@ public class 基站定位api {
                 strBuff.append(result);
             }
             resultString = strBuff.toString();
-
-            /** 解析JSON数据，获得物理地址 */
+            System.out.println();
+//            System.out.println(resultString);
+            return resultString;
+          /*   下面添加的方法 用开返回一个直接可以定位的 url信息
+           *  System.out.println();
+            *//** 解析JSON数据，获得物理地址 *//*
             if (resultString != null && resultString.length() > 0) {
                 JSONObject jsonobject = new JSONObject(resultString);
                 System.out.println("lat" + jsonobject.getString("latitude"));
                 System.out.println("lon" + jsonobject.getString("longitude"));
                 System.out.println("https://www.google.com/maps/place/"+jsonobject.getString("latitude")+","+jsonobject.getString("longitude"));
-            }
+            }*/
         } catch (Exception e) {
             e.printStackTrace();
         } finally {
             get.abort();
             client = null;
         }
+		return "Faild";
     }
     
     public static int getRssi(int Rexle){

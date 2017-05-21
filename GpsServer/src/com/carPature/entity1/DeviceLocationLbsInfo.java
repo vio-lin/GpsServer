@@ -12,12 +12,12 @@ import javax.persistence.Table;
  */
 @Entity
 @Table(name = "device_location_lbs_info", catalog = "carfencing")
-
 public class DeviceLocationLbsInfo implements java.io.Serializable {
 
 	// Fields
 
 	private Integer id;
+	private String imei;
 	private Integer mcc;
 	private Integer mnc;
 	private Integer lac1;
@@ -52,10 +52,14 @@ public class DeviceLocationLbsInfo implements java.io.Serializable {
 	}
 
 	/** full constructor */
-	public DeviceLocationLbsInfo(Integer mcc, Integer mnc, Integer lac1, Integer ci1, Integer rssi, Integer lac2,
-			Integer ci2, Integer rssi2, Integer lac3, Integer ci3, Integer rssi3, Integer lac4, Integer ci4,
-			Integer rssi4, Integer lac5, Integer ci5, Integer rssi5, Integer lac6, Integer ci6, Integer rssi6,
-			Integer lac7, Integer ci7, Integer rssi7, Integer timebefore, Short language, Timestamp date) {
+	public DeviceLocationLbsInfo(String imei, Integer mcc, Integer mnc,
+			Integer lac1, Integer ci1, Integer rssi, Integer lac2, Integer ci2,
+			Integer rssi2, Integer lac3, Integer ci3, Integer rssi3,
+			Integer lac4, Integer ci4, Integer rssi4, Integer lac5,
+			Integer ci5, Integer rssi5, Integer lac6, Integer ci6,
+			Integer rssi6, Integer lac7, Integer ci7, Integer rssi7,
+			Integer timebefore, Short language, Timestamp date) {
+		this.imei = imei;
 		this.mcc = mcc;
 		this.mnc = mnc;
 		this.lac1 = lac1;
@@ -87,9 +91,7 @@ public class DeviceLocationLbsInfo implements java.io.Serializable {
 	// Property accessors
 	@Id
 	@GeneratedValue
-
 	@Column(name = "ID", unique = true, nullable = false)
-
 	public Integer getId() {
 		return this.id;
 	}
@@ -98,8 +100,16 @@ public class DeviceLocationLbsInfo implements java.io.Serializable {
 		this.id = id;
 	}
 
-	@Column(name = "MCC")
+	@Column(name = "IMEI", length = 15)
+	public String getImei() {
+		return this.imei;
+	}
 
+	public void setImei(String imei) {
+		this.imei = imei;
+	}
+
+	@Column(name = "MCC")
 	public Integer getMcc() {
 		return this.mcc;
 	}
@@ -109,7 +119,6 @@ public class DeviceLocationLbsInfo implements java.io.Serializable {
 	}
 
 	@Column(name = "MNC")
-
 	public Integer getMnc() {
 		return this.mnc;
 	}
@@ -119,7 +128,6 @@ public class DeviceLocationLbsInfo implements java.io.Serializable {
 	}
 
 	@Column(name = "LAC1")
-
 	public Integer getLac1() {
 		return this.lac1;
 	}
@@ -129,7 +137,6 @@ public class DeviceLocationLbsInfo implements java.io.Serializable {
 	}
 
 	@Column(name = "CI1")
-
 	public Integer getCi1() {
 		return this.ci1;
 	}
@@ -139,7 +146,6 @@ public class DeviceLocationLbsInfo implements java.io.Serializable {
 	}
 
 	@Column(name = "RSSI")
-
 	public Integer getRssi() {
 		return this.rssi;
 	}
@@ -149,7 +155,6 @@ public class DeviceLocationLbsInfo implements java.io.Serializable {
 	}
 
 	@Column(name = "LAC2")
-
 	public Integer getLac2() {
 		return this.lac2;
 	}
@@ -159,7 +164,6 @@ public class DeviceLocationLbsInfo implements java.io.Serializable {
 	}
 
 	@Column(name = "CI2")
-
 	public Integer getCi2() {
 		return this.ci2;
 	}
@@ -169,7 +173,6 @@ public class DeviceLocationLbsInfo implements java.io.Serializable {
 	}
 
 	@Column(name = "RSSI2")
-
 	public Integer getRssi2() {
 		return this.rssi2;
 	}
@@ -179,7 +182,6 @@ public class DeviceLocationLbsInfo implements java.io.Serializable {
 	}
 
 	@Column(name = "LAC3")
-
 	public Integer getLac3() {
 		return this.lac3;
 	}
@@ -189,7 +191,6 @@ public class DeviceLocationLbsInfo implements java.io.Serializable {
 	}
 
 	@Column(name = "CI3")
-
 	public Integer getCi3() {
 		return this.ci3;
 	}
@@ -199,7 +200,6 @@ public class DeviceLocationLbsInfo implements java.io.Serializable {
 	}
 
 	@Column(name = "RSSI3")
-
 	public Integer getRssi3() {
 		return this.rssi3;
 	}
@@ -209,7 +209,6 @@ public class DeviceLocationLbsInfo implements java.io.Serializable {
 	}
 
 	@Column(name = "LAC4")
-
 	public Integer getLac4() {
 		return this.lac4;
 	}
@@ -219,7 +218,6 @@ public class DeviceLocationLbsInfo implements java.io.Serializable {
 	}
 
 	@Column(name = "CI4")
-
 	public Integer getCi4() {
 		return this.ci4;
 	}
@@ -229,7 +227,6 @@ public class DeviceLocationLbsInfo implements java.io.Serializable {
 	}
 
 	@Column(name = "RSSI4")
-
 	public Integer getRssi4() {
 		return this.rssi4;
 	}
@@ -239,7 +236,6 @@ public class DeviceLocationLbsInfo implements java.io.Serializable {
 	}
 
 	@Column(name = "LAC5")
-
 	public Integer getLac5() {
 		return this.lac5;
 	}
@@ -249,7 +245,6 @@ public class DeviceLocationLbsInfo implements java.io.Serializable {
 	}
 
 	@Column(name = "CI5")
-
 	public Integer getCi5() {
 		return this.ci5;
 	}
@@ -259,7 +254,6 @@ public class DeviceLocationLbsInfo implements java.io.Serializable {
 	}
 
 	@Column(name = "RSSI5")
-
 	public Integer getRssi5() {
 		return this.rssi5;
 	}
@@ -269,7 +263,6 @@ public class DeviceLocationLbsInfo implements java.io.Serializable {
 	}
 
 	@Column(name = "LAC6")
-
 	public Integer getLac6() {
 		return this.lac6;
 	}
@@ -279,7 +272,6 @@ public class DeviceLocationLbsInfo implements java.io.Serializable {
 	}
 
 	@Column(name = "CI6")
-
 	public Integer getCi6() {
 		return this.ci6;
 	}
@@ -289,7 +281,6 @@ public class DeviceLocationLbsInfo implements java.io.Serializable {
 	}
 
 	@Column(name = "RSSI6")
-
 	public Integer getRssi6() {
 		return this.rssi6;
 	}
@@ -299,7 +290,6 @@ public class DeviceLocationLbsInfo implements java.io.Serializable {
 	}
 
 	@Column(name = "LAC7")
-
 	public Integer getLac7() {
 		return this.lac7;
 	}
@@ -309,7 +299,6 @@ public class DeviceLocationLbsInfo implements java.io.Serializable {
 	}
 
 	@Column(name = "CI7")
-
 	public Integer getCi7() {
 		return this.ci7;
 	}
@@ -319,7 +308,6 @@ public class DeviceLocationLbsInfo implements java.io.Serializable {
 	}
 
 	@Column(name = "RSSI7")
-
 	public Integer getRssi7() {
 		return this.rssi7;
 	}
@@ -329,7 +317,6 @@ public class DeviceLocationLbsInfo implements java.io.Serializable {
 	}
 
 	@Column(name = "TIMEBEFORE")
-
 	public Integer getTimebefore() {
 		return this.timebefore;
 	}
@@ -339,7 +326,6 @@ public class DeviceLocationLbsInfo implements java.io.Serializable {
 	}
 
 	@Column(name = "LANGUAGE")
-
 	public Short getLanguage() {
 		return this.language;
 	}
@@ -348,8 +334,7 @@ public class DeviceLocationLbsInfo implements java.io.Serializable {
 		this.language = language;
 	}
 
-	@Column(name = "DATE", length = 19)
-
+	@Column(name = "DATE", length = 0)
 	public Timestamp getDate() {
 		return this.date;
 	}

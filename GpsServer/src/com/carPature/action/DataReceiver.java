@@ -589,6 +589,7 @@ public class DataReceiver extends Thread {
 			int mileageNum = Integer.parseInt(bytesToHexString(mileage), 16);
 //			System.out.println("里程统计:"+bytesToHexString(mileage));
 			logger.info("里程统计:"+mileageNum);
+			gps.setImei(IMEI);
 			locationdao.insertLocation(gps);
 			StringBuilder strb = new StringBuilder();
 			strb.append("7878");

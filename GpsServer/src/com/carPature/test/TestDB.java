@@ -1,12 +1,20 @@
 package com.carPature.test;
 
 import java.sql.Timestamp;
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.List;
 
 import org.junit.Test;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
+
+
+
+import com.alibaba.fastjson.JSONArray;
+import com.alibaba.fastjson.JSONObject;
 import com.carPature.dao.DeviceLocationInfoDAO;
 import com.carPature.dao.DeviceLocationLbsInfoDAO;
 import com.carPature.dao.DeviceStatusDAO;
@@ -104,5 +112,65 @@ public class TestDB {
 		info.setMcc(57);
 		info.setMnc(48);
 		locationdao.insertLbsInfo(info);
+	}
+	@Test
+	public void getChange(){
+		ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
+		context.start();
+		DeviceLocationLbsInfoDAO locationdao = (DeviceLocationLbsInfoDAO) context.getBean("DeviceLocationLbsInfoDAO");
+		List<Integer> ids = new ArrayList<Integer>(Arrays.asList(new Integer[]{21,23,25,27,29,30,32,33,35,38,39,40,41,43,44,47,48,49,50}));
+//		List<Integer> ids = new ArrayList<Integer>(Arrays.asList(new Integer[]{32}));
+		
+		for(int i =77;i<=88;i++){
+			DeviceLocationLbsInfo info = locationdao.getSpacificLocation(i);
+			List<Object> list = new ArrayList<Object>();
+			list.add(new BaseStation(info.getLac1(), info.getCi1(), info.getRssi()));
+			if(info.getCi2()!=0)
+			list.add(new BaseStation(info.getCi2(),info.getLac2(), info.getRssi2()));
+			if(info.getCi3()!=0)
+			list.add(new BaseStation(info.getCi3(),info.getLac3(), info.getRssi3()));
+			if(info.getCi4()!=0)
+			list.add(new BaseStation(info.getCi4(),info.getLac4(), info.getRssi4()));
+			if(info.getCi5()!=0)
+			list.add(new BaseStation(info.getCi5(),info.getLac5(), info.getRssi5()));
+			if(info.getCi6()!=0)
+			list.add(new BaseStation(info.getCi6(),info.getLac6(), info.getRssi6()));
+			if(info.getCi7()!=0)
+			list.add(new BaseStation(info.getCi7(),info.getLac7(), info.getRssi7()));
+			JSONArray array = new JSONArray(list);
+			System.out.println("编号："+i+":");
+			System.out.println(array.toJSONString());
+		}
+		
+	}
+	
+	class BaseStation{
+		public int lac;
+		public int ci;
+		public int rssi;
+		public int getLac() {
+			return lac;
+		}
+		public void setLac(int lac) {
+			this.lac = lac;
+		}
+		public int getCi() {
+			return ci;
+		}
+		public void setCi(int ci) {
+			this.ci = ci;
+		}
+		public int getRssi() {
+			return rssi;
+		}
+		public void setRssi(int rssi) {
+			this.rssi = rssi;
+		}
+		public BaseStation(int lac, int ci, int rssi) {
+			this.lac = lac;
+			this.ci = ci;
+			this.rssi = rssi;
+		}
+		
 	}
 }

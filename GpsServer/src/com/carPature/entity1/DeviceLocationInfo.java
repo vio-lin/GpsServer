@@ -12,12 +12,12 @@ import javax.persistence.Table;
  */
 @Entity
 @Table(name = "device_location_info", catalog = "carfencing")
-
 public class DeviceLocationInfo implements java.io.Serializable {
 
 	// Fields
 
 	private Integer id;
+	private String imei;
 	private byte[] gpssstat;
 	private Double longtitude;
 	private Double latitude;
@@ -39,9 +39,11 @@ public class DeviceLocationInfo implements java.io.Serializable {
 	}
 
 	/** full constructor */
-	public DeviceLocationInfo(byte[] gpssstat, Double longtitude, Double latitude, Float speed, String orienStat,
-			Integer mcc, Integer mnc, Integer lac, Integer cellId, Boolean acc, String oploadMode, Boolean realNot,
-			Timestamp date) {
+	public DeviceLocationInfo(String imei, byte[] gpssstat, Double longtitude,
+			Double latitude, Float speed, String orienStat, Integer mcc,
+			Integer mnc, Integer lac, Integer cellId, Boolean acc,
+			String oploadMode, Boolean realNot, Timestamp date) {
+		this.imei = imei;
 		this.gpssstat = gpssstat;
 		this.longtitude = longtitude;
 		this.latitude = latitude;
@@ -60,9 +62,7 @@ public class DeviceLocationInfo implements java.io.Serializable {
 	// Property accessors
 	@Id
 	@GeneratedValue
-
 	@Column(name = "ID", unique = true, nullable = false)
-
 	public Integer getId() {
 		return this.id;
 	}
@@ -71,8 +71,16 @@ public class DeviceLocationInfo implements java.io.Serializable {
 		this.id = id;
 	}
 
-	@Column(name = "GPSSSTAT")
+	@Column(name = "IMEI", length = 20)
+	public String getImei() {
+		return this.imei;
+	}
 
+	public void setImei(String imei) {
+		this.imei = imei;
+	}
+
+	@Column(name = "GPSSSTAT")
 	public byte[] getGpssstat() {
 		return this.gpssstat;
 	}
@@ -82,7 +90,6 @@ public class DeviceLocationInfo implements java.io.Serializable {
 	}
 
 	@Column(name = "LONGTITUDE", precision = 22, scale = 0)
-
 	public Double getLongtitude() {
 		return this.longtitude;
 	}
@@ -92,7 +99,6 @@ public class DeviceLocationInfo implements java.io.Serializable {
 	}
 
 	@Column(name = "LATITUDE", precision = 22, scale = 0)
-
 	public Double getLatitude() {
 		return this.latitude;
 	}
@@ -102,7 +108,6 @@ public class DeviceLocationInfo implements java.io.Serializable {
 	}
 
 	@Column(name = "SPEED", precision = 12, scale = 0)
-
 	public Float getSpeed() {
 		return this.speed;
 	}
@@ -112,7 +117,6 @@ public class DeviceLocationInfo implements java.io.Serializable {
 	}
 
 	@Column(name = "ORIEN_STAT", length = 4)
-
 	public String getOrienStat() {
 		return this.orienStat;
 	}
@@ -122,7 +126,6 @@ public class DeviceLocationInfo implements java.io.Serializable {
 	}
 
 	@Column(name = "MCC")
-
 	public Integer getMcc() {
 		return this.mcc;
 	}
@@ -132,7 +135,6 @@ public class DeviceLocationInfo implements java.io.Serializable {
 	}
 
 	@Column(name = "MNC")
-
 	public Integer getMnc() {
 		return this.mnc;
 	}
@@ -142,7 +144,6 @@ public class DeviceLocationInfo implements java.io.Serializable {
 	}
 
 	@Column(name = "LAC")
-
 	public Integer getLac() {
 		return this.lac;
 	}
@@ -152,7 +153,6 @@ public class DeviceLocationInfo implements java.io.Serializable {
 	}
 
 	@Column(name = "CELL_ID")
-
 	public Integer getCellId() {
 		return this.cellId;
 	}
@@ -162,7 +162,6 @@ public class DeviceLocationInfo implements java.io.Serializable {
 	}
 
 	@Column(name = "ACC")
-
 	public Boolean getAcc() {
 		return this.acc;
 	}
@@ -172,7 +171,6 @@ public class DeviceLocationInfo implements java.io.Serializable {
 	}
 
 	@Column(name = "OPLOAD_MODE", length = 4)
-
 	public String getOploadMode() {
 		return this.oploadMode;
 	}
@@ -182,7 +180,6 @@ public class DeviceLocationInfo implements java.io.Serializable {
 	}
 
 	@Column(name = "REAL_NOT")
-
 	public Boolean getRealNot() {
 		return this.realNot;
 	}
@@ -191,8 +188,7 @@ public class DeviceLocationInfo implements java.io.Serializable {
 		this.realNot = realNot;
 	}
 
-	@Column(name = "DATE", length = 19)
-
+	@Column(name = "DATE", length = 0)
 	public Timestamp getDate() {
 		return this.date;
 	}
