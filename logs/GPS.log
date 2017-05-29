@@ -1,0 +1,912 @@
+2017-05-05 16:44:29,461 DEBUG [org.hibernate.engine.jdbc.internal.LogicalConnectionImpl] - Obtained JDBC connection
+2017-05-05 16:44:29,461 DEBUG [org.hibernate.engine.transaction.internal.jdbc.JdbcTransaction] - initial autocommit status: true
+2017-05-05 16:44:29,461 DEBUG [org.hibernate.engine.transaction.internal.jdbc.JdbcTransaction] - disabling autocommit
+2017-05-05 16:44:29,462 DEBUG [org.hibernate.engine.spi.ActionQueue] - Executing identity-insert immediately
+2017-05-05 16:44:29,464 DEBUG [org.hibernate.id.IdentifierGeneratorHelper] - Natively generated identity: 467
+2017-05-05 16:44:29,464 DEBUG [org.hibernate.engine.transaction.spi.AbstractTransactionImpl] - committing
+2017-05-05 16:44:29,464 DEBUG [org.hibernate.event.internal.AbstractFlushingEventListener] - Processing flush-time cascades
+2017-05-05 16:44:29,464 DEBUG [org.hibernate.event.internal.AbstractFlushingEventListener] - Dirty checking collections
+2017-05-05 16:44:29,465 DEBUG [org.hibernate.event.internal.AbstractFlushingEventListener] - Flushed: 0 insertions, 0 updates, 0 deletions to 1 objects
+2017-05-05 16:44:29,465 DEBUG [org.hibernate.event.internal.AbstractFlushingEventListener] - Flushed: 0 (re)creations, 0 updates, 0 removals to 0 collections
+2017-05-05 16:44:29,465 DEBUG [org.hibernate.internal.util.EntityPrinter] - Listing entities:
+2017-05-05 16:44:29,465 DEBUG [org.hibernate.internal.util.EntityPrinter] - com.carPature.entity1.DeviceLocationInfo{gpssstat=[B@233b32a3, speed=0.0, mcc=460, date=3917-05-05 08:46:00.0, acc=false, lac=6347, id=467, realNot=true, cellId=54147, longtitude=121.39434666666666, mnc=0, latitude=31.319022222222223, oploadMode=0, orienStat=155e}
+2017-05-05 16:44:29,466 DEBUG [org.hibernate.engine.transaction.internal.jdbc.JdbcTransaction] - committed JDBC Connection
+2017-05-05 16:44:29,466 DEBUG [org.hibernate.engine.transaction.internal.jdbc.JdbcTransaction] - re-enabling autocommit
+2017-05-05 16:44:29,467 DEBUG [org.hibernate.engine.jdbc.internal.LogicalConnectionImpl] - Releasing JDBC connection
+2017-05-05 16:44:29,467 DEBUG [org.hibernate.engine.jdbc.internal.LogicalConnectionImpl] - Released JDBC connection
+2017-05-05 16:44:29,467 DEBUG [org.hibernate.engine.jdbc.internal.proxy.ConnectionProxyHandler] - HHH000163: Logical connection releasing its physical connection
+2017-05-05 16:44:29,467 DEBUG [org.hibernate.engine.jdbc.internal.proxy.ConnectionProxyHandler] - HHH000163: Logical connection releasing its physical connection
+2017-05-05 16:44:29,467 DEBUG [org.hibernate.engine.jdbc.internal.proxy.ConnectionProxyHandler] - HHH000163: Logical connection releasing its physical connection
+2017-05-05 16:44:29,467 DEBUG [org.hibernate.engine.jdbc.internal.proxy.ConnectionProxyHandler] - HHH000163: Logical connection releasing its physical connection
+2017-05-05 16:44:29,467 INFO [com.carPature.action.DataReceiver] - 返回结果：787805019ff80d0a
+2017-05-05 16:44:49,434 INFO [com.carPature.action.DataReceiver] - 接受结果：78782222110505082e14c6035c33e00d06320000155e01cc0018cb00d3830000000034e2cb0d0a
+2017-05-05 16:44:49,434 INFO [com.carPature.action.DataReceiver] - 数据位2222110505082e14c6035c33e00d06320000155e01cc0018cb00d3830000000034
+2017-05-05 16:44:49,434 INFO [com.carPature.action.DataReceiver] - GPS定位包
+2017-05-05 16:44:49,434 INFO [com.carPature.action.DataReceiver] - 日期时间:2017年5月5日       8：46:20
+2017-05-05 16:44:49,434 INFO [com.carPature.action.DataReceiver] - 纬度:31.319022222222223
+2017-05-05 16:44:49,434 INFO [com.carPature.action.DataReceiver] - 经度:121.39434666666666
+2017-05-05 16:44:49,434 INFO [com.carPature.action.DataReceiver] - 航向状态:实时GPS、GPS已定位、东经、北纬、航向110°
+2017-05-05 16:44:49,434 INFO [com.carPature.action.DataReceiver] - 国家代码:460
+2017-05-05 16:44:49,434 INFO [com.carPature.action.DataReceiver] - 移动基站:54147
+2017-05-05 16:44:49,435 INFO [com.carPature.action.DataReceiver] - GPS实时补传:实时上传
+2017-05-05 16:44:49,435 INFO [com.carPature.action.DataReceiver] - 里程统计:3465931
+2017-05-05 16:44:49,435 DEBUG [org.hibernate.internal.SessionImpl] - Opened session at timestamp: 14939738894
+2017-05-05 16:44:49,435 DEBUG [org.hibernate.engine.transaction.spi.AbstractTransactionImpl] - begin
+2017-05-05 16:44:49,435 DEBUG [org.hibernate.engine.jdbc.internal.LogicalConnectionImpl] - Obtaining JDBC connection
+2017-05-05 16:44:49,435 DEBUG [org.hibernate.engine.jdbc.internal.LogicalConnectionImpl] - Obtained JDBC connection
+2017-05-05 16:44:49,435 DEBUG [org.hibernate.engine.transaction.internal.jdbc.JdbcTransaction] - initial autocommit status: true
+2017-05-05 16:44:49,436 DEBUG [org.hibernate.engine.transaction.internal.jdbc.JdbcTransaction] - disabling autocommit
+2017-05-05 16:44:49,436 DEBUG [org.hibernate.engine.spi.ActionQueue] - Executing identity-insert immediately
+2017-05-05 16:44:49,438 DEBUG [org.hibernate.id.IdentifierGeneratorHelper] - Natively generated identity: 468
+2017-05-05 16:44:49,438 DEBUG [org.hibernate.engine.transaction.spi.AbstractTransactionImpl] - committing
+2017-05-05 16:44:49,438 DEBUG [org.hibernate.event.internal.AbstractFlushingEventListener] - Processing flush-time cascades
+2017-05-05 16:44:49,438 DEBUG [org.hibernate.event.internal.AbstractFlushingEventListener] - Dirty checking collections
+2017-05-05 16:44:49,439 DEBUG [org.hibernate.event.internal.AbstractFlushingEventListener] - Flushed: 0 insertions, 0 updates, 0 deletions to 1 objects
+2017-05-05 16:44:49,439 DEBUG [org.hibernate.event.internal.AbstractFlushingEventListener] - Flushed: 0 (re)creations, 0 updates, 0 removals to 0 collections
+2017-05-05 16:44:49,439 DEBUG [org.hibernate.internal.util.EntityPrinter] - Listing entities:
+2017-05-05 16:44:49,439 DEBUG [org.hibernate.internal.util.EntityPrinter] - com.carPature.entity1.DeviceLocationInfo{gpssstat=[B@453a5dd8, speed=0.0, mcc=460, date=3917-05-05 08:46:20.0, acc=false, lac=6347, id=468, realNot=true, cellId=54147, longtitude=121.39434666666666, mnc=0, latitude=31.319022222222223, oploadMode=0, orienStat=155e}
+2017-05-05 16:44:49,440 DEBUG [org.hibernate.engine.transaction.internal.jdbc.JdbcTransaction] - committed JDBC Connection
+2017-05-05 16:44:49,440 DEBUG [org.hibernate.engine.transaction.internal.jdbc.JdbcTransaction] - re-enabling autocommit
+2017-05-05 16:44:49,441 DEBUG [org.hibernate.engine.jdbc.internal.LogicalConnectionImpl] - Releasing JDBC connection
+2017-05-05 16:44:49,441 DEBUG [org.hibernate.engine.jdbc.internal.LogicalConnectionImpl] - Released JDBC connection
+2017-05-05 16:44:49,441 DEBUG [org.hibernate.engine.jdbc.internal.proxy.ConnectionProxyHandler] - HHH000163: Logical connection releasing its physical connection
+2017-05-05 16:44:49,441 DEBUG [org.hibernate.engine.jdbc.internal.proxy.ConnectionProxyHandler] - HHH000163: Logical connection releasing its physical connection
+2017-05-05 16:44:49,441 DEBUG [org.hibernate.engine.jdbc.internal.proxy.ConnectionProxyHandler] - HHH000163: Logical connection releasing its physical connection
+2017-05-05 16:44:49,441 DEBUG [org.hibernate.engine.jdbc.internal.proxy.ConnectionProxyHandler] - HHH000163: Logical connection releasing its physical connection
+2017-05-05 16:44:49,441 INFO [com.carPature.action.DataReceiver] - 返回结果：787805019ff80d0a
+2017-05-05 16:45:09,374 INFO [com.carPature.action.DataReceiver] - 接受结果：78782222110505082e28c6035c36f40d0630b004155501cc0018cb00d38300000000351e110d0a
+2017-05-05 16:45:09,374 INFO [com.carPature.action.DataReceiver] - 数据位2222110505082e28c6035c36f40d0630b004155501cc0018cb00d3830000000035
+2017-05-05 16:45:09,374 INFO [com.carPature.action.DataReceiver] - GPS定位包
+2017-05-05 16:45:09,374 INFO [com.carPature.action.DataReceiver] - 日期时间:2017年5月5日       8：46:40
+2017-05-05 16:45:09,374 INFO [com.carPature.action.DataReceiver] - 纬度:31.31946
+2017-05-05 16:45:09,374 INFO [com.carPature.action.DataReceiver] - 经度:121.39416
+2017-05-05 16:45:09,374 INFO [com.carPature.action.DataReceiver] - 航向状态:实时GPS、GPS已定位、东经、北纬、航向101°
+2017-05-05 16:45:09,375 INFO [com.carPature.action.DataReceiver] - 国家代码:460
+2017-05-05 16:45:09,375 INFO [com.carPature.action.DataReceiver] - 移动基站:54147
+2017-05-05 16:45:09,375 INFO [com.carPature.action.DataReceiver] - GPS实时补传:实时上传
+2017-05-05 16:45:09,375 INFO [com.carPature.action.DataReceiver] - 里程统计:3481105
+2017-05-05 16:45:09,375 DEBUG [org.hibernate.internal.SessionImpl] - Opened session at timestamp: 14939739093
+2017-05-05 16:45:09,375 DEBUG [org.hibernate.engine.transaction.spi.AbstractTransactionImpl] - begin
+2017-05-05 16:45:09,375 DEBUG [org.hibernate.engine.jdbc.internal.LogicalConnectionImpl] - Obtaining JDBC connection
+2017-05-05 16:45:09,376 DEBUG [org.hibernate.engine.jdbc.internal.LogicalConnectionImpl] - Obtained JDBC connection
+2017-05-05 16:45:09,376 DEBUG [org.hibernate.engine.transaction.internal.jdbc.JdbcTransaction] - initial autocommit status: true
+2017-05-05 16:45:09,376 DEBUG [org.hibernate.engine.transaction.internal.jdbc.JdbcTransaction] - disabling autocommit
+2017-05-05 16:45:09,381 DEBUG [org.hibernate.engine.spi.ActionQueue] - Executing identity-insert immediately
+2017-05-05 16:45:09,383 DEBUG [org.hibernate.id.IdentifierGeneratorHelper] - Natively generated identity: 469
+2017-05-05 16:45:09,383 DEBUG [org.hibernate.engine.transaction.spi.AbstractTransactionImpl] - committing
+2017-05-05 16:45:09,383 DEBUG [org.hibernate.event.internal.AbstractFlushingEventListener] - Processing flush-time cascades
+2017-05-05 16:45:09,383 DEBUG [org.hibernate.event.internal.AbstractFlushingEventListener] - Dirty checking collections
+2017-05-05 16:45:09,384 DEBUG [org.hibernate.event.internal.AbstractFlushingEventListener] - Flushed: 0 insertions, 0 updates, 0 deletions to 1 objects
+2017-05-05 16:45:09,384 DEBUG [org.hibernate.event.internal.AbstractFlushingEventListener] - Flushed: 0 (re)creations, 0 updates, 0 removals to 0 collections
+2017-05-05 16:45:09,384 DEBUG [org.hibernate.internal.util.EntityPrinter] - Listing entities:
+2017-05-05 16:45:09,384 DEBUG [org.hibernate.internal.util.EntityPrinter] - com.carPature.entity1.DeviceLocationInfo{gpssstat=[B@2bbbba57, speed=4.0, mcc=460, date=3917-05-05 08:46:40.0, acc=false, lac=6347, id=469, realNot=true, cellId=54147, longtitude=121.39416, mnc=0, latitude=31.31946, oploadMode=0, orienStat=1555}
+2017-05-05 16:45:09,385 DEBUG [org.hibernate.engine.transaction.internal.jdbc.JdbcTransaction] - committed JDBC Connection
+2017-05-05 16:45:09,385 DEBUG [org.hibernate.engine.transaction.internal.jdbc.JdbcTransaction] - re-enabling autocommit
+2017-05-05 16:45:09,386 DEBUG [org.hibernate.engine.jdbc.internal.LogicalConnectionImpl] - Releasing JDBC connection
+2017-05-05 16:45:09,386 DEBUG [org.hibernate.engine.jdbc.internal.LogicalConnectionImpl] - Released JDBC connection
+2017-05-05 16:45:09,386 DEBUG [org.hibernate.engine.jdbc.internal.proxy.ConnectionProxyHandler] - HHH000163: Logical connection releasing its physical connection
+2017-05-05 16:45:09,386 DEBUG [org.hibernate.engine.jdbc.internal.proxy.ConnectionProxyHandler] - HHH000163: Logical connection releasing its physical connection
+2017-05-05 16:45:09,386 DEBUG [org.hibernate.engine.jdbc.internal.proxy.ConnectionProxyHandler] - HHH000163: Logical connection releasing its physical connection
+2017-05-05 16:45:09,386 DEBUG [org.hibernate.engine.jdbc.internal.proxy.ConnectionProxyHandler] - HHH000163: Logical connection releasing its physical connection
+2017-05-05 16:45:09,386 INFO [com.carPature.action.DataReceiver] - 返回结果：787805019ff80d0a
+2017-05-05 16:45:29,376 INFO [com.carPature.action.DataReceiver] - 接受结果：78782222110505082f00c6035c37bc0d06303003154f01cc0018cb00d3830000000036df770d0a
+2017-05-05 16:45:29,376 INFO [com.carPature.action.DataReceiver] - 数据位2222110505082f00c6035c37bc0d06303003154f01cc0018cb00d3830000000036
+2017-05-05 16:45:29,377 INFO [com.carPature.action.DataReceiver] - GPS定位包
+2017-05-05 16:45:29,377 INFO [com.carPature.action.DataReceiver] - 日期时间:2017年5月5日       8：47:0
+2017-05-05 16:45:29,377 INFO [com.carPature.action.DataReceiver] - 纬度:31.31957111111111
+2017-05-05 16:45:29,377 INFO [com.carPature.action.DataReceiver] - 经度:121.39408888888889
+2017-05-05 16:45:29,377 INFO [com.carPature.action.DataReceiver] - 航向状态:实时GPS、GPS已定位、东经、北纬、航向95°
+2017-05-05 16:45:29,377 INFO [com.carPature.action.DataReceiver] - 国家代码:460
+2017-05-05 16:45:29,377 INFO [com.carPature.action.DataReceiver] - 移动基站:54147
+2017-05-05 16:45:29,377 INFO [com.carPature.action.DataReceiver] - GPS实时补传:实时上传
+2017-05-05 16:45:29,377 INFO [com.carPature.action.DataReceiver] - 里程统计:3596151
+2017-05-05 16:45:29,378 DEBUG [org.hibernate.internal.SessionImpl] - Opened session at timestamp: 14939739293
+2017-05-05 16:45:29,378 DEBUG [org.hibernate.engine.transaction.spi.AbstractTransactionImpl] - begin
+2017-05-05 16:45:29,378 DEBUG [org.hibernate.engine.jdbc.internal.LogicalConnectionImpl] - Obtaining JDBC connection
+2017-05-05 16:45:29,378 DEBUG [org.hibernate.engine.jdbc.internal.LogicalConnectionImpl] - Obtained JDBC connection
+2017-05-05 16:45:29,378 DEBUG [org.hibernate.engine.transaction.internal.jdbc.JdbcTransaction] - initial autocommit status: true
+2017-05-05 16:45:29,378 DEBUG [org.hibernate.engine.transaction.internal.jdbc.JdbcTransaction] - disabling autocommit
+2017-05-05 16:45:29,379 DEBUG [org.hibernate.engine.spi.ActionQueue] - Executing identity-insert immediately
+2017-05-05 16:45:29,381 DEBUG [org.hibernate.id.IdentifierGeneratorHelper] - Natively generated identity: 470
+2017-05-05 16:45:29,381 DEBUG [org.hibernate.engine.transaction.spi.AbstractTransactionImpl] - committing
+2017-05-05 16:45:29,381 DEBUG [org.hibernate.event.internal.AbstractFlushingEventListener] - Processing flush-time cascades
+2017-05-05 16:45:29,381 DEBUG [org.hibernate.event.internal.AbstractFlushingEventListener] - Dirty checking collections
+2017-05-05 16:45:29,382 DEBUG [org.hibernate.event.internal.AbstractFlushingEventListener] - Flushed: 0 insertions, 0 updates, 0 deletions to 1 objects
+2017-05-05 16:45:29,382 DEBUG [org.hibernate.event.internal.AbstractFlushingEventListener] - Flushed: 0 (re)creations, 0 updates, 0 removals to 0 collections
+2017-05-05 16:45:29,382 DEBUG [org.hibernate.internal.util.EntityPrinter] - Listing entities:
+2017-05-05 16:45:29,382 DEBUG [org.hibernate.internal.util.EntityPrinter] - com.carPature.entity1.DeviceLocationInfo{gpssstat=[B@457c88bc, speed=3.0, mcc=460, date=3917-05-05 08:47:00.0, acc=false, lac=6347, id=470, realNot=true, cellId=54147, longtitude=121.39408888888889, mnc=0, latitude=31.31957111111111, oploadMode=0, orienStat=154f}
+2017-05-05 16:45:29,383 DEBUG [org.hibernate.engine.transaction.internal.jdbc.JdbcTransaction] - committed JDBC Connection
+2017-05-05 16:45:29,383 DEBUG [org.hibernate.engine.transaction.internal.jdbc.JdbcTransaction] - re-enabling autocommit
+2017-05-05 16:45:29,384 DEBUG [org.hibernate.engine.jdbc.internal.LogicalConnectionImpl] - Releasing JDBC connection
+2017-05-05 16:45:29,384 DEBUG [org.hibernate.engine.jdbc.internal.LogicalConnectionImpl] - Released JDBC connection
+2017-05-05 16:45:29,384 DEBUG [org.hibernate.engine.jdbc.internal.proxy.ConnectionProxyHandler] - HHH000163: Logical connection releasing its physical connection
+2017-05-05 16:45:29,384 DEBUG [org.hibernate.engine.jdbc.internal.proxy.ConnectionProxyHandler] - HHH000163: Logical connection releasing its physical connection
+2017-05-05 16:45:29,384 DEBUG [org.hibernate.engine.jdbc.internal.proxy.ConnectionProxyHandler] - HHH000163: Logical connection releasing its physical connection
+2017-05-05 16:45:29,384 DEBUG [org.hibernate.engine.jdbc.internal.proxy.ConnectionProxyHandler] - HHH000163: Logical connection releasing its physical connection
+2017-05-05 16:45:29,384 INFO [com.carPature.action.DataReceiver] - 返回结果：787805019ff80d0a
+2017-05-05 16:45:49,462 INFO [com.carPature.action.DataReceiver] - 接受结果：78782222110505082f14c6035c36ac0d0630b000140101cc0018cb00d3830000000037a68d0d0a
+2017-05-05 16:45:49,462 INFO [com.carPature.action.DataReceiver] - 数据位2222110505082f14c6035c36ac0d0630b000140101cc0018cb00d3830000000037
+2017-05-05 16:45:49,462 INFO [com.carPature.action.DataReceiver] - GPS定位包
+2017-05-05 16:45:49,462 INFO [com.carPature.action.DataReceiver] - 日期时间:2017年5月5日       8：47:20
+2017-05-05 16:45:49,462 INFO [com.carPature.action.DataReceiver] - 纬度:31.31942
+2017-05-05 16:45:49,462 INFO [com.carPature.action.DataReceiver] - 经度:121.39416
+2017-05-05 16:45:49,463 INFO [com.carPature.action.DataReceiver] - 航向状态:实时GPS、GPS已定位、东经、北纬、航向1°
+2017-05-05 16:45:49,463 INFO [com.carPature.action.DataReceiver] - 国家代码:460
+2017-05-05 16:45:49,463 INFO [com.carPature.action.DataReceiver] - 移动基站:54147
+2017-05-05 16:45:49,463 INFO [com.carPature.action.DataReceiver] - GPS实时补传:实时上传
+2017-05-05 16:45:49,463 INFO [com.carPature.action.DataReceiver] - 里程统计:3647117
+2017-05-05 16:45:49,463 DEBUG [org.hibernate.internal.SessionImpl] - Opened session at timestamp: 14939739494
+2017-05-05 16:45:49,463 DEBUG [org.hibernate.engine.transaction.spi.AbstractTransactionImpl] - begin
+2017-05-05 16:45:49,463 DEBUG [org.hibernate.engine.jdbc.internal.LogicalConnectionImpl] - Obtaining JDBC connection
+2017-05-05 16:45:49,464 DEBUG [org.hibernate.engine.jdbc.internal.LogicalConnectionImpl] - Obtained JDBC connection
+2017-05-05 16:45:49,464 DEBUG [org.hibernate.engine.transaction.internal.jdbc.JdbcTransaction] - initial autocommit status: true
+2017-05-05 16:45:49,464 DEBUG [org.hibernate.engine.transaction.internal.jdbc.JdbcTransaction] - disabling autocommit
+2017-05-05 16:45:49,464 DEBUG [org.hibernate.engine.spi.ActionQueue] - Executing identity-insert immediately
+2017-05-05 16:45:49,466 DEBUG [org.hibernate.id.IdentifierGeneratorHelper] - Natively generated identity: 471
+2017-05-05 16:45:49,466 DEBUG [org.hibernate.engine.transaction.spi.AbstractTransactionImpl] - committing
+2017-05-05 16:45:49,466 DEBUG [org.hibernate.event.internal.AbstractFlushingEventListener] - Processing flush-time cascades
+2017-05-05 16:45:49,467 DEBUG [org.hibernate.event.internal.AbstractFlushingEventListener] - Dirty checking collections
+2017-05-05 16:45:49,467 DEBUG [org.hibernate.event.internal.AbstractFlushingEventListener] - Flushed: 0 insertions, 0 updates, 0 deletions to 1 objects
+2017-05-05 16:45:49,467 DEBUG [org.hibernate.event.internal.AbstractFlushingEventListener] - Flushed: 0 (re)creations, 0 updates, 0 removals to 0 collections
+2017-05-05 16:45:49,467 DEBUG [org.hibernate.internal.util.EntityPrinter] - Listing entities:
+2017-05-05 16:45:49,467 DEBUG [org.hibernate.internal.util.EntityPrinter] - com.carPature.entity1.DeviceLocationInfo{gpssstat=[B@ffcf967, speed=0.0, mcc=460, date=3917-05-05 08:47:20.0, acc=false, lac=6347, id=471, realNot=true, cellId=54147, longtitude=121.39416, mnc=0, latitude=31.31942, oploadMode=0, orienStat=1401}
+2017-05-05 16:45:49,469 DEBUG [org.hibernate.engine.transaction.internal.jdbc.JdbcTransaction] - committed JDBC Connection
+2017-05-05 16:45:49,469 DEBUG [org.hibernate.engine.transaction.internal.jdbc.JdbcTransaction] - re-enabling autocommit
+2017-05-05 16:45:49,469 DEBUG [org.hibernate.engine.jdbc.internal.LogicalConnectionImpl] - Releasing JDBC connection
+2017-05-05 16:45:49,470 DEBUG [org.hibernate.engine.jdbc.internal.LogicalConnectionImpl] - Released JDBC connection
+2017-05-05 16:45:49,470 DEBUG [org.hibernate.engine.jdbc.internal.proxy.ConnectionProxyHandler] - HHH000163: Logical connection releasing its physical connection
+2017-05-05 16:45:49,470 DEBUG [org.hibernate.engine.jdbc.internal.proxy.ConnectionProxyHandler] - HHH000163: Logical connection releasing its physical connection
+2017-05-05 16:45:49,470 DEBUG [org.hibernate.engine.jdbc.internal.proxy.ConnectionProxyHandler] - HHH000163: Logical connection releasing its physical connection
+2017-05-05 16:45:49,470 DEBUG [org.hibernate.engine.jdbc.internal.proxy.ConnectionProxyHandler] - HHH000163: Logical connection releasing its physical connection
+2017-05-05 16:45:49,470 INFO [com.carPature.action.DataReceiver] - 返回结果：787805019ff80d0a
+2017-05-05 16:46:09,360 INFO [com.carPature.action.DataReceiver] - 接受结果：78782222110505082f28c6035c35000d0631200114b001cc0018cb00d383000000003862920d0a
+2017-05-05 16:46:09,360 INFO [com.carPature.action.DataReceiver] - 数据位2222110505082f28c6035c35000d0631200114b001cc0018cb00d3830000000038
+2017-05-05 16:46:09,360 INFO [com.carPature.action.DataReceiver] - GPS定位包
+2017-05-05 16:46:09,360 INFO [com.carPature.action.DataReceiver] - 日期时间:2017年5月5日       8：47:40
+2017-05-05 16:46:09,361 INFO [com.carPature.action.DataReceiver] - 纬度:31.31918222222222
+2017-05-05 16:46:09,361 INFO [com.carPature.action.DataReceiver] - 经度:121.39422222222223
+2017-05-05 16:46:09,361 INFO [com.carPature.action.DataReceiver] - 航向状态:实时GPS、GPS已定位、东经、北纬、航向-80°
+2017-05-05 16:46:09,361 INFO [com.carPature.action.DataReceiver] - 国家代码:460
+2017-05-05 16:46:09,361 INFO [com.carPature.action.DataReceiver] - 移动基站:54147
+2017-05-05 16:46:09,361 INFO [com.carPature.action.DataReceiver] - GPS实时补传:实时上传
+2017-05-05 16:46:09,361 INFO [com.carPature.action.DataReceiver] - 里程统计:3695250
+2017-05-05 16:46:09,362 DEBUG [org.hibernate.internal.SessionImpl] - Opened session at timestamp: 14939739693
+2017-05-05 16:46:09,362 DEBUG [org.hibernate.engine.transaction.spi.AbstractTransactionImpl] - begin
+2017-05-05 16:46:09,362 DEBUG [org.hibernate.engine.jdbc.internal.LogicalConnectionImpl] - Obtaining JDBC connection
+2017-05-05 16:46:09,362 DEBUG [org.hibernate.engine.jdbc.internal.LogicalConnectionImpl] - Obtained JDBC connection
+2017-05-05 16:46:09,362 DEBUG [org.hibernate.engine.transaction.internal.jdbc.JdbcTransaction] - initial autocommit status: true
+2017-05-05 16:46:09,363 DEBUG [org.hibernate.engine.transaction.internal.jdbc.JdbcTransaction] - disabling autocommit
+2017-05-05 16:46:09,364 DEBUG [org.hibernate.engine.spi.ActionQueue] - Executing identity-insert immediately
+2017-05-05 16:46:09,366 DEBUG [org.hibernate.id.IdentifierGeneratorHelper] - Natively generated identity: 472
+2017-05-05 16:46:09,366 DEBUG [org.hibernate.engine.transaction.spi.AbstractTransactionImpl] - committing
+2017-05-05 16:46:09,366 DEBUG [org.hibernate.event.internal.AbstractFlushingEventListener] - Processing flush-time cascades
+2017-05-05 16:46:09,366 DEBUG [org.hibernate.event.internal.AbstractFlushingEventListener] - Dirty checking collections
+2017-05-05 16:46:09,366 DEBUG [org.hibernate.event.internal.AbstractFlushingEventListener] - Flushed: 0 insertions, 0 updates, 0 deletions to 1 objects
+2017-05-05 16:46:09,367 DEBUG [org.hibernate.event.internal.AbstractFlushingEventListener] - Flushed: 0 (re)creations, 0 updates, 0 removals to 0 collections
+2017-05-05 16:46:09,367 DEBUG [org.hibernate.internal.util.EntityPrinter] - Listing entities:
+2017-05-05 16:46:09,367 DEBUG [org.hibernate.internal.util.EntityPrinter] - com.carPature.entity1.DeviceLocationInfo{gpssstat=[B@15fae190, speed=1.0, mcc=460, date=3917-05-05 08:47:40.0, acc=false, lac=6347, id=472, realNot=true, cellId=54147, longtitude=121.39422222222223, mnc=0, latitude=31.31918222222222, oploadMode=0, orienStat=14b0}
+2017-05-05 16:46:09,368 DEBUG [org.hibernate.engine.transaction.internal.jdbc.JdbcTransaction] - committed JDBC Connection
+2017-05-05 16:46:09,368 DEBUG [org.hibernate.engine.transaction.internal.jdbc.JdbcTransaction] - re-enabling autocommit
+2017-05-05 16:46:09,369 DEBUG [org.hibernate.engine.jdbc.internal.LogicalConnectionImpl] - Releasing JDBC connection
+2017-05-05 16:46:09,369 DEBUG [org.hibernate.engine.jdbc.internal.LogicalConnectionImpl] - Released JDBC connection
+2017-05-05 16:46:09,369 DEBUG [org.hibernate.engine.jdbc.internal.proxy.ConnectionProxyHandler] - HHH000163: Logical connection releasing its physical connection
+2017-05-05 16:46:09,369 DEBUG [org.hibernate.engine.jdbc.internal.proxy.ConnectionProxyHandler] - HHH000163: Logical connection releasing its physical connection
+2017-05-05 16:46:09,369 DEBUG [org.hibernate.engine.jdbc.internal.proxy.ConnectionProxyHandler] - HHH000163: Logical connection releasing its physical connection
+2017-05-05 16:46:09,369 DEBUG [org.hibernate.engine.jdbc.internal.proxy.ConnectionProxyHandler] - HHH000163: Logical connection releasing its physical connection
+2017-05-05 16:46:09,370 INFO [com.carPature.action.DataReceiver] - 返回结果：787805019ff80d0a
+2017-05-05 16:46:18,939 INFO [com.carPature.action.DataReceiver] - 接受结果：78780b23c0011a0400010039def00d0a
+2017-05-05 16:46:18,939 INFO [com.carPature.action.DataReceiver] - 数据位0b23c0011a0400010039
+2017-05-05 16:46:18,939 INFO [com.carPature.action.DataReceiver] - 心跳包
+2017-05-05 16:46:18,940 INFO [com.carPature.action.DataReceiver] - 返回结果：787805230039d2940d0a
+2017-05-05 16:46:29,354 INFO [com.carPature.action.DataReceiver] - 接受结果：78782222110505083000c7035c33c80d0631900214a501cc0018cb00d383000000003a5abe0d0a
+2017-05-05 16:46:29,354 INFO [com.carPature.action.DataReceiver] - 数据位2222110505083000c7035c33c80d0631900214a501cc0018cb00d383000000003a
+2017-05-05 16:46:29,354 INFO [com.carPature.action.DataReceiver] - GPS定位包
+2017-05-05 16:46:29,355 INFO [com.carPature.action.DataReceiver] - 日期时间:2017年5月5日       8：48:0
+2017-05-05 16:46:29,355 INFO [com.carPature.action.DataReceiver] - 纬度:31.319008888888888
+2017-05-05 16:46:29,355 INFO [com.carPature.action.DataReceiver] - 经度:121.39428444444444
+2017-05-05 16:46:29,355 INFO [com.carPature.action.DataReceiver] - 航向状态:实时GPS、GPS已定位、东经、北纬、航向-91°
+2017-05-05 16:46:29,355 INFO [com.carPature.action.DataReceiver] - 国家代码:460
+2017-05-05 16:46:29,355 INFO [com.carPature.action.DataReceiver] - 移动基站:54147
+2017-05-05 16:46:29,355 INFO [com.carPature.action.DataReceiver] - GPS实时补传:实时上传
+2017-05-05 16:46:29,355 INFO [com.carPature.action.DataReceiver] - 里程统计:3824318
+2017-05-05 16:46:29,356 DEBUG [org.hibernate.internal.SessionImpl] - Opened session at timestamp: 14939739893
+2017-05-05 16:46:29,356 DEBUG [org.hibernate.engine.transaction.spi.AbstractTransactionImpl] - begin
+2017-05-05 16:46:29,356 DEBUG [org.hibernate.engine.jdbc.internal.LogicalConnectionImpl] - Obtaining JDBC connection
+2017-05-05 16:46:29,356 DEBUG [org.hibernate.engine.jdbc.internal.LogicalConnectionImpl] - Obtained JDBC connection
+2017-05-05 16:46:29,356 DEBUG [org.hibernate.engine.transaction.internal.jdbc.JdbcTransaction] - initial autocommit status: true
+2017-05-05 16:46:29,356 DEBUG [org.hibernate.engine.transaction.internal.jdbc.JdbcTransaction] - disabling autocommit
+2017-05-05 16:46:29,357 DEBUG [org.hibernate.engine.spi.ActionQueue] - Executing identity-insert immediately
+2017-05-05 16:46:29,359 DEBUG [org.hibernate.id.IdentifierGeneratorHelper] - Natively generated identity: 473
+2017-05-05 16:46:29,359 DEBUG [org.hibernate.engine.transaction.spi.AbstractTransactionImpl] - committing
+2017-05-05 16:46:29,359 DEBUG [org.hibernate.event.internal.AbstractFlushingEventListener] - Processing flush-time cascades
+2017-05-05 16:46:29,359 DEBUG [org.hibernate.event.internal.AbstractFlushingEventListener] - Dirty checking collections
+2017-05-05 16:46:29,359 DEBUG [org.hibernate.event.internal.AbstractFlushingEventListener] - Flushed: 0 insertions, 0 updates, 0 deletions to 1 objects
+2017-05-05 16:46:29,360 DEBUG [org.hibernate.event.internal.AbstractFlushingEventListener] - Flushed: 0 (re)creations, 0 updates, 0 removals to 0 collections
+2017-05-05 16:46:29,360 DEBUG [org.hibernate.internal.util.EntityPrinter] - Listing entities:
+2017-05-05 16:46:29,360 DEBUG [org.hibernate.internal.util.EntityPrinter] - com.carPature.entity1.DeviceLocationInfo{gpssstat=[B@78ea4c81, speed=2.0, mcc=460, date=3917-05-05 08:48:00.0, acc=false, lac=6347, id=473, realNot=true, cellId=54147, longtitude=121.39428444444444, mnc=0, latitude=31.319008888888888, oploadMode=0, orienStat=14a5}
+2017-05-05 16:46:29,361 DEBUG [org.hibernate.engine.transaction.internal.jdbc.JdbcTransaction] - committed JDBC Connection
+2017-05-05 16:46:29,361 DEBUG [org.hibernate.engine.transaction.internal.jdbc.JdbcTransaction] - re-enabling autocommit
+2017-05-05 16:46:29,361 DEBUG [org.hibernate.engine.jdbc.internal.LogicalConnectionImpl] - Releasing JDBC connection
+2017-05-05 16:46:29,361 DEBUG [org.hibernate.engine.jdbc.internal.LogicalConnectionImpl] - Released JDBC connection
+2017-05-05 16:46:29,361 DEBUG [org.hibernate.engine.jdbc.internal.proxy.ConnectionProxyHandler] - HHH000163: Logical connection releasing its physical connection
+2017-05-05 16:46:29,361 DEBUG [org.hibernate.engine.jdbc.internal.proxy.ConnectionProxyHandler] - HHH000163: Logical connection releasing its physical connection
+2017-05-05 16:46:29,361 DEBUG [org.hibernate.engine.jdbc.internal.proxy.ConnectionProxyHandler] - HHH000163: Logical connection releasing its physical connection
+2017-05-05 16:46:29,362 DEBUG [org.hibernate.engine.jdbc.internal.proxy.ConnectionProxyHandler] - HHH000163: Logical connection releasing its physical connection
+2017-05-05 16:46:29,362 INFO [com.carPature.action.DataReceiver] - 返回结果：787805019ff80d0a
+2017-05-05 16:46:49,416 INFO [com.carPature.action.DataReceiver] - 接受结果：78782222110505083014c7035c33300d06320002149f01cc0018cb00d383000000003b20940d0a
+2017-05-05 16:46:49,416 INFO [com.carPature.action.DataReceiver] - 数据位2222110505083014c7035c33300d06320002149f01cc0018cb00d383000000003b
+2017-05-05 16:46:49,417 INFO [com.carPature.action.DataReceiver] - GPS定位包
+2017-05-05 16:46:49,417 INFO [com.carPature.action.DataReceiver] - 日期时间:2017年5月5日       8：48:20
+2017-05-05 16:46:49,417 INFO [com.carPature.action.DataReceiver] - 纬度:31.318924444444445
+2017-05-05 16:46:49,417 INFO [com.carPature.action.DataReceiver] - 经度:121.39434666666666
+2017-05-05 16:46:49,417 INFO [com.carPature.action.DataReceiver] - 航向状态:实时GPS、GPS已定位、东经、北纬、航向-97°
+2017-05-05 16:46:49,417 INFO [com.carPature.action.DataReceiver] - 国家代码:460
+2017-05-05 16:46:49,417 INFO [com.carPature.action.DataReceiver] - 移动基站:54147
+2017-05-05 16:46:49,417 INFO [com.carPature.action.DataReceiver] - GPS实时补传:实时上传
+2017-05-05 16:46:49,417 INFO [com.carPature.action.DataReceiver] - 里程统计:3874964
+2017-05-05 16:46:49,418 DEBUG [org.hibernate.internal.SessionImpl] - Opened session at timestamp: 14939740094
+2017-05-05 16:46:49,418 DEBUG [org.hibernate.engine.transaction.spi.AbstractTransactionImpl] - begin
+2017-05-05 16:46:49,418 DEBUG [org.hibernate.engine.jdbc.internal.LogicalConnectionImpl] - Obtaining JDBC connection
+2017-05-05 16:46:49,418 DEBUG [org.hibernate.engine.jdbc.internal.LogicalConnectionImpl] - Obtained JDBC connection
+2017-05-05 16:46:49,418 DEBUG [org.hibernate.engine.transaction.internal.jdbc.JdbcTransaction] - initial autocommit status: true
+2017-05-05 16:46:49,418 DEBUG [org.hibernate.engine.transaction.internal.jdbc.JdbcTransaction] - disabling autocommit
+2017-05-05 16:46:49,419 DEBUG [org.hibernate.engine.spi.ActionQueue] - Executing identity-insert immediately
+2017-05-05 16:46:49,420 DEBUG [org.hibernate.id.IdentifierGeneratorHelper] - Natively generated identity: 474
+2017-05-05 16:46:49,421 DEBUG [org.hibernate.engine.transaction.spi.AbstractTransactionImpl] - committing
+2017-05-05 16:46:49,421 DEBUG [org.hibernate.event.internal.AbstractFlushingEventListener] - Processing flush-time cascades
+2017-05-05 16:46:49,421 DEBUG [org.hibernate.event.internal.AbstractFlushingEventListener] - Dirty checking collections
+2017-05-05 16:46:49,421 DEBUG [org.hibernate.event.internal.AbstractFlushingEventListener] - Flushed: 0 insertions, 0 updates, 0 deletions to 1 objects
+2017-05-05 16:46:49,421 DEBUG [org.hibernate.event.internal.AbstractFlushingEventListener] - Flushed: 0 (re)creations, 0 updates, 0 removals to 0 collections
+2017-05-05 16:46:49,421 DEBUG [org.hibernate.internal.util.EntityPrinter] - Listing entities:
+2017-05-05 16:46:49,422 DEBUG [org.hibernate.internal.util.EntityPrinter] - com.carPature.entity1.DeviceLocationInfo{gpssstat=[B@cc78032, speed=2.0, mcc=460, date=3917-05-05 08:48:20.0, acc=false, lac=6347, id=474, realNot=true, cellId=54147, longtitude=121.39434666666666, mnc=0, latitude=31.318924444444445, oploadMode=0, orienStat=149f}
+2017-05-05 16:46:49,422 DEBUG [org.hibernate.engine.transaction.internal.jdbc.JdbcTransaction] - committed JDBC Connection
+2017-05-05 16:46:49,423 DEBUG [org.hibernate.engine.transaction.internal.jdbc.JdbcTransaction] - re-enabling autocommit
+2017-05-05 16:46:49,423 DEBUG [org.hibernate.engine.jdbc.internal.LogicalConnectionImpl] - Releasing JDBC connection
+2017-05-05 16:46:49,423 DEBUG [org.hibernate.engine.jdbc.internal.LogicalConnectionImpl] - Released JDBC connection
+2017-05-05 16:46:49,423 DEBUG [org.hibernate.engine.jdbc.internal.proxy.ConnectionProxyHandler] - HHH000163: Logical connection releasing its physical connection
+2017-05-05 16:46:49,423 DEBUG [org.hibernate.engine.jdbc.internal.proxy.ConnectionProxyHandler] - HHH000163: Logical connection releasing its physical connection
+2017-05-05 16:46:49,424 DEBUG [org.hibernate.engine.jdbc.internal.proxy.ConnectionProxyHandler] - HHH000163: Logical connection releasing its physical connection
+2017-05-05 16:46:49,424 DEBUG [org.hibernate.engine.jdbc.internal.proxy.ConnectionProxyHandler] - HHH000163: Logical connection releasing its physical connection
+2017-05-05 16:46:49,424 INFO [com.carPature.action.DataReceiver] - 返回结果：787805019ff80d0a
+2017-05-05 16:47:09,359 INFO [com.carPature.action.DataReceiver] - 接受结果：78782222110505083028c7035c332c0d0632000114af01cc0018cb00d383000000003c1c800d0a
+2017-05-05 16:47:09,359 INFO [com.carPature.action.DataReceiver] - 数据位2222110505083028c7035c332c0d0632000114af01cc0018cb00d383000000003c
+2017-05-05 16:47:09,359 INFO [com.carPature.action.DataReceiver] - GPS定位包
+2017-05-05 16:47:09,359 INFO [com.carPature.action.DataReceiver] - 日期时间:2017年5月5日       8：48:40
+2017-05-05 16:47:09,359 INFO [com.carPature.action.DataReceiver] - 纬度:31.318922222222223
+2017-05-05 16:47:09,360 INFO [com.carPature.action.DataReceiver] - 经度:121.39434666666666
+2017-05-05 16:47:09,360 INFO [com.carPature.action.DataReceiver] - 航向状态:实时GPS、GPS已定位、东经、北纬、航向-81°
+2017-05-05 16:47:09,360 INFO [com.carPature.action.DataReceiver] - 国家代码:460
+2017-05-05 16:47:09,360 INFO [com.carPature.action.DataReceiver] - 移动基站:54147
+2017-05-05 16:47:09,360 INFO [com.carPature.action.DataReceiver] - GPS实时补传:实时上传
+2017-05-05 16:47:09,360 INFO [com.carPature.action.DataReceiver] - 里程统计:3939456
+2017-05-05 16:47:09,360 DEBUG [org.hibernate.internal.SessionImpl] - Opened session at timestamp: 14939740293
+2017-05-05 16:47:09,360 DEBUG [org.hibernate.engine.transaction.spi.AbstractTransactionImpl] - begin
+2017-05-05 16:47:09,361 DEBUG [org.hibernate.engine.jdbc.internal.LogicalConnectionImpl] - Obtaining JDBC connection
+2017-05-05 16:47:09,361 DEBUG [org.hibernate.engine.jdbc.internal.LogicalConnectionImpl] - Obtained JDBC connection
+2017-05-05 16:47:09,361 DEBUG [org.hibernate.engine.transaction.internal.jdbc.JdbcTransaction] - initial autocommit status: true
+2017-05-05 16:47:09,361 DEBUG [org.hibernate.engine.transaction.internal.jdbc.JdbcTransaction] - disabling autocommit
+2017-05-05 16:47:09,363 DEBUG [org.hibernate.engine.spi.ActionQueue] - Executing identity-insert immediately
+2017-05-05 16:47:09,365 DEBUG [org.hibernate.id.IdentifierGeneratorHelper] - Natively generated identity: 475
+2017-05-05 16:47:09,365 DEBUG [org.hibernate.engine.transaction.spi.AbstractTransactionImpl] - committing
+2017-05-05 16:47:09,365 DEBUG [org.hibernate.event.internal.AbstractFlushingEventListener] - Processing flush-time cascades
+2017-05-05 16:47:09,365 DEBUG [org.hibernate.event.internal.AbstractFlushingEventListener] - Dirty checking collections
+2017-05-05 16:47:09,366 DEBUG [org.hibernate.event.internal.AbstractFlushingEventListener] - Flushed: 0 insertions, 0 updates, 0 deletions to 1 objects
+2017-05-05 16:47:09,366 DEBUG [org.hibernate.event.internal.AbstractFlushingEventListener] - Flushed: 0 (re)creations, 0 updates, 0 removals to 0 collections
+2017-05-05 16:47:09,366 DEBUG [org.hibernate.internal.util.EntityPrinter] - Listing entities:
+2017-05-05 16:47:09,366 DEBUG [org.hibernate.internal.util.EntityPrinter] - com.carPature.entity1.DeviceLocationInfo{gpssstat=[B@5aff0e4c, speed=1.0, mcc=460, date=3917-05-05 08:48:40.0, acc=false, lac=6347, id=475, realNot=true, cellId=54147, longtitude=121.39434666666666, mnc=0, latitude=31.318922222222223, oploadMode=0, orienStat=14af}
+2017-05-05 16:47:09,367 DEBUG [org.hibernate.engine.transaction.internal.jdbc.JdbcTransaction] - committed JDBC Connection
+2017-05-05 16:47:09,367 DEBUG [org.hibernate.engine.transaction.internal.jdbc.JdbcTransaction] - re-enabling autocommit
+2017-05-05 16:47:09,368 DEBUG [org.hibernate.engine.jdbc.internal.LogicalConnectionImpl] - Releasing JDBC connection
+2017-05-05 16:47:09,368 DEBUG [org.hibernate.engine.jdbc.internal.LogicalConnectionImpl] - Released JDBC connection
+2017-05-05 16:47:09,368 DEBUG [org.hibernate.engine.jdbc.internal.proxy.ConnectionProxyHandler] - HHH000163: Logical connection releasing its physical connection
+2017-05-05 16:47:09,368 DEBUG [org.hibernate.engine.jdbc.internal.proxy.ConnectionProxyHandler] - HHH000163: Logical connection releasing its physical connection
+2017-05-05 16:47:09,368 DEBUG [org.hibernate.engine.jdbc.internal.proxy.ConnectionProxyHandler] - HHH000163: Logical connection releasing its physical connection
+2017-05-05 16:47:09,368 DEBUG [org.hibernate.engine.jdbc.internal.proxy.ConnectionProxyHandler] - HHH000163: Logical connection releasing its physical connection
+2017-05-05 16:47:09,369 INFO [com.carPature.action.DataReceiver] - 返回结果：787805019ff80d0a
+2017-05-05 16:47:29,460 INFO [com.carPature.action.DataReceiver] - 接受结果：78782222110505083100c7035c33480d0632000014a801cc0018cb00d383000000003d2b320d0a
+2017-05-05 16:47:29,461 INFO [com.carPature.action.DataReceiver] - 数据位2222110505083100c7035c33480d0632000014a801cc0018cb00d383000000003d
+2017-05-05 16:47:29,461 INFO [com.carPature.action.DataReceiver] - GPS定位包
+2017-05-05 16:47:29,461 INFO [com.carPature.action.DataReceiver] - 日期时间:2017年5月5日       8：49:0
+2017-05-05 16:47:29,461 INFO [com.carPature.action.DataReceiver] - 纬度:31.318937777777776
+2017-05-05 16:47:29,461 INFO [com.carPature.action.DataReceiver] - 经度:121.39434666666666
+2017-05-05 16:47:29,461 INFO [com.carPature.action.DataReceiver] - 航向状态:实时GPS、GPS已定位、东经、北纬、航向-88°
+2017-05-05 16:47:29,461 INFO [com.carPature.action.DataReceiver] - 国家代码:460
+2017-05-05 16:47:29,461 INFO [com.carPature.action.DataReceiver] - 移动基站:54147
+2017-05-05 16:47:29,462 INFO [com.carPature.action.DataReceiver] - GPS实时补传:实时上传
+2017-05-05 16:47:29,462 INFO [com.carPature.action.DataReceiver] - 里程统计:4008754
+2017-05-05 16:47:29,462 DEBUG [org.hibernate.internal.SessionImpl] - Opened session at timestamp: 14939740494
+2017-05-05 16:47:29,462 DEBUG [org.hibernate.engine.transaction.spi.AbstractTransactionImpl] - begin
+2017-05-05 16:47:29,462 DEBUG [org.hibernate.engine.jdbc.internal.LogicalConnectionImpl] - Obtaining JDBC connection
+2017-05-05 16:47:29,462 DEBUG [org.hibernate.engine.jdbc.internal.LogicalConnectionImpl] - Obtained JDBC connection
+2017-05-05 16:47:29,462 DEBUG [org.hibernate.engine.transaction.internal.jdbc.JdbcTransaction] - initial autocommit status: true
+2017-05-05 16:47:29,462 DEBUG [org.hibernate.engine.transaction.internal.jdbc.JdbcTransaction] - disabling autocommit
+2017-05-05 16:47:29,463 DEBUG [org.hibernate.engine.spi.ActionQueue] - Executing identity-insert immediately
+2017-05-05 16:47:29,465 DEBUG [org.hibernate.id.IdentifierGeneratorHelper] - Natively generated identity: 476
+2017-05-05 16:47:29,465 DEBUG [org.hibernate.engine.transaction.spi.AbstractTransactionImpl] - committing
+2017-05-05 16:47:29,465 DEBUG [org.hibernate.event.internal.AbstractFlushingEventListener] - Processing flush-time cascades
+2017-05-05 16:47:29,465 DEBUG [org.hibernate.event.internal.AbstractFlushingEventListener] - Dirty checking collections
+2017-05-05 16:47:29,466 DEBUG [org.hibernate.event.internal.AbstractFlushingEventListener] - Flushed: 0 insertions, 0 updates, 0 deletions to 1 objects
+2017-05-05 16:47:29,466 DEBUG [org.hibernate.event.internal.AbstractFlushingEventListener] - Flushed: 0 (re)creations, 0 updates, 0 removals to 0 collections
+2017-05-05 16:47:29,466 DEBUG [org.hibernate.internal.util.EntityPrinter] - Listing entities:
+2017-05-05 16:47:29,466 DEBUG [org.hibernate.internal.util.EntityPrinter] - com.carPature.entity1.DeviceLocationInfo{gpssstat=[B@3248dfe, speed=0.0, mcc=460, date=3917-05-05 08:49:00.0, acc=false, lac=6347, id=476, realNot=true, cellId=54147, longtitude=121.39434666666666, mnc=0, latitude=31.318937777777776, oploadMode=0, orienStat=14a8}
+2017-05-05 16:47:29,467 DEBUG [org.hibernate.engine.transaction.internal.jdbc.JdbcTransaction] - committed JDBC Connection
+2017-05-05 16:47:29,467 DEBUG [org.hibernate.engine.transaction.internal.jdbc.JdbcTransaction] - re-enabling autocommit
+2017-05-05 16:47:29,468 DEBUG [org.hibernate.engine.jdbc.internal.LogicalConnectionImpl] - Releasing JDBC connection
+2017-05-05 16:47:29,468 DEBUG [org.hibernate.engine.jdbc.internal.LogicalConnectionImpl] - Released JDBC connection
+2017-05-05 16:47:29,468 DEBUG [org.hibernate.engine.jdbc.internal.proxy.ConnectionProxyHandler] - HHH000163: Logical connection releasing its physical connection
+2017-05-05 16:47:29,468 DEBUG [org.hibernate.engine.jdbc.internal.proxy.ConnectionProxyHandler] - HHH000163: Logical connection releasing its physical connection
+2017-05-05 16:47:29,468 DEBUG [org.hibernate.engine.jdbc.internal.proxy.ConnectionProxyHandler] - HHH000163: Logical connection releasing its physical connection
+2017-05-05 16:47:29,468 DEBUG [org.hibernate.engine.jdbc.internal.proxy.ConnectionProxyHandler] - HHH000163: Logical connection releasing its physical connection
+2017-05-05 16:47:29,468 INFO [com.carPature.action.DataReceiver] - 返回结果：787805019ff80d0a
+2017-05-05 16:47:49,781 INFO [com.carPature.action.DataReceiver] - 接受结果：78782222110505083114c6035c34000d0631a00014b001cc0018cb00d383000000003ead270d0a
+2017-05-05 16:47:49,781 INFO [com.carPature.action.DataReceiver] - 数据位2222110505083114c6035c34000d0631a00014b001cc0018cb00d383000000003e
+2017-05-05 16:47:49,781 INFO [com.carPature.action.DataReceiver] - GPS定位包
+2017-05-05 16:47:49,781 INFO [com.carPature.action.DataReceiver] - 日期时间:2017年5月5日       8：49:20
+2017-05-05 16:47:49,782 INFO [com.carPature.action.DataReceiver] - 纬度:31.31904
+2017-05-05 16:47:49,782 INFO [com.carPature.action.DataReceiver] - 经度:121.39429333333334
+2017-05-05 16:47:49,782 INFO [com.carPature.action.DataReceiver] - 航向状态:实时GPS、GPS已定位、东经、北纬、航向-80°
+2017-05-05 16:47:49,782 INFO [com.carPature.action.DataReceiver] - 国家代码:460
+2017-05-05 16:47:49,782 INFO [com.carPature.action.DataReceiver] - 移动基站:54147
+2017-05-05 16:47:49,782 INFO [com.carPature.action.DataReceiver] - GPS实时补传:实时上传
+2017-05-05 16:47:49,782 INFO [com.carPature.action.DataReceiver] - 里程统计:4107559
+2017-05-05 16:47:49,783 DEBUG [org.hibernate.internal.SessionImpl] - Opened session at timestamp: 14939740697
+2017-05-05 16:47:49,783 DEBUG [org.hibernate.engine.transaction.spi.AbstractTransactionImpl] - begin
+2017-05-05 16:47:49,783 DEBUG [org.hibernate.engine.jdbc.internal.LogicalConnectionImpl] - Obtaining JDBC connection
+2017-05-05 16:47:49,783 DEBUG [org.hibernate.engine.jdbc.internal.LogicalConnectionImpl] - Obtained JDBC connection
+2017-05-05 16:47:49,783 DEBUG [org.hibernate.engine.transaction.internal.jdbc.JdbcTransaction] - initial autocommit status: true
+2017-05-05 16:47:49,783 DEBUG [org.hibernate.engine.transaction.internal.jdbc.JdbcTransaction] - disabling autocommit
+2017-05-05 16:47:49,784 DEBUG [org.hibernate.engine.spi.ActionQueue] - Executing identity-insert immediately
+2017-05-05 16:47:49,786 DEBUG [org.hibernate.id.IdentifierGeneratorHelper] - Natively generated identity: 477
+2017-05-05 16:47:49,786 DEBUG [org.hibernate.engine.transaction.spi.AbstractTransactionImpl] - committing
+2017-05-05 16:47:49,786 DEBUG [org.hibernate.event.internal.AbstractFlushingEventListener] - Processing flush-time cascades
+2017-05-05 16:47:49,786 DEBUG [org.hibernate.event.internal.AbstractFlushingEventListener] - Dirty checking collections
+2017-05-05 16:47:49,787 DEBUG [org.hibernate.event.internal.AbstractFlushingEventListener] - Flushed: 0 insertions, 0 updates, 0 deletions to 1 objects
+2017-05-05 16:47:49,787 DEBUG [org.hibernate.event.internal.AbstractFlushingEventListener] - Flushed: 0 (re)creations, 0 updates, 0 removals to 0 collections
+2017-05-05 16:47:49,787 DEBUG [org.hibernate.internal.util.EntityPrinter] - Listing entities:
+2017-05-05 16:47:49,787 DEBUG [org.hibernate.internal.util.EntityPrinter] - com.carPature.entity1.DeviceLocationInfo{gpssstat=[B@321d6495, speed=0.0, mcc=460, date=3917-05-05 08:49:20.0, acc=false, lac=6347, id=477, realNot=true, cellId=54147, longtitude=121.39429333333334, mnc=0, latitude=31.31904, oploadMode=0, orienStat=14b0}
+2017-05-05 16:47:49,789 DEBUG [org.hibernate.engine.transaction.internal.jdbc.JdbcTransaction] - committed JDBC Connection
+2017-05-05 16:47:49,789 DEBUG [org.hibernate.engine.transaction.internal.jdbc.JdbcTransaction] - re-enabling autocommit
+2017-05-05 16:47:49,790 DEBUG [org.hibernate.engine.jdbc.internal.LogicalConnectionImpl] - Releasing JDBC connection
+2017-05-05 16:47:49,790 DEBUG [org.hibernate.engine.jdbc.internal.LogicalConnectionImpl] - Released JDBC connection
+2017-05-05 16:47:49,790 DEBUG [org.hibernate.engine.jdbc.internal.proxy.ConnectionProxyHandler] - HHH000163: Logical connection releasing its physical connection
+2017-05-05 16:47:49,791 DEBUG [org.hibernate.engine.jdbc.internal.proxy.ConnectionProxyHandler] - HHH000163: Logical connection releasing its physical connection
+2017-05-05 16:47:49,791 DEBUG [org.hibernate.engine.jdbc.internal.proxy.ConnectionProxyHandler] - HHH000163: Logical connection releasing its physical connection
+2017-05-05 16:47:49,791 DEBUG [org.hibernate.engine.jdbc.internal.proxy.ConnectionProxyHandler] - HHH000163: Logical connection releasing its physical connection
+2017-05-05 16:47:49,791 INFO [com.carPature.action.DataReceiver] - 返回结果：787805019ff80d0a
+2017-05-05 16:48:09,343 INFO [com.carPature.action.DataReceiver] - 接受结果：78782222110505083128c6035c34000d0631a00014b001cc0018cb00d383000000003f1d7e0d0a
+2017-05-05 16:48:09,344 INFO [com.carPature.action.DataReceiver] - 数据位2222110505083128c6035c34000d0631a00014b001cc0018cb00d383000000003f
+2017-05-05 16:48:09,344 INFO [com.carPature.action.DataReceiver] - GPS定位包
+2017-05-05 16:48:09,344 INFO [com.carPature.action.DataReceiver] - 日期时间:2017年5月5日       8：49:40
+2017-05-05 16:48:09,344 INFO [com.carPature.action.DataReceiver] - 纬度:31.31904
+2017-05-05 16:48:09,344 INFO [com.carPature.action.DataReceiver] - 经度:121.39429333333334
+2017-05-05 16:48:09,344 INFO [com.carPature.action.DataReceiver] - 航向状态:实时GPS、GPS已定位、东经、北纬、航向-80°
+2017-05-05 16:48:09,344 INFO [com.carPature.action.DataReceiver] - 国家代码:460
+2017-05-05 16:48:09,344 INFO [com.carPature.action.DataReceiver] - 移动基站:54147
+2017-05-05 16:48:09,344 INFO [com.carPature.action.DataReceiver] - GPS实时补传:实时上传
+2017-05-05 16:48:09,344 INFO [com.carPature.action.DataReceiver] - 里程统计:4136318
+2017-05-05 16:48:09,345 DEBUG [org.hibernate.internal.SessionImpl] - Opened session at timestamp: 14939740893
+2017-05-05 16:48:09,345 DEBUG [org.hibernate.engine.transaction.spi.AbstractTransactionImpl] - begin
+2017-05-05 16:48:09,345 DEBUG [org.hibernate.engine.jdbc.internal.LogicalConnectionImpl] - Obtaining JDBC connection
+2017-05-05 16:48:09,345 DEBUG [org.hibernate.engine.jdbc.internal.LogicalConnectionImpl] - Obtained JDBC connection
+2017-05-05 16:48:09,345 DEBUG [org.hibernate.engine.transaction.internal.jdbc.JdbcTransaction] - initial autocommit status: true
+2017-05-05 16:48:09,345 DEBUG [org.hibernate.engine.transaction.internal.jdbc.JdbcTransaction] - disabling autocommit
+2017-05-05 16:48:09,346 DEBUG [org.hibernate.engine.spi.ActionQueue] - Executing identity-insert immediately
+2017-05-05 16:48:09,356 DEBUG [org.hibernate.id.IdentifierGeneratorHelper] - Natively generated identity: 478
+2017-05-05 16:48:09,356 DEBUG [org.hibernate.engine.transaction.spi.AbstractTransactionImpl] - committing
+2017-05-05 16:48:09,356 DEBUG [org.hibernate.event.internal.AbstractFlushingEventListener] - Processing flush-time cascades
+2017-05-05 16:48:09,356 DEBUG [org.hibernate.event.internal.AbstractFlushingEventListener] - Dirty checking collections
+2017-05-05 16:48:09,356 DEBUG [org.hibernate.event.internal.AbstractFlushingEventListener] - Flushed: 0 insertions, 0 updates, 0 deletions to 1 objects
+2017-05-05 16:48:09,357 DEBUG [org.hibernate.event.internal.AbstractFlushingEventListener] - Flushed: 0 (re)creations, 0 updates, 0 removals to 0 collections
+2017-05-05 16:48:09,357 DEBUG [org.hibernate.internal.util.EntityPrinter] - Listing entities:
+2017-05-05 16:48:09,357 DEBUG [org.hibernate.internal.util.EntityPrinter] - com.carPature.entity1.DeviceLocationInfo{gpssstat=[B@61149371, speed=0.0, mcc=460, date=3917-05-05 08:49:40.0, acc=false, lac=6347, id=478, realNot=true, cellId=54147, longtitude=121.39429333333334, mnc=0, latitude=31.31904, oploadMode=0, orienStat=14b0}
+2017-05-05 16:48:09,358 DEBUG [org.hibernate.engine.transaction.internal.jdbc.JdbcTransaction] - committed JDBC Connection
+2017-05-05 16:48:09,358 DEBUG [org.hibernate.engine.transaction.internal.jdbc.JdbcTransaction] - re-enabling autocommit
+2017-05-05 16:48:09,359 DEBUG [org.hibernate.engine.jdbc.internal.LogicalConnectionImpl] - Releasing JDBC connection
+2017-05-05 16:48:09,359 DEBUG [org.hibernate.engine.jdbc.internal.LogicalConnectionImpl] - Released JDBC connection
+2017-05-05 16:48:09,359 DEBUG [org.hibernate.engine.jdbc.internal.proxy.ConnectionProxyHandler] - HHH000163: Logical connection releasing its physical connection
+2017-05-05 16:48:09,359 DEBUG [org.hibernate.engine.jdbc.internal.proxy.ConnectionProxyHandler] - HHH000163: Logical connection releasing its physical connection
+2017-05-05 16:48:09,359 DEBUG [org.hibernate.engine.jdbc.internal.proxy.ConnectionProxyHandler] - HHH000163: Logical connection releasing its physical connection
+2017-05-05 16:48:09,359 DEBUG [org.hibernate.engine.jdbc.internal.proxy.ConnectionProxyHandler] - HHH000163: Logical connection releasing its physical connection
+2017-05-05 16:48:09,359 INFO [com.carPature.action.DataReceiver] - 返回结果：787805019ff80d0a
+2017-05-05 16:48:29,418 INFO [com.carPature.action.DataReceiver] - 接受结果：78782222110505083200c7035c34000d0631a00014b001cc0018cb00d38300000000405dc20d0a
+2017-05-05 16:48:29,418 INFO [com.carPature.action.DataReceiver] - 数据位2222110505083200c7035c34000d0631a00014b001cc0018cb00d3830000000040
+2017-05-05 16:48:29,418 INFO [com.carPature.action.DataReceiver] - GPS定位包
+2017-05-05 16:48:29,418 INFO [com.carPature.action.DataReceiver] - 日期时间:2017年5月5日       8：50:0
+2017-05-05 16:48:29,419 INFO [com.carPature.action.DataReceiver] - 纬度:31.31904
+2017-05-05 16:48:29,419 INFO [com.carPature.action.DataReceiver] - 经度:121.39429333333334
+2017-05-05 16:48:29,419 INFO [com.carPature.action.DataReceiver] - 航向状态:实时GPS、GPS已定位、东经、北纬、航向-80°
+2017-05-05 16:48:29,419 INFO [com.carPature.action.DataReceiver] - 国家代码:460
+2017-05-05 16:48:29,419 INFO [com.carPature.action.DataReceiver] - 移动基站:54147
+2017-05-05 16:48:29,419 INFO [com.carPature.action.DataReceiver] - GPS实时补传:实时上传
+2017-05-05 16:48:29,419 INFO [com.carPature.action.DataReceiver] - 里程统计:4218306
+2017-05-05 16:48:29,420 DEBUG [org.hibernate.internal.SessionImpl] - Opened session at timestamp: 14939741094
+2017-05-05 16:48:29,420 DEBUG [org.hibernate.engine.transaction.spi.AbstractTransactionImpl] - begin
+2017-05-05 16:48:29,420 DEBUG [org.hibernate.engine.jdbc.internal.LogicalConnectionImpl] - Obtaining JDBC connection
+2017-05-05 16:48:29,420 DEBUG [org.hibernate.engine.jdbc.internal.LogicalConnectionImpl] - Obtained JDBC connection
+2017-05-05 16:48:29,420 DEBUG [org.hibernate.engine.transaction.internal.jdbc.JdbcTransaction] - initial autocommit status: true
+2017-05-05 16:48:29,420 DEBUG [org.hibernate.engine.transaction.internal.jdbc.JdbcTransaction] - disabling autocommit
+2017-05-05 16:48:29,421 DEBUG [org.hibernate.engine.spi.ActionQueue] - Executing identity-insert immediately
+2017-05-05 16:48:29,422 DEBUG [org.hibernate.id.IdentifierGeneratorHelper] - Natively generated identity: 479
+2017-05-05 16:48:29,423 DEBUG [org.hibernate.engine.transaction.spi.AbstractTransactionImpl] - committing
+2017-05-05 16:48:29,423 DEBUG [org.hibernate.event.internal.AbstractFlushingEventListener] - Processing flush-time cascades
+2017-05-05 16:48:29,423 DEBUG [org.hibernate.event.internal.AbstractFlushingEventListener] - Dirty checking collections
+2017-05-05 16:48:29,423 DEBUG [org.hibernate.event.internal.AbstractFlushingEventListener] - Flushed: 0 insertions, 0 updates, 0 deletions to 1 objects
+2017-05-05 16:48:29,423 DEBUG [org.hibernate.event.internal.AbstractFlushingEventListener] - Flushed: 0 (re)creations, 0 updates, 0 removals to 0 collections
+2017-05-05 16:48:29,424 DEBUG [org.hibernate.internal.util.EntityPrinter] - Listing entities:
+2017-05-05 16:48:29,424 DEBUG [org.hibernate.internal.util.EntityPrinter] - com.carPature.entity1.DeviceLocationInfo{gpssstat=[B@723249c4, speed=0.0, mcc=460, date=3917-05-05 08:50:00.0, acc=false, lac=6347, id=479, realNot=true, cellId=54147, longtitude=121.39429333333334, mnc=0, latitude=31.31904, oploadMode=0, orienStat=14b0}
+2017-05-05 16:48:29,432 DEBUG [org.hibernate.engine.transaction.internal.jdbc.JdbcTransaction] - committed JDBC Connection
+2017-05-05 16:48:29,432 DEBUG [org.hibernate.engine.transaction.internal.jdbc.JdbcTransaction] - re-enabling autocommit
+2017-05-05 16:48:29,433 DEBUG [org.hibernate.engine.jdbc.internal.LogicalConnectionImpl] - Releasing JDBC connection
+2017-05-05 16:48:29,433 DEBUG [org.hibernate.engine.jdbc.internal.LogicalConnectionImpl] - Released JDBC connection
+2017-05-05 16:48:29,433 DEBUG [org.hibernate.engine.jdbc.internal.proxy.ConnectionProxyHandler] - HHH000163: Logical connection releasing its physical connection
+2017-05-05 16:48:29,433 DEBUG [org.hibernate.engine.jdbc.internal.proxy.ConnectionProxyHandler] - HHH000163: Logical connection releasing its physical connection
+2017-05-05 16:48:29,433 DEBUG [org.hibernate.engine.jdbc.internal.proxy.ConnectionProxyHandler] - HHH000163: Logical connection releasing its physical connection
+2017-05-05 16:48:29,433 DEBUG [org.hibernate.engine.jdbc.internal.proxy.ConnectionProxyHandler] - HHH000163: Logical connection releasing its physical connection
+2017-05-05 16:48:29,433 INFO [com.carPature.action.DataReceiver] - 返回结果：787805019ff80d0a
+2017-05-05 16:48:49,418 INFO [com.carPature.action.DataReceiver] - 接受结果：78782222110505083214c7035c34000d0631a00014b001cc0018cb00d3830000000041d4f40d0a
+2017-05-05 16:48:49,418 INFO [com.carPature.action.DataReceiver] - 数据位2222110505083214c7035c34000d0631a00014b001cc0018cb00d3830000000041
+2017-05-05 16:48:49,418 INFO [com.carPature.action.DataReceiver] - GPS定位包
+2017-05-05 16:48:49,418 INFO [com.carPature.action.DataReceiver] - 日期时间:2017年5月5日       8：50:20
+2017-05-05 16:48:49,419 INFO [com.carPature.action.DataReceiver] - 纬度:31.31904
+2017-05-05 16:48:49,419 INFO [com.carPature.action.DataReceiver] - 经度:121.39429333333334
+2017-05-05 16:48:49,419 INFO [com.carPature.action.DataReceiver] - 航向状态:实时GPS、GPS已定位、东经、北纬、航向-80°
+2017-05-05 16:48:49,419 INFO [com.carPature.action.DataReceiver] - 国家代码:460
+2017-05-05 16:48:49,419 INFO [com.carPature.action.DataReceiver] - 移动基站:54147
+2017-05-05 16:48:49,419 INFO [com.carPature.action.DataReceiver] - GPS实时补传:实时上传
+2017-05-05 16:48:49,419 INFO [com.carPature.action.DataReceiver] - 里程统计:4314356
+2017-05-05 16:48:49,420 DEBUG [org.hibernate.internal.SessionImpl] - Opened session at timestamp: 14939741294
+2017-05-05 16:48:49,420 DEBUG [org.hibernate.engine.transaction.spi.AbstractTransactionImpl] - begin
+2017-05-05 16:48:49,420 DEBUG [org.hibernate.engine.jdbc.internal.LogicalConnectionImpl] - Obtaining JDBC connection
+2017-05-05 16:48:49,420 DEBUG [org.hibernate.engine.jdbc.internal.LogicalConnectionImpl] - Obtained JDBC connection
+2017-05-05 16:48:49,420 DEBUG [org.hibernate.engine.transaction.internal.jdbc.JdbcTransaction] - initial autocommit status: true
+2017-05-05 16:48:49,420 DEBUG [org.hibernate.engine.transaction.internal.jdbc.JdbcTransaction] - disabling autocommit
+2017-05-05 16:48:49,421 DEBUG [org.hibernate.engine.spi.ActionQueue] - Executing identity-insert immediately
+2017-05-05 16:48:49,422 DEBUG [org.hibernate.id.IdentifierGeneratorHelper] - Natively generated identity: 480
+2017-05-05 16:48:49,423 DEBUG [org.hibernate.engine.transaction.spi.AbstractTransactionImpl] - committing
+2017-05-05 16:48:49,423 DEBUG [org.hibernate.event.internal.AbstractFlushingEventListener] - Processing flush-time cascades
+2017-05-05 16:48:49,423 DEBUG [org.hibernate.event.internal.AbstractFlushingEventListener] - Dirty checking collections
+2017-05-05 16:48:49,423 DEBUG [org.hibernate.event.internal.AbstractFlushingEventListener] - Flushed: 0 insertions, 0 updates, 0 deletions to 1 objects
+2017-05-05 16:48:49,423 DEBUG [org.hibernate.event.internal.AbstractFlushingEventListener] - Flushed: 0 (re)creations, 0 updates, 0 removals to 0 collections
+2017-05-05 16:48:49,423 DEBUG [org.hibernate.internal.util.EntityPrinter] - Listing entities:
+2017-05-05 16:48:49,424 DEBUG [org.hibernate.internal.util.EntityPrinter] - com.carPature.entity1.DeviceLocationInfo{gpssstat=[B@5b9fa3b0, speed=0.0, mcc=460, date=3917-05-05 08:50:20.0, acc=false, lac=6347, id=480, realNot=true, cellId=54147, longtitude=121.39429333333334, mnc=0, latitude=31.31904, oploadMode=0, orienStat=14b0}
+2017-05-05 16:48:49,425 DEBUG [org.hibernate.engine.transaction.internal.jdbc.JdbcTransaction] - committed JDBC Connection
+2017-05-05 16:48:49,425 DEBUG [org.hibernate.engine.transaction.internal.jdbc.JdbcTransaction] - re-enabling autocommit
+2017-05-05 16:48:49,425 DEBUG [org.hibernate.engine.jdbc.internal.LogicalConnectionImpl] - Releasing JDBC connection
+2017-05-05 16:48:49,425 DEBUG [org.hibernate.engine.jdbc.internal.LogicalConnectionImpl] - Released JDBC connection
+2017-05-05 16:48:49,425 DEBUG [org.hibernate.engine.jdbc.internal.proxy.ConnectionProxyHandler] - HHH000163: Logical connection releasing its physical connection
+2017-05-05 16:48:49,425 DEBUG [org.hibernate.engine.jdbc.internal.proxy.ConnectionProxyHandler] - HHH000163: Logical connection releasing its physical connection
+2017-05-05 16:48:49,426 DEBUG [org.hibernate.engine.jdbc.internal.proxy.ConnectionProxyHandler] - HHH000163: Logical connection releasing its physical connection
+2017-05-05 16:48:49,426 DEBUG [org.hibernate.engine.jdbc.internal.proxy.ConnectionProxyHandler] - HHH000163: Logical connection releasing its physical connection
+2017-05-05 16:48:49,426 INFO [com.carPature.action.DataReceiver] - 返回结果：787805019ff80d0a
+2017-05-05 16:49:09,378 INFO [com.carPature.action.DataReceiver] - 接受结果：78782222110505083228c7035c34900d0631c000155601cc0018cb00d383000000004252e80d0a
+2017-05-05 16:49:09,379 INFO [com.carPature.action.DataReceiver] - 数据位2222110505083228c7035c34900d0631c000155601cc0018cb00d3830000000042
+2017-05-05 16:49:09,379 INFO [com.carPature.action.DataReceiver] - GPS定位包
+2017-05-05 16:49:09,379 INFO [com.carPature.action.DataReceiver] - 日期时间:2017年5月5日       8：50:40
+2017-05-05 16:49:09,379 INFO [com.carPature.action.DataReceiver] - 纬度:31.31912
+2017-05-05 16:49:09,379 INFO [com.carPature.action.DataReceiver] - 经度:121.39431111111111
+2017-05-05 16:49:09,379 INFO [com.carPature.action.DataReceiver] - 航向状态:实时GPS、GPS已定位、东经、北纬、航向102°
+2017-05-05 16:49:09,379 INFO [com.carPature.action.DataReceiver] - 国家代码:460
+2017-05-05 16:49:09,379 INFO [com.carPature.action.DataReceiver] - 移动基站:54147
+2017-05-05 16:49:09,379 INFO [com.carPature.action.DataReceiver] - GPS实时补传:实时上传
+2017-05-05 16:49:09,380 INFO [com.carPature.action.DataReceiver] - 里程统计:4346600
+2017-05-05 16:49:09,380 DEBUG [org.hibernate.internal.SessionImpl] - Opened session at timestamp: 14939741493
+2017-05-05 16:49:09,380 DEBUG [org.hibernate.engine.transaction.spi.AbstractTransactionImpl] - begin
+2017-05-05 16:49:09,380 DEBUG [org.hibernate.engine.jdbc.internal.LogicalConnectionImpl] - Obtaining JDBC connection
+2017-05-05 16:49:09,380 DEBUG [org.hibernate.engine.jdbc.internal.LogicalConnectionImpl] - Obtained JDBC connection
+2017-05-05 16:49:09,380 DEBUG [org.hibernate.engine.transaction.internal.jdbc.JdbcTransaction] - initial autocommit status: true
+2017-05-05 16:49:09,380 DEBUG [org.hibernate.engine.transaction.internal.jdbc.JdbcTransaction] - disabling autocommit
+2017-05-05 16:49:09,381 DEBUG [org.hibernate.engine.spi.ActionQueue] - Executing identity-insert immediately
+2017-05-05 16:49:09,383 DEBUG [org.hibernate.id.IdentifierGeneratorHelper] - Natively generated identity: 481
+2017-05-05 16:49:09,383 DEBUG [org.hibernate.engine.transaction.spi.AbstractTransactionImpl] - committing
+2017-05-05 16:49:09,383 DEBUG [org.hibernate.event.internal.AbstractFlushingEventListener] - Processing flush-time cascades
+2017-05-05 16:49:09,383 DEBUG [org.hibernate.event.internal.AbstractFlushingEventListener] - Dirty checking collections
+2017-05-05 16:49:09,384 DEBUG [org.hibernate.event.internal.AbstractFlushingEventListener] - Flushed: 0 insertions, 0 updates, 0 deletions to 1 objects
+2017-05-05 16:49:09,384 DEBUG [org.hibernate.event.internal.AbstractFlushingEventListener] - Flushed: 0 (re)creations, 0 updates, 0 removals to 0 collections
+2017-05-05 16:49:09,384 DEBUG [org.hibernate.internal.util.EntityPrinter] - Listing entities:
+2017-05-05 16:49:09,384 DEBUG [org.hibernate.internal.util.EntityPrinter] - com.carPature.entity1.DeviceLocationInfo{gpssstat=[B@304b9565, speed=0.0, mcc=460, date=3917-05-05 08:50:40.0, acc=false, lac=6347, id=481, realNot=true, cellId=54147, longtitude=121.39431111111111, mnc=0, latitude=31.31912, oploadMode=0, orienStat=1556}
+2017-05-05 16:49:09,385 DEBUG [org.hibernate.engine.transaction.internal.jdbc.JdbcTransaction] - committed JDBC Connection
+2017-05-05 16:49:09,385 DEBUG [org.hibernate.engine.transaction.internal.jdbc.JdbcTransaction] - re-enabling autocommit
+2017-05-05 16:49:09,386 DEBUG [org.hibernate.engine.jdbc.internal.LogicalConnectionImpl] - Releasing JDBC connection
+2017-05-05 16:49:09,386 DEBUG [org.hibernate.engine.jdbc.internal.LogicalConnectionImpl] - Released JDBC connection
+2017-05-05 16:49:09,386 DEBUG [org.hibernate.engine.jdbc.internal.proxy.ConnectionProxyHandler] - HHH000163: Logical connection releasing its physical connection
+2017-05-05 16:49:09,386 DEBUG [org.hibernate.engine.jdbc.internal.proxy.ConnectionProxyHandler] - HHH000163: Logical connection releasing its physical connection
+2017-05-05 16:49:09,387 DEBUG [org.hibernate.engine.jdbc.internal.proxy.ConnectionProxyHandler] - HHH000163: Logical connection releasing its physical connection
+2017-05-05 16:49:09,387 DEBUG [org.hibernate.engine.jdbc.internal.proxy.ConnectionProxyHandler] - HHH000163: Logical connection releasing its physical connection
+2017-05-05 16:49:09,387 INFO [com.carPature.action.DataReceiver] - 返回结果：787805019ff80d0a
+2017-05-05 16:49:18,978 INFO [com.carPature.action.DataReceiver] - 接受结果：78780b23c0011a0400010043022d0d0a
+2017-05-05 16:49:18,978 INFO [com.carPature.action.DataReceiver] - 数据位0b23c0011a0400010043
+2017-05-05 16:49:18,978 INFO [com.carPature.action.DataReceiver] - 心跳包
+2017-05-05 16:49:18,978 INFO [com.carPature.action.DataReceiver] - 返回结果：787805230043e490d0
+2017-05-05 16:49:29,384 INFO [com.carPature.action.DataReceiver] - 接受结果：78782222110505083300c7035c34900d0631c000155601cc0018cb00d38300000000445cf90d0a
+2017-05-05 16:49:29,384 INFO [com.carPature.action.DataReceiver] - 数据位2222110505083300c7035c34900d0631c000155601cc0018cb00d3830000000044
+2017-05-05 16:49:29,384 INFO [com.carPature.action.DataReceiver] - GPS定位包
+2017-05-05 16:49:29,385 INFO [com.carPature.action.DataReceiver] - 日期时间:2017年5月5日       8：51:0
+2017-05-05 16:49:29,385 INFO [com.carPature.action.DataReceiver] - 纬度:31.31912
+2017-05-05 16:49:29,385 INFO [com.carPature.action.DataReceiver] - 经度:121.39431111111111
+2017-05-05 16:49:29,385 INFO [com.carPature.action.DataReceiver] - 航向状态:实时GPS、GPS已定位、东经、北纬、航向102°
+2017-05-05 16:49:29,385 INFO [com.carPature.action.DataReceiver] - 国家代码:460
+2017-05-05 16:49:29,386 INFO [com.carPature.action.DataReceiver] - 移动基站:54147
+2017-05-05 16:49:29,386 INFO [com.carPature.action.DataReceiver] - GPS实时补传:实时上传
+2017-05-05 16:49:29,386 INFO [com.carPature.action.DataReceiver] - 里程统计:4480249
+2017-05-05 16:49:29,387 DEBUG [org.hibernate.internal.SessionImpl] - Opened session at timestamp: 14939741693
+2017-05-05 16:49:29,387 DEBUG [org.hibernate.engine.transaction.spi.AbstractTransactionImpl] - begin
+2017-05-05 16:49:29,387 DEBUG [org.hibernate.engine.jdbc.internal.LogicalConnectionImpl] - Obtaining JDBC connection
+2017-05-05 16:49:29,387 DEBUG [org.hibernate.engine.jdbc.internal.LogicalConnectionImpl] - Obtained JDBC connection
+2017-05-05 16:49:29,387 DEBUG [org.hibernate.engine.transaction.internal.jdbc.JdbcTransaction] - initial autocommit status: true
+2017-05-05 16:49:29,387 DEBUG [org.hibernate.engine.transaction.internal.jdbc.JdbcTransaction] - disabling autocommit
+2017-05-05 16:49:29,388 DEBUG [org.hibernate.engine.spi.ActionQueue] - Executing identity-insert immediately
+2017-05-05 16:49:29,390 DEBUG [org.hibernate.id.IdentifierGeneratorHelper] - Natively generated identity: 482
+2017-05-05 16:49:29,390 DEBUG [org.hibernate.engine.transaction.spi.AbstractTransactionImpl] - committing
+2017-05-05 16:49:29,390 DEBUG [org.hibernate.event.internal.AbstractFlushingEventListener] - Processing flush-time cascades
+2017-05-05 16:49:29,390 DEBUG [org.hibernate.event.internal.AbstractFlushingEventListener] - Dirty checking collections
+2017-05-05 16:49:29,391 DEBUG [org.hibernate.event.internal.AbstractFlushingEventListener] - Flushed: 0 insertions, 0 updates, 0 deletions to 1 objects
+2017-05-05 16:49:29,391 DEBUG [org.hibernate.event.internal.AbstractFlushingEventListener] - Flushed: 0 (re)creations, 0 updates, 0 removals to 0 collections
+2017-05-05 16:49:29,391 DEBUG [org.hibernate.internal.util.EntityPrinter] - Listing entities:
+2017-05-05 16:49:29,391 DEBUG [org.hibernate.internal.util.EntityPrinter] - com.carPature.entity1.DeviceLocationInfo{gpssstat=[B@143cf9d4, speed=0.0, mcc=460, date=3917-05-05 08:51:00.0, acc=false, lac=6347, id=482, realNot=true, cellId=54147, longtitude=121.39431111111111, mnc=0, latitude=31.31912, oploadMode=0, orienStat=1556}
+2017-05-05 16:49:29,392 DEBUG [org.hibernate.engine.transaction.internal.jdbc.JdbcTransaction] - committed JDBC Connection
+2017-05-05 16:49:29,393 DEBUG [org.hibernate.engine.transaction.internal.jdbc.JdbcTransaction] - re-enabling autocommit
+2017-05-05 16:49:29,393 DEBUG [org.hibernate.engine.jdbc.internal.LogicalConnectionImpl] - Releasing JDBC connection
+2017-05-05 16:49:29,393 DEBUG [org.hibernate.engine.jdbc.internal.LogicalConnectionImpl] - Released JDBC connection
+2017-05-05 16:49:29,393 DEBUG [org.hibernate.engine.jdbc.internal.proxy.ConnectionProxyHandler] - HHH000163: Logical connection releasing its physical connection
+2017-05-05 16:49:29,393 DEBUG [org.hibernate.engine.jdbc.internal.proxy.ConnectionProxyHandler] - HHH000163: Logical connection releasing its physical connection
+2017-05-05 16:49:29,393 DEBUG [org.hibernate.engine.jdbc.internal.proxy.ConnectionProxyHandler] - HHH000163: Logical connection releasing its physical connection
+2017-05-05 16:49:29,394 DEBUG [org.hibernate.engine.jdbc.internal.proxy.ConnectionProxyHandler] - HHH000163: Logical connection releasing its physical connection
+2017-05-05 16:49:29,394 INFO [com.carPature.action.DataReceiver] - 返回结果：787805019ff80d0a
+2017-05-05 16:49:49,334 INFO [com.carPature.action.DataReceiver] - 接受结果：78782222110505083314c7035c34900d0631c000155601cc0018cb00d3830000000045d5cf0d0a
+2017-05-05 16:49:49,335 INFO [com.carPature.action.DataReceiver] - 数据位2222110505083314c7035c34900d0631c000155601cc0018cb00d3830000000045
+2017-05-05 16:49:49,335 INFO [com.carPature.action.DataReceiver] - GPS定位包
+2017-05-05 16:49:49,335 INFO [com.carPature.action.DataReceiver] - 日期时间:2017年5月5日       8：51:20
+2017-05-05 16:49:49,335 INFO [com.carPature.action.DataReceiver] - 纬度:31.31912
+2017-05-05 16:49:49,335 INFO [com.carPature.action.DataReceiver] - 经度:121.39431111111111
+2017-05-05 16:49:49,335 INFO [com.carPature.action.DataReceiver] - 航向状态:实时GPS、GPS已定位、东经、北纬、航向102°
+2017-05-05 16:49:49,335 INFO [com.carPature.action.DataReceiver] - 国家代码:460
+2017-05-05 16:49:49,335 INFO [com.carPature.action.DataReceiver] - 移动基站:54147
+2017-05-05 16:49:49,335 INFO [com.carPature.action.DataReceiver] - GPS实时补传:实时上传
+2017-05-05 16:49:49,335 INFO [com.carPature.action.DataReceiver] - 里程统计:4576719
+2017-05-05 16:49:49,336 DEBUG [org.hibernate.internal.SessionImpl] - Opened session at timestamp: 14939741893
+2017-05-05 16:49:49,336 DEBUG [org.hibernate.engine.transaction.spi.AbstractTransactionImpl] - begin
+2017-05-05 16:49:49,336 DEBUG [org.hibernate.engine.jdbc.internal.LogicalConnectionImpl] - Obtaining JDBC connection
+2017-05-05 16:49:49,336 DEBUG [org.hibernate.engine.jdbc.internal.LogicalConnectionImpl] - Obtained JDBC connection
+2017-05-05 16:49:49,336 DEBUG [org.hibernate.engine.transaction.internal.jdbc.JdbcTransaction] - initial autocommit status: true
+2017-05-05 16:49:49,336 DEBUG [org.hibernate.engine.transaction.internal.jdbc.JdbcTransaction] - disabling autocommit
+2017-05-05 16:49:49,337 DEBUG [org.hibernate.engine.spi.ActionQueue] - Executing identity-insert immediately
+2017-05-05 16:49:49,339 DEBUG [org.hibernate.id.IdentifierGeneratorHelper] - Natively generated identity: 483
+2017-05-05 16:49:49,339 DEBUG [org.hibernate.engine.transaction.spi.AbstractTransactionImpl] - committing
+2017-05-05 16:49:49,339 DEBUG [org.hibernate.event.internal.AbstractFlushingEventListener] - Processing flush-time cascades
+2017-05-05 16:49:49,340 DEBUG [org.hibernate.event.internal.AbstractFlushingEventListener] - Dirty checking collections
+2017-05-05 16:49:49,340 DEBUG [org.hibernate.event.internal.AbstractFlushingEventListener] - Flushed: 0 insertions, 0 updates, 0 deletions to 1 objects
+2017-05-05 16:49:49,340 DEBUG [org.hibernate.event.internal.AbstractFlushingEventListener] - Flushed: 0 (re)creations, 0 updates, 0 removals to 0 collections
+2017-05-05 16:49:49,340 DEBUG [org.hibernate.internal.util.EntityPrinter] - Listing entities:
+2017-05-05 16:49:49,340 DEBUG [org.hibernate.internal.util.EntityPrinter] - com.carPature.entity1.DeviceLocationInfo{gpssstat=[B@9e9aabc, speed=0.0, mcc=460, date=3917-05-05 08:51:20.0, acc=false, lac=6347, id=483, realNot=true, cellId=54147, longtitude=121.39431111111111, mnc=0, latitude=31.31912, oploadMode=0, orienStat=1556}
+2017-05-05 16:49:49,341 DEBUG [org.hibernate.engine.transaction.internal.jdbc.JdbcTransaction] - committed JDBC Connection
+2017-05-05 16:49:49,341 DEBUG [org.hibernate.engine.transaction.internal.jdbc.JdbcTransaction] - re-enabling autocommit
+2017-05-05 16:49:49,342 DEBUG [org.hibernate.engine.jdbc.internal.LogicalConnectionImpl] - Releasing JDBC connection
+2017-05-05 16:49:49,342 DEBUG [org.hibernate.engine.jdbc.internal.LogicalConnectionImpl] - Released JDBC connection
+2017-05-05 16:49:49,342 DEBUG [org.hibernate.engine.jdbc.internal.proxy.ConnectionProxyHandler] - HHH000163: Logical connection releasing its physical connection
+2017-05-05 16:49:49,342 DEBUG [org.hibernate.engine.jdbc.internal.proxy.ConnectionProxyHandler] - HHH000163: Logical connection releasing its physical connection
+2017-05-05 16:49:49,342 DEBUG [org.hibernate.engine.jdbc.internal.proxy.ConnectionProxyHandler] - HHH000163: Logical connection releasing its physical connection
+2017-05-05 16:49:49,342 DEBUG [org.hibernate.engine.jdbc.internal.proxy.ConnectionProxyHandler] - HHH000163: Logical connection releasing its physical connection
+2017-05-05 16:49:49,342 INFO [com.carPature.action.DataReceiver] - 返回结果：787805019ff80d0a
+2017-05-05 16:50:09,374 INFO [com.carPature.action.DataReceiver] - 接受结果：78782222110505083328c7035c35540d06318000155601cc0018cb00d3830000000046cd9b0d0a
+2017-05-05 16:50:09,374 INFO [com.carPature.action.DataReceiver] - 数据位2222110505083328c7035c35540d06318000155601cc0018cb00d3830000000046
+2017-05-05 16:50:09,374 INFO [com.carPature.action.DataReceiver] - GPS定位包
+2017-05-05 16:50:09,375 INFO [com.carPature.action.DataReceiver] - 日期时间:2017年5月5日       8：51:40
+2017-05-05 16:50:09,375 INFO [com.carPature.action.DataReceiver] - 纬度:31.31922888888889
+2017-05-05 16:50:09,375 INFO [com.carPature.action.DataReceiver] - 经度:121.39427555555555
+2017-05-05 16:50:09,375 INFO [com.carPature.action.DataReceiver] - 航向状态:实时GPS、GPS已定位、东经、北纬、航向102°
+2017-05-05 16:50:09,375 INFO [com.carPature.action.DataReceiver] - 国家代码:460
+2017-05-05 16:50:09,375 INFO [com.carPature.action.DataReceiver] - 移动基站:54147
+2017-05-05 16:50:09,375 INFO [com.carPature.action.DataReceiver] - GPS实时补传:实时上传
+2017-05-05 16:50:09,375 INFO [com.carPature.action.DataReceiver] - 里程统计:4640155
+2017-05-05 16:50:09,376 DEBUG [org.hibernate.internal.SessionImpl] - Opened session at timestamp: 14939742093
+2017-05-05 16:50:09,376 DEBUG [org.hibernate.engine.transaction.spi.AbstractTransactionImpl] - begin
+2017-05-05 16:50:09,376 DEBUG [org.hibernate.engine.jdbc.internal.LogicalConnectionImpl] - Obtaining JDBC connection
+2017-05-05 16:50:09,376 DEBUG [org.hibernate.engine.jdbc.internal.LogicalConnectionImpl] - Obtained JDBC connection
+2017-05-05 16:50:09,376 DEBUG [org.hibernate.engine.transaction.internal.jdbc.JdbcTransaction] - initial autocommit status: true
+2017-05-05 16:50:09,376 DEBUG [org.hibernate.engine.transaction.internal.jdbc.JdbcTransaction] - disabling autocommit
+2017-05-05 16:50:09,377 DEBUG [org.hibernate.engine.spi.ActionQueue] - Executing identity-insert immediately
+2017-05-05 16:50:09,379 DEBUG [org.hibernate.id.IdentifierGeneratorHelper] - Natively generated identity: 484
+2017-05-05 16:50:09,379 DEBUG [org.hibernate.engine.transaction.spi.AbstractTransactionImpl] - committing
+2017-05-05 16:50:09,379 DEBUG [org.hibernate.event.internal.AbstractFlushingEventListener] - Processing flush-time cascades
+2017-05-05 16:50:09,380 DEBUG [org.hibernate.event.internal.AbstractFlushingEventListener] - Dirty checking collections
+2017-05-05 16:50:09,380 DEBUG [org.hibernate.event.internal.AbstractFlushingEventListener] - Flushed: 0 insertions, 0 updates, 0 deletions to 1 objects
+2017-05-05 16:50:09,380 DEBUG [org.hibernate.event.internal.AbstractFlushingEventListener] - Flushed: 0 (re)creations, 0 updates, 0 removals to 0 collections
+2017-05-05 16:50:09,380 DEBUG [org.hibernate.internal.util.EntityPrinter] - Listing entities:
+2017-05-05 16:50:09,380 DEBUG [org.hibernate.internal.util.EntityPrinter] - com.carPature.entity1.DeviceLocationInfo{gpssstat=[B@34f913d5, speed=0.0, mcc=460, date=3917-05-05 08:51:40.0, acc=false, lac=6347, id=484, realNot=true, cellId=54147, longtitude=121.39427555555555, mnc=0, latitude=31.31922888888889, oploadMode=0, orienStat=1556}
+2017-05-05 16:50:09,382 DEBUG [org.hibernate.engine.transaction.internal.jdbc.JdbcTransaction] - committed JDBC Connection
+2017-05-05 16:50:09,382 DEBUG [org.hibernate.engine.transaction.internal.jdbc.JdbcTransaction] - re-enabling autocommit
+2017-05-05 16:50:09,383 DEBUG [org.hibernate.engine.jdbc.internal.LogicalConnectionImpl] - Releasing JDBC connection
+2017-05-05 16:50:09,383 DEBUG [org.hibernate.engine.jdbc.internal.LogicalConnectionImpl] - Released JDBC connection
+2017-05-05 16:50:09,383 DEBUG [org.hibernate.engine.jdbc.internal.proxy.ConnectionProxyHandler] - HHH000163: Logical connection releasing its physical connection
+2017-05-05 16:50:09,383 DEBUG [org.hibernate.engine.jdbc.internal.proxy.ConnectionProxyHandler] - HHH000163: Logical connection releasing its physical connection
+2017-05-05 16:50:09,383 DEBUG [org.hibernate.engine.jdbc.internal.proxy.ConnectionProxyHandler] - HHH000163: Logical connection releasing its physical connection
+2017-05-05 16:50:09,383 DEBUG [org.hibernate.engine.jdbc.internal.proxy.ConnectionProxyHandler] - HHH000163: Logical connection releasing its physical connection
+2017-05-05 16:50:09,383 INFO [com.carPature.action.DataReceiver] - 返回结果：787805019ff80d0a
+2017-05-05 16:50:29,345 INFO [com.carPature.action.DataReceiver] - 接受结果：78782222110505083400c7035c35540d06318000155601cc0018cb00d383000000004752940d0a
+2017-05-05 16:50:29,345 INFO [com.carPature.action.DataReceiver] - 数据位2222110505083400c7035c35540d06318000155601cc0018cb00d3830000000047
+2017-05-05 16:50:29,345 INFO [com.carPature.action.DataReceiver] - GPS定位包
+2017-05-05 16:50:29,345 INFO [com.carPature.action.DataReceiver] - 日期时间:2017年5月5日       8：52:0
+2017-05-05 16:50:29,345 INFO [com.carPature.action.DataReceiver] - 纬度:31.31922888888889
+2017-05-05 16:50:29,345 INFO [com.carPature.action.DataReceiver] - 经度:121.39427555555555
+2017-05-05 16:50:29,345 INFO [com.carPature.action.DataReceiver] - 航向状态:实时GPS、GPS已定位、东经、北纬、航向102°
+2017-05-05 16:50:29,345 INFO [com.carPature.action.DataReceiver] - 国家代码:460
+2017-05-05 16:50:29,346 INFO [com.carPature.action.DataReceiver] - 移动基站:54147
+2017-05-05 16:50:29,346 INFO [com.carPature.action.DataReceiver] - GPS实时补传:实时上传
+2017-05-05 16:50:29,346 INFO [com.carPature.action.DataReceiver] - 里程统计:4674196
+2017-05-05 16:50:29,346 DEBUG [org.hibernate.internal.SessionImpl] - Opened session at timestamp: 14939742293
+2017-05-05 16:50:29,346 DEBUG [org.hibernate.engine.transaction.spi.AbstractTransactionImpl] - begin
+2017-05-05 16:50:29,346 DEBUG [org.hibernate.engine.jdbc.internal.LogicalConnectionImpl] - Obtaining JDBC connection
+2017-05-05 16:50:29,346 DEBUG [org.hibernate.engine.jdbc.internal.LogicalConnectionImpl] - Obtained JDBC connection
+2017-05-05 16:50:29,346 DEBUG [org.hibernate.engine.transaction.internal.jdbc.JdbcTransaction] - initial autocommit status: true
+2017-05-05 16:50:29,346 DEBUG [org.hibernate.engine.transaction.internal.jdbc.JdbcTransaction] - disabling autocommit
+2017-05-05 16:50:29,347 DEBUG [org.hibernate.engine.spi.ActionQueue] - Executing identity-insert immediately
+2017-05-05 16:50:29,349 DEBUG [org.hibernate.id.IdentifierGeneratorHelper] - Natively generated identity: 485
+2017-05-05 16:50:29,349 DEBUG [org.hibernate.engine.transaction.spi.AbstractTransactionImpl] - committing
+2017-05-05 16:50:29,349 DEBUG [org.hibernate.event.internal.AbstractFlushingEventListener] - Processing flush-time cascades
+2017-05-05 16:50:29,349 DEBUG [org.hibernate.event.internal.AbstractFlushingEventListener] - Dirty checking collections
+2017-05-05 16:50:29,350 DEBUG [org.hibernate.event.internal.AbstractFlushingEventListener] - Flushed: 0 insertions, 0 updates, 0 deletions to 1 objects
+2017-05-05 16:50:29,350 DEBUG [org.hibernate.event.internal.AbstractFlushingEventListener] - Flushed: 0 (re)creations, 0 updates, 0 removals to 0 collections
+2017-05-05 16:50:29,350 DEBUG [org.hibernate.internal.util.EntityPrinter] - Listing entities:
+2017-05-05 16:50:29,350 DEBUG [org.hibernate.internal.util.EntityPrinter] - com.carPature.entity1.DeviceLocationInfo{gpssstat=[B@6fa73afe, speed=0.0, mcc=460, date=3917-05-05 08:52:00.0, acc=false, lac=6347, id=485, realNot=true, cellId=54147, longtitude=121.39427555555555, mnc=0, latitude=31.31922888888889, oploadMode=0, orienStat=1556}
+2017-05-05 16:50:29,351 DEBUG [org.hibernate.engine.transaction.internal.jdbc.JdbcTransaction] - committed JDBC Connection
+2017-05-05 16:50:29,351 DEBUG [org.hibernate.engine.transaction.internal.jdbc.JdbcTransaction] - re-enabling autocommit
+2017-05-05 16:50:29,352 DEBUG [org.hibernate.engine.jdbc.internal.LogicalConnectionImpl] - Releasing JDBC connection
+2017-05-05 16:50:29,352 DEBUG [org.hibernate.engine.jdbc.internal.LogicalConnectionImpl] - Released JDBC connection
+2017-05-05 16:50:29,352 DEBUG [org.hibernate.engine.jdbc.internal.proxy.ConnectionProxyHandler] - HHH000163: Logical connection releasing its physical connection
+2017-05-05 16:50:29,352 DEBUG [org.hibernate.engine.jdbc.internal.proxy.ConnectionProxyHandler] - HHH000163: Logical connection releasing its physical connection
+2017-05-05 16:50:29,352 DEBUG [org.hibernate.engine.jdbc.internal.proxy.ConnectionProxyHandler] - HHH000163: Logical connection releasing its physical connection
+2017-05-05 16:50:29,352 DEBUG [org.hibernate.engine.jdbc.internal.proxy.ConnectionProxyHandler] - HHH000163: Logical connection releasing its physical connection
+2017-05-05 16:50:29,352 INFO [com.carPature.action.DataReceiver] - 返回结果：787805019ff80d0a
+2017-05-05 16:50:49,473 INFO [com.carPature.action.DataReceiver] - 接受结果：78782222110505083414c7035c34980d0631800014b801cc0018cb00d3830000000048e01c0d0a
+2017-05-05 16:50:49,473 INFO [com.carPature.action.DataReceiver] - 数据位2222110505083414c7035c34980d0631800014b801cc0018cb00d3830000000048
+2017-05-05 16:50:49,473 INFO [com.carPature.action.DataReceiver] - GPS定位包
+2017-05-05 16:50:49,474 INFO [com.carPature.action.DataReceiver] - 日期时间:2017年5月5日       8：52:20
+2017-05-05 16:50:49,474 INFO [com.carPature.action.DataReceiver] - 纬度:31.319124444444444
+2017-05-05 16:50:49,474 INFO [com.carPature.action.DataReceiver] - 经度:121.39427555555555
+2017-05-05 16:50:49,474 INFO [com.carPature.action.DataReceiver] - 航向状态:实时GPS、GPS已定位、东经、北纬、航向-72°
+2017-05-05 16:50:49,474 INFO [com.carPature.action.DataReceiver] - 国家代码:460
+2017-05-05 16:50:49,474 INFO [com.carPature.action.DataReceiver] - 移动基站:54147
+2017-05-05 16:50:49,474 INFO [com.carPature.action.DataReceiver] - GPS实时补传:实时上传
+2017-05-05 16:50:49,474 INFO [com.carPature.action.DataReceiver] - 里程统计:4775964
+2017-05-05 16:50:49,475 DEBUG [org.hibernate.internal.SessionImpl] - Opened session at timestamp: 14939742494
+2017-05-05 16:50:49,475 DEBUG [org.hibernate.engine.transaction.spi.AbstractTransactionImpl] - begin
+2017-05-05 16:50:49,475 DEBUG [org.hibernate.engine.jdbc.internal.LogicalConnectionImpl] - Obtaining JDBC connection
+2017-05-05 16:50:49,475 DEBUG [org.hibernate.engine.jdbc.internal.LogicalConnectionImpl] - Obtained JDBC connection
+2017-05-05 16:50:49,475 DEBUG [org.hibernate.engine.transaction.internal.jdbc.JdbcTransaction] - initial autocommit status: true
+2017-05-05 16:50:49,475 DEBUG [org.hibernate.engine.transaction.internal.jdbc.JdbcTransaction] - disabling autocommit
+2017-05-05 16:50:49,476 DEBUG [org.hibernate.engine.spi.ActionQueue] - Executing identity-insert immediately
+2017-05-05 16:50:49,478 DEBUG [org.hibernate.id.IdentifierGeneratorHelper] - Natively generated identity: 486
+2017-05-05 16:50:49,478 DEBUG [org.hibernate.engine.transaction.spi.AbstractTransactionImpl] - committing
+2017-05-05 16:50:49,478 DEBUG [org.hibernate.event.internal.AbstractFlushingEventListener] - Processing flush-time cascades
+2017-05-05 16:50:49,478 DEBUG [org.hibernate.event.internal.AbstractFlushingEventListener] - Dirty checking collections
+2017-05-05 16:50:49,478 DEBUG [org.hibernate.event.internal.AbstractFlushingEventListener] - Flushed: 0 insertions, 0 updates, 0 deletions to 1 objects
+2017-05-05 16:50:49,479 DEBUG [org.hibernate.event.internal.AbstractFlushingEventListener] - Flushed: 0 (re)creations, 0 updates, 0 removals to 0 collections
+2017-05-05 16:50:49,479 DEBUG [org.hibernate.internal.util.EntityPrinter] - Listing entities:
+2017-05-05 16:50:49,479 DEBUG [org.hibernate.internal.util.EntityPrinter] - com.carPature.entity1.DeviceLocationInfo{gpssstat=[B@3c31bc6a, speed=0.0, mcc=460, date=3917-05-05 08:52:20.0, acc=false, lac=6347, id=486, realNot=true, cellId=54147, longtitude=121.39427555555555, mnc=0, latitude=31.319124444444444, oploadMode=0, orienStat=14b8}
+2017-05-05 16:50:49,480 DEBUG [org.hibernate.engine.transaction.internal.jdbc.JdbcTransaction] - committed JDBC Connection
+2017-05-05 16:50:49,480 DEBUG [org.hibernate.engine.transaction.internal.jdbc.JdbcTransaction] - re-enabling autocommit
+2017-05-05 16:50:49,481 DEBUG [org.hibernate.engine.jdbc.internal.LogicalConnectionImpl] - Releasing JDBC connection
+2017-05-05 16:50:49,481 DEBUG [org.hibernate.engine.jdbc.internal.LogicalConnectionImpl] - Released JDBC connection
+2017-05-05 16:50:49,481 DEBUG [org.hibernate.engine.jdbc.internal.proxy.ConnectionProxyHandler] - HHH000163: Logical connection releasing its physical connection
+2017-05-05 16:50:49,481 DEBUG [org.hibernate.engine.jdbc.internal.proxy.ConnectionProxyHandler] - HHH000163: Logical connection releasing its physical connection
+2017-05-05 16:50:49,481 DEBUG [org.hibernate.engine.jdbc.internal.proxy.ConnectionProxyHandler] - HHH000163: Logical connection releasing its physical connection
+2017-05-05 16:50:49,481 DEBUG [org.hibernate.engine.jdbc.internal.proxy.ConnectionProxyHandler] - HHH000163: Logical connection releasing its physical connection
+2017-05-05 16:50:49,481 INFO [com.carPature.action.DataReceiver] - 返回结果：787805019ff80d0a
+2017-05-05 16:51:09,413 INFO [com.carPature.action.DataReceiver] - 接受结果：78782222110505083428c7035c340c0d0631e00014aa01cc0018cb00d383000000004995e80d0a
+2017-05-05 16:51:09,413 INFO [com.carPature.action.DataReceiver] - 数据位2222110505083428c7035c340c0d0631e00014aa01cc0018cb00d3830000000049
+2017-05-05 16:51:09,413 INFO [com.carPature.action.DataReceiver] - GPS定位包
+2017-05-05 16:51:09,413 INFO [com.carPature.action.DataReceiver] - 日期时间:2017年5月5日       8：52:40
+2017-05-05 16:51:09,413 INFO [com.carPature.action.DataReceiver] - 纬度:31.319046666666665
+2017-05-05 16:51:09,414 INFO [com.carPature.action.DataReceiver] - 经度:121.3943288888889
+2017-05-05 16:51:09,414 INFO [com.carPature.action.DataReceiver] - 航向状态:实时GPS、GPS已定位、东经、北纬、航向-86°
+2017-05-05 16:51:09,414 INFO [com.carPature.action.DataReceiver] - 国家代码:460
+2017-05-05 16:51:09,414 INFO [com.carPature.action.DataReceiver] - 移动基站:54147
+2017-05-05 16:51:09,414 INFO [com.carPature.action.DataReceiver] - GPS实时补传:实时上传
+2017-05-05 16:51:09,414 INFO [com.carPature.action.DataReceiver] - 里程统计:4822504
+2017-05-05 16:51:09,414 DEBUG [org.hibernate.internal.SessionImpl] - Opened session at timestamp: 14939742694
+2017-05-05 16:51:09,414 DEBUG [org.hibernate.engine.transaction.spi.AbstractTransactionImpl] - begin
+2017-05-05 16:51:09,415 DEBUG [org.hibernate.engine.jdbc.internal.LogicalConnectionImpl] - Obtaining JDBC connection
+2017-05-05 16:51:09,415 DEBUG [org.hibernate.engine.jdbc.internal.LogicalConnectionImpl] - Obtained JDBC connection
+2017-05-05 16:51:09,415 DEBUG [org.hibernate.engine.transaction.internal.jdbc.JdbcTransaction] - initial autocommit status: true
+2017-05-05 16:51:09,415 DEBUG [org.hibernate.engine.transaction.internal.jdbc.JdbcTransaction] - disabling autocommit
+2017-05-05 16:51:09,416 DEBUG [org.hibernate.engine.spi.ActionQueue] - Executing identity-insert immediately
+2017-05-05 16:51:09,417 DEBUG [org.hibernate.id.IdentifierGeneratorHelper] - Natively generated identity: 487
+2017-05-05 16:51:09,418 DEBUG [org.hibernate.engine.transaction.spi.AbstractTransactionImpl] - committing
+2017-05-05 16:51:09,418 DEBUG [org.hibernate.event.internal.AbstractFlushingEventListener] - Processing flush-time cascades
+2017-05-05 16:51:09,418 DEBUG [org.hibernate.event.internal.AbstractFlushingEventListener] - Dirty checking collections
+2017-05-05 16:51:09,418 DEBUG [org.hibernate.event.internal.AbstractFlushingEventListener] - Flushed: 0 insertions, 0 updates, 0 deletions to 1 objects
+2017-05-05 16:51:09,418 DEBUG [org.hibernate.event.internal.AbstractFlushingEventListener] - Flushed: 0 (re)creations, 0 updates, 0 removals to 0 collections
+2017-05-05 16:51:09,418 DEBUG [org.hibernate.internal.util.EntityPrinter] - Listing entities:
+2017-05-05 16:51:09,418 DEBUG [org.hibernate.internal.util.EntityPrinter] - com.carPature.entity1.DeviceLocationInfo{gpssstat=[B@774d4142, speed=0.0, mcc=460, date=3917-05-05 08:52:40.0, acc=false, lac=6347, id=487, realNot=true, cellId=54147, longtitude=121.3943288888889, mnc=0, latitude=31.319046666666665, oploadMode=0, orienStat=14aa}
+2017-05-05 16:51:09,420 DEBUG [org.hibernate.engine.transaction.internal.jdbc.JdbcTransaction] - committed JDBC Connection
+2017-05-05 16:51:09,420 DEBUG [org.hibernate.engine.transaction.internal.jdbc.JdbcTransaction] - re-enabling autocommit
+2017-05-05 16:51:09,420 DEBUG [org.hibernate.engine.jdbc.internal.LogicalConnectionImpl] - Releasing JDBC connection
+2017-05-05 16:51:09,420 DEBUG [org.hibernate.engine.jdbc.internal.LogicalConnectionImpl] - Released JDBC connection
+2017-05-05 16:51:09,420 DEBUG [org.hibernate.engine.jdbc.internal.proxy.ConnectionProxyHandler] - HHH000163: Logical connection releasing its physical connection
+2017-05-05 16:51:09,420 DEBUG [org.hibernate.engine.jdbc.internal.proxy.ConnectionProxyHandler] - HHH000163: Logical connection releasing its physical connection
+2017-05-05 16:51:09,420 DEBUG [org.hibernate.engine.jdbc.internal.proxy.ConnectionProxyHandler] - HHH000163: Logical connection releasing its physical connection
+2017-05-05 16:51:09,420 DEBUG [org.hibernate.engine.jdbc.internal.proxy.ConnectionProxyHandler] - HHH000163: Logical connection releasing its physical connection
+2017-05-05 16:51:09,421 INFO [com.carPature.action.DataReceiver] - 返回结果：787805019ff80d0a
+2017-05-05 16:51:20,372 INFO [com.carPature.action.DataReceiver] - 接受结果：78782222110505083433c7035c340c0d0631e00014aa01cc0018cb00d383000800004af2600d0a
+2017-05-05 16:51:20,373 INFO [com.carPature.action.DataReceiver] - 数据位2222110505083433c7035c340c0d0631e00014aa01cc0018cb00d383000800004a
+2017-05-05 16:51:20,373 INFO [com.carPature.action.DataReceiver] - GPS定位包
+2017-05-05 16:51:20,373 INFO [com.carPature.action.DataReceiver] - 日期时间:2017年5月5日       8：52:51
+2017-05-05 16:51:20,373 INFO [com.carPature.action.DataReceiver] - 纬度:31.319046666666665
+2017-05-05 16:51:20,373 INFO [com.carPature.action.DataReceiver] - 经度:121.3943288888889
+2017-05-05 16:51:20,373 INFO [com.carPature.action.DataReceiver] - 航向状态:实时GPS、GPS已定位、东经、北纬、航向-86°
+2017-05-05 16:51:20,374 INFO [com.carPature.action.DataReceiver] - 国家代码:460
+2017-05-05 16:51:20,374 INFO [com.carPature.action.DataReceiver] - 移动基站:54147
+2017-05-05 16:51:20,374 INFO [com.carPature.action.DataReceiver] - GPS实时补传:实时上传
+2017-05-05 16:51:20,374 INFO [com.carPature.action.DataReceiver] - 里程统计:4911712
+2017-05-05 16:51:20,374 DEBUG [org.hibernate.internal.SessionImpl] - Opened session at timestamp: 14939742803
+2017-05-05 16:51:20,374 DEBUG [org.hibernate.engine.transaction.spi.AbstractTransactionImpl] - begin
+2017-05-05 16:51:20,374 DEBUG [org.hibernate.engine.jdbc.internal.LogicalConnectionImpl] - Obtaining JDBC connection
+2017-05-05 16:51:20,375 DEBUG [org.hibernate.engine.jdbc.internal.LogicalConnectionImpl] - Obtained JDBC connection
+2017-05-05 16:51:20,375 DEBUG [org.hibernate.engine.transaction.internal.jdbc.JdbcTransaction] - initial autocommit status: true
+2017-05-05 16:51:20,375 DEBUG [org.hibernate.engine.transaction.internal.jdbc.JdbcTransaction] - disabling autocommit
+2017-05-05 16:51:20,376 DEBUG [org.hibernate.engine.spi.ActionQueue] - Executing identity-insert immediately
+2017-05-05 16:51:20,378 DEBUG [org.hibernate.id.IdentifierGeneratorHelper] - Natively generated identity: 488
+2017-05-05 16:51:20,378 DEBUG [org.hibernate.engine.transaction.spi.AbstractTransactionImpl] - committing
+2017-05-05 16:51:20,378 DEBUG [org.hibernate.event.internal.AbstractFlushingEventListener] - Processing flush-time cascades
+2017-05-05 16:51:20,378 DEBUG [org.hibernate.event.internal.AbstractFlushingEventListener] - Dirty checking collections
+2017-05-05 16:51:20,379 DEBUG [org.hibernate.event.internal.AbstractFlushingEventListener] - Flushed: 0 insertions, 0 updates, 0 deletions to 1 objects
+2017-05-05 16:51:20,379 DEBUG [org.hibernate.event.internal.AbstractFlushingEventListener] - Flushed: 0 (re)creations, 0 updates, 0 removals to 0 collections
+2017-05-05 16:51:20,379 DEBUG [org.hibernate.internal.util.EntityPrinter] - Listing entities:
+2017-05-05 16:51:20,379 DEBUG [org.hibernate.internal.util.EntityPrinter] - com.carPature.entity1.DeviceLocationInfo{gpssstat=[B@1412b2cc, speed=0.0, mcc=460, date=3917-05-05 08:52:51.0, acc=false, lac=6347, id=488, realNot=true, cellId=54147, longtitude=121.3943288888889, mnc=0, latitude=31.319046666666665, oploadMode=8, orienStat=14aa}
+2017-05-05 16:51:20,380 DEBUG [org.hibernate.engine.transaction.internal.jdbc.JdbcTransaction] - committed JDBC Connection
+2017-05-05 16:51:20,380 DEBUG [org.hibernate.engine.transaction.internal.jdbc.JdbcTransaction] - re-enabling autocommit
+2017-05-05 16:51:20,381 DEBUG [org.hibernate.engine.jdbc.internal.LogicalConnectionImpl] - Releasing JDBC connection
+2017-05-05 16:51:20,381 DEBUG [org.hibernate.engine.jdbc.internal.LogicalConnectionImpl] - Released JDBC connection
+2017-05-05 16:51:20,381 DEBUG [org.hibernate.engine.jdbc.internal.proxy.ConnectionProxyHandler] - HHH000163: Logical connection releasing its physical connection
+2017-05-05 16:51:20,381 DEBUG [org.hibernate.engine.jdbc.internal.proxy.ConnectionProxyHandler] - HHH000163: Logical connection releasing its physical connection
+2017-05-05 16:51:20,381 DEBUG [org.hibernate.engine.jdbc.internal.proxy.ConnectionProxyHandler] - HHH000163: Logical connection releasing its physical connection
+2017-05-05 16:51:20,381 DEBUG [org.hibernate.engine.jdbc.internal.proxy.ConnectionProxyHandler] - HHH000163: Logical connection releasing its physical connection
+2017-05-05 16:51:20,381 INFO [com.carPature.action.DataReceiver] - 返回结果：787805019ff80d0a
+2017-05-05 17:18:37,896 INFO [com.carPature.action.DataReceiver] - New connection accepted /10.105.1.200:6868
+2017-05-05 19:54:17,840 INFO [com.carPature.action.DataReceiver] - New connection accepted /10.105.1.200:45673
+2017-05-05 20:20:31,280 INFO [com.carPature.action.DataReceiver] - New connection accepted /10.105.1.200:64364
+2017-05-05 20:39:29,150 INFO [com.carPature.action.DataReceiver] - New connection accepted /10.105.1.200:11330
+2017-05-05 20:56:19,960 INFO [com.carPature.action.DataReceiver] - New connection accepted /10.105.1.200:27267
+2017-05-05 20:56:19,962 INFO [com.carPature.action.DataReceiver] - 接受结果：47455420687474703a2f2f3131322e3132342e3131362e3137303a38332f696e6465782e70687020485454502f312e310d0a486f73743a203131322e3132342e3131362e3137303a38330d0a557365722d4167656e743a204d6f7a696c6c612f352e30202857696e646f7773204e5420362e313b20574f57363429204170706c655765624b69742f3533372e333620284b48544d4c2c206c696b65204765636b6f29204368726f6d652f33382e302e323132352e313232205361666172692f3533372e333620534520322e58204d657461537220312e300d0a4163636570743a202a2f2a0d0a50726f78792d436f6e6e656374696f6e3a204b6565702d416c6976650d0a0d0a
+2017-05-05 20:56:19,962 INFO [com.carPature.action.DataReceiver] - 数据位5420687474703a2f2f3131322e3132342e3131362e3137303a38332f696e6465782e70687020485454502f312e310d0a486f73743a203131322e3132342e3131362e3137303a38330d0a557365722d4167656e743a204d6f7a696c6c612f352e30202857696e646f7773204e5420362e313b20574f57363429204170706c655765624b69742f3533372e333620284b48544d4c2c206c696b65204765636b6f29204368726f6d652f33382e302e323132352e313232205361666172692f3533372e333620534520322e58204d657461537220312e300d0a4163636570743a202a2f2a0d0a50726f78792d436f6e6e656374696f6e3a204b6565702d416c697665
+2017-05-05 20:56:19,962 ERROR [com.carPature.action.DataReceiver] - 校验失败 消息损坏
+2017-05-05 20:56:19,962 INFO [com.carPature.action.DataReceiver] - 返回结果：657863657074696f6e
+2017-05-06 00:30:23,366 INFO [com.carPature.action.DataReceiver] - New connection accepted /10.105.1.200:6000
+2017-05-06 01:27:25,070 INFO [com.carPature.action.DataReceiver] - New connection accepted /10.105.1.200:53555
+2017-05-06 01:27:25,071 INFO [com.carPature.action.DataReceiver] - 接受结果：474554202f20485454502f312e310d0a436f6e6e656374696f6e3a204b6565702d416c6976650d0a436f6e74656e742d547970653a206170706c69636174696f6e2f782d7777772d666f726d2d75726c656e636f6465640d0a4163636570743a202a2f2a0d0a4163636570742d4c616e67756167653a207a682d636e0d0a526566657265723a20687474703a2f2f3230322e3132312e3139372e3131313a38310d0a557365722d4167656e743a204d6f7a696c6c612f342e302028636f6d70617469626c653b204d53494520392e303b2057696e646f7773204e5420362e31290d0a486f73743a203230322e3132312e3139372e3131313a38310d0a0d0a
+2017-05-06 01:27:25,071 INFO [com.carPature.action.DataReceiver] - 数据位54202f20485454502f312e310d0a436f6e6e656374696f6e3a204b6565702d416c6976650d0a436f6e74656e742d547970653a206170706c69636174696f6e2f782d7777772d666f726d2d75726c656e636f6465640d0a4163636570743a202a2f2a0d0a4163636570742d4c616e67756167653a207a682d636e0d0a526566657265723a20687474703a2f2f3230322e3132312e3139372e3131313a38310d0a557365722d4167656e743a204d6f7a696c6c612f342e302028636f6d70617469626c653b204d53494520392e303b2057696e646f7773204e5420362e31290d0a486f73743a203230322e3132312e3139372e3131313a3831
+2017-05-06 01:27:25,071 ERROR [com.carPature.action.DataReceiver] - 校验失败 消息损坏
+2017-05-06 01:27:25,072 INFO [com.carPature.action.DataReceiver] - 返回结果：657863657074696f6e
+2017-05-06 01:39:26,379 INFO [com.carPature.action.DataReceiver] - New connection accepted /10.105.1.200:3045
+2017-05-06 01:39:26,769 INFO [com.carPature.action.DataReceiver] - New connection accepted /10.105.1.200:3049
+2017-05-06 01:39:26,772 INFO [com.carPature.action.DataReceiver] - 接受结果：474554202f20485454502f312e310d0a557365722d4167656e743a204d6f7a696c6c612f352e30202857696e646f7773204e5420362e3229204170706c655765624b69742f3533372e333620284b48544d4c2c206c696b65204765636b6f29204368726f6d652f32382e302e313530302e3935205361666172692f3533372e33360d0a417574686f72697a6174696f6e3a2042617369632059575274615734364f4467344f4467340d0a436f6e6e656374696f6e3a204b6565702d416c6976650d0a43616368652d436f6e74726f6c3a206e6f2d63616368650d0a444e543a20310d0a4163636570743a202a2f2a0d0a486f73743a203230322e3132312e3139372e3131313a38310d0a0d0a
+2017-05-06 01:39:26,772 INFO [com.carPature.action.DataReceiver] - 数据位54202f20485454502f312e310d0a557365722d4167656e743a204d6f7a696c6c612f352e30202857696e646f7773204e5420362e3229204170706c655765624b69742f3533372e333620284b48544d4c2c206c696b65204765636b6f29204368726f6d652f32382e302e313530302e3935205361666172692f3533372e33360d0a417574686f72697a6174696f6e3a2042617369632059575274615734364f4467344f4467340d0a436f6e6e656374696f6e3a204b6565702d416c6976650d0a43616368652d436f6e74726f6c3a206e6f2d63616368650d0a444e543a20310d0a4163636570743a202a2f2a0d0a486f73743a203230322e3132312e3139372e3131313a3831
+2017-05-06 01:39:26,772 ERROR [com.carPature.action.DataReceiver] - 校验失败 消息损坏
+2017-05-06 01:39:26,772 INFO [com.carPature.action.DataReceiver] - 返回结果：657863657074696f6e
+2017-05-06 01:39:30,427 INFO [com.carPature.action.DataReceiver] - New connection accepted /10.105.1.200:3307
+2017-05-06 01:39:30,429 INFO [com.carPature.action.DataReceiver] - 接受结果：474554202f20485454502f312e310d0a557365722d4167656e743a204d6f7a696c6c612f352e30202857696e646f7773204e5420362e3229204170706c655765624b69742f3533372e333620284b48544d4c2c206c696b65204765636b6f29204368726f6d652f32382e302e313530302e3935205361666172692f3533372e33360d0a417574686f72697a6174696f6e3a2042617369632064584e6c636a7031633256790d0a436f6e6e656374696f6e3a204b6565702d416c6976650d0a43616368652d436f6e74726f6c3a206e6f2d63616368650d0a444e543a20310d0a4163636570743a202a2f2a0d0a486f73743a203230322e3132312e3139372e3131313a38310d0a0d0a
+2017-05-06 01:39:30,429 INFO [com.carPature.action.DataReceiver] - 数据位54202f20485454502f312e310d0a557365722d4167656e743a204d6f7a696c6c612f352e30202857696e646f7773204e5420362e3229204170706c655765624b69742f3533372e333620284b48544d4c2c206c696b65204765636b6f29204368726f6d652f32382e302e313530302e3935205361666172692f3533372e33360d0a417574686f72697a6174696f6e3a2042617369632064584e6c636a7031633256790d0a436f6e6e656374696f6e3a204b6565702d416c6976650d0a43616368652d436f6e74726f6c3a206e6f2d63616368650d0a444e543a20310d0a4163636570743a202a2f2a0d0a486f73743a203230322e3132312e3139372e3131313a3831
+2017-05-06 01:39:30,429 ERROR [com.carPature.action.DataReceiver] - 校验失败 消息损坏
+2017-05-06 01:39:30,430 INFO [com.carPature.action.DataReceiver] - 返回结果：657863657074696f6e
+2017-05-06 01:39:34,076 INFO [com.carPature.action.DataReceiver] - New connection accepted /10.105.1.200:3543
+2017-05-06 01:39:34,078 INFO [com.carPature.action.DataReceiver] - 接受结果：474554202f20485454502f312e310d0a557365722d4167656e743a204d6f7a696c6c612f352e30202857696e646f7773204e5420362e3229204170706c655765624b69742f3533372e333620284b48544d4c2c206c696b65204765636b6f29204368726f6d652f32382e302e313530302e3935205361666172692f3533372e33360d0a417574686f72697a6174696f6e3a204261736963205957527461573436595752746157343d0d0a436f6e6e656374696f6e3a204b6565702d416c6976650d0a43616368652d436f6e74726f6c3a206e6f2d63616368650d0a444e543a20310d0a4163636570743a202a2f2a0d0a486f73743a203230322e3132312e3139372e3131313a38310d0a0d0a
+2017-05-06 01:39:34,078 INFO [com.carPature.action.DataReceiver] - 数据位54202f20485454502f312e310d0a557365722d4167656e743a204d6f7a696c6c612f352e30202857696e646f7773204e5420362e3229204170706c655765624b69742f3533372e333620284b48544d4c2c206c696b65204765636b6f29204368726f6d652f32382e302e313530302e3935205361666172692f3533372e33360d0a417574686f72697a6174696f6e3a204261736963205957527461573436595752746157343d0d0a436f6e6e656374696f6e3a204b6565702d416c6976650d0a43616368652d436f6e74726f6c3a206e6f2d63616368650d0a444e543a20310d0a4163636570743a202a2f2a0d0a486f73743a203230322e3132312e3139372e3131313a3831
+2017-05-06 01:39:34,078 ERROR [com.carPature.action.DataReceiver] - 校验失败 消息损坏
+2017-05-06 01:39:34,078 INFO [com.carPature.action.DataReceiver] - 返回结果：657863657074696f6e
+2017-05-06 01:39:37,725 INFO [com.carPature.action.DataReceiver] - New connection accepted /10.105.1.200:3778
+2017-05-06 01:39:37,728 INFO [com.carPature.action.DataReceiver] - 接受结果：474554202f20485454502f312e310d0a557365722d4167656e743a204d6f7a696c6c612f352e30202857696e646f7773204e5420362e3229204170706c655765624b69742f3533372e333620284b48544d4c2c206c696b65204765636b6f29204368726f6d652f32382e302e313530302e3935205361666172692f3533372e33360d0a417574686f72697a6174696f6e3a2042617369632059575274615734366358646c636e52350d0a436f6e6e656374696f6e3a204b6565702d416c6976650d0a43616368652d436f6e74726f6c3a206e6f2d63616368650d0a444e543a20310d0a4163636570743a202a2f2a0d0a486f73743a203230322e3132312e3139372e3131313a38310d0a0d0a
+2017-05-06 01:39:37,728 INFO [com.carPature.action.DataReceiver] - 数据位54202f20485454502f312e310d0a557365722d4167656e743a204d6f7a696c6c612f352e30202857696e646f7773204e5420362e3229204170706c655765624b69742f3533372e333620284b48544d4c2c206c696b65204765636b6f29204368726f6d652f32382e302e313530302e3935205361666172692f3533372e33360d0a417574686f72697a6174696f6e3a2042617369632059575274615734366358646c636e52350d0a436f6e6e656374696f6e3a204b6565702d416c6976650d0a43616368652d436f6e74726f6c3a206e6f2d63616368650d0a444e543a20310d0a4163636570743a202a2f2a0d0a486f73743a203230322e3132312e3139372e3131313a3831
+2017-05-06 01:39:37,728 ERROR [com.carPature.action.DataReceiver] - 校验失败 消息损坏
+2017-05-06 01:39:37,728 INFO [com.carPature.action.DataReceiver] - 返回结果：657863657074696f6e
+2017-05-06 01:39:41,376 INFO [com.carPature.action.DataReceiver] - New connection accepted /10.105.1.200:4013
+2017-05-06 01:39:41,378 INFO [com.carPature.action.DataReceiver] - 接受结果：474554202f20485454502f312e310d0a557365722d4167656e743a204d6f7a696c6c612f352e30202857696e646f7773204e5420362e3229204170706c655765624b69742f3533372e333620284b48544d4c2c206c696b65204765636b6f29204368726f6d652f32382e302e313530302e3935205361666172692f3533372e33360d0a417574686f72697a6174696f6e3a2042617369632059575274615734364d54497a4e44553d0d0a436f6e6e656374696f6e3a204b6565702d416c6976650d0a43616368652d436f6e74726f6c3a206e6f2d63616368650d0a444e543a20310d0a4163636570743a202a2f2a0d0a486f73743a203230322e3132312e3139372e3131313a38310d0a0d0a
+2017-05-06 01:39:41,378 INFO [com.carPature.action.DataReceiver] - 数据位54202f20485454502f312e310d0a557365722d4167656e743a204d6f7a696c6c612f352e30202857696e646f7773204e5420362e3229204170706c655765624b69742f3533372e333620284b48544d4c2c206c696b65204765636b6f29204368726f6d652f32382e302e313530302e3935205361666172692f3533372e33360d0a417574686f72697a6174696f6e3a2042617369632059575274615734364d54497a4e44553d0d0a436f6e6e656374696f6e3a204b6565702d416c6976650d0a43616368652d436f6e74726f6c3a206e6f2d63616368650d0a444e543a20310d0a4163636570743a202a2f2a0d0a486f73743a203230322e3132312e3139372e3131313a3831
+2017-05-06 01:39:41,378 ERROR [com.carPature.action.DataReceiver] - 校验失败 消息损坏
+2017-05-06 01:39:41,378 INFO [com.carPature.action.DataReceiver] - 返回结果：657863657074696f6e
+2017-05-06 01:39:45,018 INFO [com.carPature.action.DataReceiver] - New connection accepted /10.105.1.200:4248
+2017-05-06 01:39:45,019 INFO [com.carPature.action.DataReceiver] - 接受结果：474554202f20485454502f312e310d0a557365722d4167656e743a204d6f7a696c6c612f352e30202857696e646f7773204e5420362e3229204170706c655765624b69742f3533372e333620284b48544d4c2c206c696b65204765636b6f29204368726f6d652f32382e302e313530302e3935205361666172692f3533372e33360d0a417574686f72697a6174696f6e3a2042617369632059575274615734364d54497a4e4455320d0a436f6e6e656374696f6e3a204b6565702d416c6976650d0a43616368652d436f6e74726f6c3a206e6f2d63616368650d0a444e543a20310d0a4163636570743a202a2f2a0d0a486f73743a203230322e3132312e3139372e3131313a38310d0a0d0a
+2017-05-06 01:39:45,019 INFO [com.carPature.action.DataReceiver] - 数据位54202f20485454502f312e310d0a557365722d4167656e743a204d6f7a696c6c612f352e30202857696e646f7773204e5420362e3229204170706c655765624b69742f3533372e333620284b48544d4c2c206c696b65204765636b6f29204368726f6d652f32382e302e313530302e3935205361666172692f3533372e33360d0a417574686f72697a6174696f6e3a2042617369632059575274615734364d54497a4e4455320d0a436f6e6e656374696f6e3a204b6565702d416c6976650d0a43616368652d436f6e74726f6c3a206e6f2d63616368650d0a444e543a20310d0a4163636570743a202a2f2a0d0a486f73743a203230322e3132312e3139372e3131313a3831
+2017-05-06 01:39:45,019 ERROR [com.carPature.action.DataReceiver] - 校验失败 消息损坏
+2017-05-06 01:39:45,020 INFO [com.carPature.action.DataReceiver] - 返回结果：657863657074696f6e
+2017-05-06 01:39:48,661 INFO [com.carPature.action.DataReceiver] - New connection accepted /10.105.1.200:4482
+2017-05-06 01:39:48,662 INFO [com.carPature.action.DataReceiver] - 接受结果：474554202f20485454502f312e310d0a557365722d4167656e743a204d6f7a696c6c612f352e30202857696e646f7773204e5420362e3229204170706c655765624b69742f3533372e333620284b48544d4c2c206c696b65204765636b6f29204368726f6d652f32382e302e313530302e3935205361666172692f3533372e33360d0a417574686f72697a6174696f6e3a2042617369632059575274615734364d5445784d5445780d0a436f6e6e656374696f6e3a204b6565702d416c6976650d0a43616368652d436f6e74726f6c3a206e6f2d63616368650d0a444e543a20310d0a4163636570743a202a2f2a0d0a486f73743a203230322e3132312e3139372e3131313a38310d0a0d0a
+2017-05-06 01:39:48,663 INFO [com.carPature.action.DataReceiver] - 数据位54202f20485454502f312e310d0a557365722d4167656e743a204d6f7a696c6c612f352e30202857696e646f7773204e5420362e3229204170706c655765624b69742f3533372e333620284b48544d4c2c206c696b65204765636b6f29204368726f6d652f32382e302e313530302e3935205361666172692f3533372e33360d0a417574686f72697a6174696f6e3a2042617369632059575274615734364d5445784d5445780d0a436f6e6e656374696f6e3a204b6565702d416c6976650d0a43616368652d436f6e74726f6c3a206e6f2d63616368650d0a444e543a20310d0a4163636570743a202a2f2a0d0a486f73743a203230322e3132312e3139372e3131313a3831
+2017-05-06 01:39:48,663 ERROR [com.carPature.action.DataReceiver] - 校验失败 消息损坏
+2017-05-06 01:39:48,663 INFO [com.carPature.action.DataReceiver] - 返回结果：657863657074696f6e
+2017-05-06 01:39:52,322 INFO [com.carPature.action.DataReceiver] - New connection accepted /10.105.1.200:4945
+2017-05-06 01:39:52,323 INFO [com.carPature.action.DataReceiver] - 接受结果：474554202f20485454502f312e310d0a557365722d4167656e743a204d6f7a696c6c612f352e30202857696e646f7773204e5420362e3229204170706c655765624b69742f3533372e333620284b48544d4c2c206c696b65204765636b6f29204368726f6d652f32382e302e313530302e3935205361666172692f3533372e33360d0a417574686f72697a6174696f6e3a2042617369632059575274615734364e6a59324e6a59320d0a436f6e6e656374696f6e3a204b6565702d416c6976650d0a43616368652d436f6e74726f6c3a206e6f2d63616368650d0a444e543a20310d0a4163636570743a202a2f2a0d0a486f73743a203230322e3132312e3139372e3131313a38310d0a0d0a
+2017-05-06 01:39:52,323 INFO [com.carPature.action.DataReceiver] - 数据位54202f20485454502f312e310d0a557365722d4167656e743a204d6f7a696c6c612f352e30202857696e646f7773204e5420362e3229204170706c655765624b69742f3533372e333620284b48544d4c2c206c696b65204765636b6f29204368726f6d652f32382e302e313530302e3935205361666172692f3533372e33360d0a417574686f72697a6174696f6e3a2042617369632059575274615734364e6a59324e6a59320d0a436f6e6e656374696f6e3a204b6565702d416c6976650d0a43616368652d436f6e74726f6c3a206e6f2d63616368650d0a444e543a20310d0a4163636570743a202a2f2a0d0a486f73743a203230322e3132312e3139372e3131313a3831
+2017-05-06 01:39:52,324 ERROR [com.carPature.action.DataReceiver] - 校验失败 消息损坏
+2017-05-06 01:39:52,324 INFO [com.carPature.action.DataReceiver] - 返回结果：657863657074696f6e
+2017-05-06 01:39:55,976 INFO [com.carPature.action.DataReceiver] - New connection accepted /10.105.1.200:1238
+2017-05-06 01:39:55,977 INFO [com.carPature.action.DataReceiver] - 接受结果：474554202f20485454502f312e310d0a557365722d4167656e743a204d6f7a696c6c612f352e30202857696e646f7773204e5420362e3229204170706c655765624b69742f3533372e333620284b48544d4c2c206c696b65204765636b6f29204368726f6d652f32382e302e313530302e3935205361666172692f3533372e33360d0a417574686f72697a6174696f6e3a204261736963205157527461573436515752746157343d0d0a436f6e6e656374696f6e3a204b6565702d416c6976650d0a43616368652d436f6e74726f6c3a206e6f2d63616368650d0a444e543a20310d0a4163636570743a202a2f2a0d0a486f73743a203230322e3132312e3139372e3131313a38310d0a0d0a
+2017-05-06 01:39:55,978 INFO [com.carPature.action.DataReceiver] - 数据位54202f20485454502f312e310d0a557365722d4167656e743a204d6f7a696c6c612f352e30202857696e646f7773204e5420362e3229204170706c655765624b69742f3533372e333620284b48544d4c2c206c696b65204765636b6f29204368726f6d652f32382e302e313530302e3935205361666172692f3533372e33360d0a417574686f72697a6174696f6e3a204261736963205157527461573436515752746157343d0d0a436f6e6e656374696f6e3a204b6565702d416c6976650d0a43616368652d436f6e74726f6c3a206e6f2d63616368650d0a444e543a20310d0a4163636570743a202a2f2a0d0a486f73743a203230322e3132312e3139372e3131313a3831
+2017-05-06 01:39:55,978 ERROR [com.carPature.action.DataReceiver] - 校验失败 消息损坏
+2017-05-06 01:39:55,978 INFO [com.carPature.action.DataReceiver] - 返回结果：657863657074696f6e
+2017-05-06 01:39:59,625 INFO [com.carPature.action.DataReceiver] - New connection accepted /10.105.1.200:1474
+2017-05-06 01:39:59,627 INFO [com.carPature.action.DataReceiver] - 接受结果：474554202f20485454502f312e310d0a557365722d4167656e743a204d6f7a696c6c612f352e30202857696e646f7773204e5420362e3229204170706c655765624b69742f3533372e333620284b48544d4c2c206c696b65204765636b6f29204368726f6d652f32382e302e313530302e3935205361666172692f3533372e33360d0a417574686f72697a6174696f6e3a2042617369632059575274615734364d54497a4e413d3d0d0a436f6e6e656374696f6e3a204b6565702d416c6976650d0a43616368652d436f6e74726f6c3a206e6f2d63616368650d0a444e543a20310d0a4163636570743a202a2f2a0d0a486f73743a203230322e3132312e3139372e3131313a38310d0a0d0a
+2017-05-06 01:39:59,627 INFO [com.carPature.action.DataReceiver] - 数据位54202f20485454502f312e310d0a557365722d4167656e743a204d6f7a696c6c612f352e30202857696e646f7773204e5420362e3229204170706c655765624b69742f3533372e333620284b48544d4c2c206c696b65204765636b6f29204368726f6d652f32382e302e313530302e3935205361666172692f3533372e33360d0a417574686f72697a6174696f6e3a2042617369632059575274615734364d54497a4e413d3d0d0a436f6e6e656374696f6e3a204b6565702d416c6976650d0a43616368652d436f6e74726f6c3a206e6f2d63616368650d0a444e543a20310d0a4163636570743a202a2f2a0d0a486f73743a203230322e3132312e3139372e3131313a3831
+2017-05-06 01:39:59,627 ERROR [com.carPature.action.DataReceiver] - 校验失败 消息损坏
+2017-05-06 01:39:59,627 INFO [com.carPature.action.DataReceiver] - 返回结果：657863657074696f6e
+2017-05-06 01:40:03,269 INFO [com.carPature.action.DataReceiver] - New connection accepted /10.105.1.200:1708
+2017-05-06 01:40:03,271 INFO [com.carPature.action.DataReceiver] - 接受结果：474554202f20485454502f312e310d0a557365722d4167656e743a204d6f7a696c6c612f352e30202857696e646f7773204e5420362e3229204170706c655765624b69742f3533372e333620284b48544d4c2c206c696b65204765636b6f29204368726f6d652f32382e302e313530302e3935205361666172692f3533372e33360d0a417574686f72697a6174696f6e3a2042617369632051575274615734364d54497a4e413d3d0d0a436f6e6e656374696f6e3a204b6565702d416c6976650d0a43616368652d436f6e74726f6c3a206e6f2d63616368650d0a444e543a20310d0a4163636570743a202a2f2a0d0a486f73743a203230322e3132312e3139372e3131313a38310d0a0d0a
+2017-05-06 01:40:03,271 INFO [com.carPature.action.DataReceiver] - 数据位54202f20485454502f312e310d0a557365722d4167656e743a204d6f7a696c6c612f352e30202857696e646f7773204e5420362e3229204170706c655765624b69742f3533372e333620284b48544d4c2c206c696b65204765636b6f29204368726f6d652f32382e302e313530302e3935205361666172692f3533372e33360d0a417574686f72697a6174696f6e3a2042617369632051575274615734364d54497a4e413d3d0d0a436f6e6e656374696f6e3a204b6565702d416c6976650d0a43616368652d436f6e74726f6c3a206e6f2d63616368650d0a444e543a20310d0a4163636570743a202a2f2a0d0a486f73743a203230322e3132312e3139372e3131313a3831
+2017-05-06 01:40:03,282 ERROR [com.carPature.action.DataReceiver] - 校验失败 消息损坏
+2017-05-06 01:40:03,282 INFO [com.carPature.action.DataReceiver] - 返回结果：657863657074696f6e
+2017-05-06 01:40:06,918 INFO [com.carPature.action.DataReceiver] - New connection accepted /10.105.1.200:1943
+2017-05-06 01:40:06,919 INFO [com.carPature.action.DataReceiver] - 接受结果：474554202f20485454502f312e310d0a557365722d4167656e743a204d6f7a696c6c612f352e30202857696e646f7773204e5420362e3229204170706c655765624b69742f3533372e333620284b48544d4c2c206c696b65204765636b6f29204368726f6d652f32382e302e313530302e3935205361666172692f3533372e33360d0a417574686f72697a6174696f6e3a2042617369632059575274615734360d0a436f6e6e656374696f6e3a204b6565702d416c6976650d0a43616368652d436f6e74726f6c3a206e6f2d63616368650d0a444e543a20310d0a4163636570743a202a2f2a0d0a486f73743a203230322e3132312e3139372e3131313a38310d0a0d0a
+2017-05-06 01:40:06,919 INFO [com.carPature.action.DataReceiver] - 数据位54202f20485454502f312e310d0a557365722d4167656e743a204d6f7a696c6c612f352e30202857696e646f7773204e5420362e3229204170706c655765624b69742f3533372e333620284b48544d4c2c206c696b65204765636b6f29204368726f6d652f32382e302e313530302e3935205361666172692f3533372e33360d0a417574686f72697a6174696f6e3a2042617369632059575274615734360d0a436f6e6e656374696f6e3a204b6565702d416c6976650d0a43616368652d436f6e74726f6c3a206e6f2d63616368650d0a444e543a20310d0a4163636570743a202a2f2a0d0a486f73743a203230322e3132312e3139372e3131313a3831
+2017-05-06 01:40:06,919 ERROR [com.carPature.action.DataReceiver] - 校验失败 消息损坏
+2017-05-06 01:40:06,919 INFO [com.carPature.action.DataReceiver] - 返回结果：657863657074696f6e
+2017-05-06 01:40:10,563 INFO [com.carPature.action.DataReceiver] - New connection accepted /10.105.1.200:2177
+2017-05-06 01:40:10,565 INFO [com.carPature.action.DataReceiver] - 接受结果：474554202f20485454502f312e310d0a557365722d4167656e743a204d6f7a696c6c612f352e30202857696e646f7773204e5420362e3229204170706c655765624b69742f3533372e333620284b48544d4c2c206c696b65204765636b6f29204368726f6d652f32382e302e313530302e3935205361666172692f3533372e33360d0a417574686f72697a6174696f6e3a2042617369632059575274615734366347467a63336476636d513d0d0a436f6e6e656374696f6e3a204b6565702d416c6976650d0a43616368652d436f6e74726f6c3a206e6f2d63616368650d0a444e543a20310d0a4163636570743a202a2f2a0d0a486f73743a203230322e3132312e3139372e3131313a38310d0a0d0a
+2017-05-06 01:40:10,565 INFO [com.carPature.action.DataReceiver] - 数据位54202f20485454502f312e310d0a557365722d4167656e743a204d6f7a696c6c612f352e30202857696e646f7773204e5420362e3229204170706c655765624b69742f3533372e333620284b48544d4c2c206c696b65204765636b6f29204368726f6d652f32382e302e313530302e3935205361666172692f3533372e33360d0a417574686f72697a6174696f6e3a2042617369632059575274615734366347467a63336476636d513d0d0a436f6e6e656374696f6e3a204b6565702d416c6976650d0a43616368652d436f6e74726f6c3a206e6f2d63616368650d0a444e543a20310d0a4163636570743a202a2f2a0d0a486f73743a203230322e3132312e3139372e3131313a3831
+2017-05-06 01:40:10,565 ERROR [com.carPature.action.DataReceiver] - 校验失败 消息损坏
+2017-05-06 01:40:10,566 INFO [com.carPature.action.DataReceiver] - 返回结果：657863657074696f6e
+2017-05-06 01:40:14,205 INFO [com.carPature.action.DataReceiver] - New connection accepted /10.105.1.200:2412
+2017-05-06 01:40:14,207 INFO [com.carPature.action.DataReceiver] - 接受结果：474554202f20485454502f312e310d0a557365722d4167656e743a204d6f7a696c6c612f352e30202857696e646f7773204e5420362e3229204170706c655765624b69742f3533372e333620284b48544d4c2c206c696b65204765636b6f29204368726f6d652f32382e302e313530302e3935205361666172692f3533372e33360d0a417574686f72697a6174696f6e3a2042617369632059575274615734364f4445774d513d3d0d0a436f6e6e656374696f6e3a204b6565702d416c6976650d0a43616368652d436f6e74726f6c3a206e6f2d63616368650d0a444e543a20310d0a4163636570743a202a2f2a0d0a486f73743a203230322e3132312e3139372e3131313a38310d0a0d0a
+2017-05-06 01:40:14,207 INFO [com.carPature.action.DataReceiver] - 数据位54202f20485454502f312e310d0a557365722d4167656e743a204d6f7a696c6c612f352e30202857696e646f7773204e5420362e3229204170706c655765624b69742f3533372e333620284b48544d4c2c206c696b65204765636b6f29204368726f6d652f32382e302e313530302e3935205361666172692f3533372e33360d0a417574686f72697a6174696f6e3a2042617369632059575274615734364f4445774d513d3d0d0a436f6e6e656374696f6e3a204b6565702d416c6976650d0a43616368652d436f6e74726f6c3a206e6f2d63616368650d0a444e543a20310d0a4163636570743a202a2f2a0d0a486f73743a203230322e3132312e3139372e3131313a3831
+2017-05-06 01:40:14,207 ERROR [com.carPature.action.DataReceiver] - 校验失败 消息损坏
+2017-05-06 01:40:14,207 INFO [com.carPature.action.DataReceiver] - 返回结果：657863657074696f6e
+2017-05-06 01:40:17,871 INFO [com.carPature.action.DataReceiver] - New connection accepted /10.105.1.200:2645
+2017-05-06 01:40:17,872 INFO [com.carPature.action.DataReceiver] - 接受结果：474554202f20485454502f312e310d0a557365722d4167656e743a204d6f7a696c6c612f352e30202857696e646f7773204e5420362e3229204170706c655765624b69742f3533372e333620284b48544d4c2c206c696b65204765636b6f29204368726f6d652f32382e302e313530302e3935205361666172692f3533372e33360d0a417574686f72697a6174696f6e3a20426173696320636d39766444706a5957316c636d453d0d0a436f6e6e656374696f6e3a204b6565702d416c6976650d0a43616368652d436f6e74726f6c3a206e6f2d63616368650d0a444e543a20310d0a4163636570743a202a2f2a0d0a486f73743a203230322e3132312e3139372e3131313a38310d0a0d0a
+2017-05-06 01:40:17,872 INFO [com.carPature.action.DataReceiver] - 数据位54202f20485454502f312e310d0a557365722d4167656e743a204d6f7a696c6c612f352e30202857696e646f7773204e5420362e3229204170706c655765624b69742f3533372e333620284b48544d4c2c206c696b65204765636b6f29204368726f6d652f32382e302e313530302e3935205361666172692f3533372e33360d0a417574686f72697a6174696f6e3a20426173696320636d39766444706a5957316c636d453d0d0a436f6e6e656374696f6e3a204b6565702d416c6976650d0a43616368652d436f6e74726f6c3a206e6f2d63616368650d0a444e543a20310d0a4163636570743a202a2f2a0d0a486f73743a203230322e3132312e3139372e3131313a3831
+2017-05-06 01:40:17,872 ERROR [com.carPature.action.DataReceiver] - 校验失败 消息损坏
+2017-05-06 01:40:17,872 INFO [com.carPature.action.DataReceiver] - 返回结果：657863657074696f6e
+2017-05-06 01:40:21,543 INFO [com.carPature.action.DataReceiver] - New connection accepted /10.105.1.200:2881
+2017-05-06 01:40:21,550 INFO [com.carPature.action.DataReceiver] - 接受结果：474554202f20485454502f312e310d0a557365722d4167656e743a204d6f7a696c6c612f352e30202857696e646f7773204e5420362e3229204170706c655765624b69742f3533372e333620284b48544d4c2c206c696b65204765636b6f29204368726f6d652f32382e302e313530302e3935205361666172692f3533372e33360d0a417574686f72697a6174696f6e3a2042617369632059575274615734364d5445784d5445784d513d3d0d0a436f6e6e656374696f6e3a204b6565702d416c6976650d0a43616368652d436f6e74726f6c3a206e6f2d63616368650d0a444e543a20310d0a4163636570743a202a2f2a0d0a486f73743a203230322e3132312e3139372e3131313a38310d0a0d0a
+2017-05-06 01:40:21,550 INFO [com.carPature.action.DataReceiver] - 数据位54202f20485454502f312e310d0a557365722d4167656e743a204d6f7a696c6c612f352e30202857696e646f7773204e5420362e3229204170706c655765624b69742f3533372e333620284b48544d4c2c206c696b65204765636b6f29204368726f6d652f32382e302e313530302e3935205361666172692f3533372e33360d0a417574686f72697a6174696f6e3a2042617369632059575274615734364d5445784d5445784d513d3d0d0a436f6e6e656374696f6e3a204b6565702d416c6976650d0a43616368652d436f6e74726f6c3a206e6f2d63616368650d0a444e543a20310d0a4163636570743a202a2f2a0d0a486f73743a203230322e3132312e3139372e3131313a3831
+2017-05-06 01:40:21,550 ERROR [com.carPature.action.DataReceiver] - 校验失败 消息损坏
+2017-05-06 01:40:21,551 INFO [com.carPature.action.DataReceiver] - 返回结果：657863657074696f6e
+2017-05-06 02:11:31,426 INFO [com.carPature.action.DataReceiver] - New connection accepted /10.105.1.200:55450
+2017-05-06 02:11:39,364 INFO [com.carPature.action.DataReceiver] - New connection accepted /10.105.1.200:10767
+2017-05-06 02:11:39,364 INFO [com.carPature.action.DataReceiver] - 接受结果：474554202f20485454502f312e300d0a486f73743a203230322e3132312e3139372e3131313a38310d0a0d0a
+2017-05-06 02:11:39,364 INFO [com.carPature.action.DataReceiver] - 数据位54202f20485454502f312e300d0a486f73743a203230322e3132312e3139372e3131313a3831
+2017-05-06 02:11:39,364 ERROR [com.carPature.action.DataReceiver] - 校验失败 消息损坏
+2017-05-06 02:11:39,364 INFO [com.carPature.action.DataReceiver] - 返回结果：657863657074696f6e
+2017-05-06 02:15:39,514 INFO [com.carPature.action.DataReceiver] - New connection accepted /10.105.1.200:61492
+2017-05-06 02:15:39,908 INFO [com.carPature.action.DataReceiver] - New connection accepted /10.105.1.200:62058
+2017-05-06 02:15:39,908 INFO [com.carPature.action.DataReceiver] - 接受结果：474554202f20485454502f312e310d0a486f73743a203230322e3132312e3139372e3131313a38310d0a4163636570743a202a2f2a0d0a436f6e6e656374696f6e3a206b6565702d616c6976650d0a0d0a
+2017-05-06 02:15:39,908 INFO [com.carPature.action.DataReceiver] - 数据位54202f20485454502f312e310d0a486f73743a203230322e3132312e3139372e3131313a38310d0a4163636570743a202a2f2a0d0a436f6e6e656374696f6e3a206b6565702d616c697665
+2017-05-06 02:15:39,908 ERROR [com.carPature.action.DataReceiver] - 校验失败 消息损坏
+2017-05-06 02:15:39,909 INFO [com.carPature.action.DataReceiver] - 返回结果：657863657074696f6e
+2017-05-06 02:29:19,864 INFO [com.carPature.action.DataReceiver] - New connection accepted /10.105.1.200:31463
+2017-05-06 02:30:02,227 INFO [com.carPature.action.DataReceiver] - New connection accepted /10.105.1.200:63943
+2017-05-06 02:48:23,903 INFO [com.carPature.action.DataReceiver] - New connection accepted /10.105.1.200:52634
+2017-05-06 03:06:40,406 INFO [com.carPature.action.DataReceiver] - New connection accepted /10.105.1.200:61113
+2017-05-06 03:06:40,485 INFO [com.carPature.action.DataReceiver] - New connection accepted /10.105.1.200:61116
+2017-05-06 03:06:40,486 INFO [com.carPature.action.DataReceiver] - 接受结果：474554202f20485454502f312e310d0a436f6e6e656374696f6e3a204b6565702d416c6976650d0a436f6e74656e742d547970653a206170706c69636174696f6e2f782d7777772d666f726d2d75726c656e636f6465640d0a4163636570743a202a2f2a0d0a4163636570742d4c616e67756167653a207a682d636e0d0a526566657265723a20687474703a2f2f3230322e3132312e3139372e3131313a38310d0a557365722d4167656e743a204d6f7a696c6c612f342e302028636f6d70617469626c653b204d53494520392e303b2057696e646f7773204e5420362e31290d0a486f73743a203230322e3132312e3139372e3131313a38310d0a0d0a
+2017-05-06 03:06:40,486 INFO [com.carPature.action.DataReceiver] - 数据位54202f20485454502f312e310d0a436f6e6e656374696f6e3a204b6565702d416c6976650d0a436f6e74656e742d547970653a206170706c69636174696f6e2f782d7777772d666f726d2d75726c656e636f6465640d0a4163636570743a202a2f2a0d0a4163636570742d4c616e67756167653a207a682d636e0d0a526566657265723a20687474703a2f2f3230322e3132312e3139372e3131313a38310d0a557365722d4167656e743a204d6f7a696c6c612f342e302028636f6d70617469626c653b204d53494520392e303b2057696e646f7773204e5420362e31290d0a486f73743a203230322e3132312e3139372e3131313a3831
+2017-05-06 03:06:40,486 ERROR [com.carPature.action.DataReceiver] - 校验失败 消息损坏
+2017-05-06 03:06:40,486 INFO [com.carPature.action.DataReceiver] - 返回结果：657863657074696f6e
+2017-05-06 03:27:28,979 INFO [com.carPature.action.DataReceiver] - New connection accepted /10.105.1.200:2136
+2017-05-06 03:27:28,980 INFO [com.carPature.action.DataReceiver] - 接受结果：474554202f20485454502f312e310d0a4163636570743a202a2f2a0d0a526566657265723a20687474703a2f2f3230322e3132312e3139372e3131313a38310d0a4163636570742d4c616e67756167653a207a682d636e0d0a557365722d4167656e743a204d6f7a696c6c612f342e302028636f6d70617469626c653b204d53494520392e303b2057696e646f7773204e5420362e31290d0a436f6e74656e742d547970653a206170706c69636174696f6e2f782d7777772d666f726d2d75726c656e636f6465640d0a486f73743a203230322e3132312e3139372e3131313a38310d0a436f6e6e656374696f6e3a204b6565702d416c6976650d0a0d0a
+2017-05-06 03:27:28,980 INFO [com.carPature.action.DataReceiver] - 数据位54202f20485454502f312e310d0a4163636570743a202a2f2a0d0a526566657265723a20687474703a2f2f3230322e3132312e3139372e3131313a38310d0a4163636570742d4c616e67756167653a207a682d636e0d0a557365722d4167656e743a204d6f7a696c6c612f342e302028636f6d70617469626c653b204d53494520392e303b2057696e646f7773204e5420362e31290d0a436f6e74656e742d547970653a206170706c69636174696f6e2f782d7777772d666f726d2d75726c656e636f6465640d0a486f73743a203230322e3132312e3139372e3131313a38310d0a436f6e6e656374696f6e3a204b6565702d416c697665
+2017-05-06 03:27:28,980 ERROR [com.carPature.action.DataReceiver] - 校验失败 消息损坏
+2017-05-06 03:27:28,980 INFO [com.carPature.action.DataReceiver] - 返回结果：657863657074696f6e
+2017-05-06 03:29:07,826 INFO [com.carPature.action.DataReceiver] - New connection accepted /10.105.1.200:50851
+2017-05-06 03:29:08,252 INFO [com.carPature.action.DataReceiver] - New connection accepted /10.105.1.200:42209
+2017-05-06 03:29:08,253 INFO [com.carPature.action.DataReceiver] - 接受结果：47455420687474703a2f2f7777772e62616964752e636f6d2f63616368652f676c6f62616c2f696d672f67732e67696620485454502f312e310d0a486f73743a207777772e62616964752e636f6d0d0a557365722d4167656e743a204d6f7a696c6c610d0a49662d4d6f6469666965642d53696e63653a205468752c2031392041707220323031322030393a35313a323020474d540d0a0d0a
+2017-05-06 03:29:08,253 INFO [com.carPature.action.DataReceiver] - 数据位5420687474703a2f2f7777772e62616964752e636f6d2f63616368652f676c6f62616c2f696d672f67732e67696620485454502f312e310d0a486f73743a207777772e62616964752e636f6d0d0a557365722d4167656e743a204d6f7a696c6c610d0a49662d4d6f6469666965642d53696e63653a205468752c2031392041707220323031322030393a35313a323020474d54
+2017-05-06 03:29:08,253 ERROR [com.carPature.action.DataReceiver] - 校验失败 消息损坏
+2017-05-06 03:29:08,253 INFO [com.carPature.action.DataReceiver] - 返回结果：657863657074696f6e
+2017-05-06 04:25:24,640 INFO [com.carPature.action.DataReceiver] - New connection accepted /10.105.1.200:53006
+2017-05-06 04:25:25,504 INFO [com.carPature.action.DataReceiver] - New connection accepted /10.105.1.200:59634
+2017-05-06 04:25:25,507 INFO [com.carPature.action.DataReceiver] - 接受结果：47455420687474703a2f2f7777772e62616964752e636f6d2f63616368652f676c6f62616c2f696d672f67732e67696620485454502f312e310d0a486f73743a207777772e62616964752e636f6d0d0a557365722d4167656e743a204d6f7a696c6c610d0a49662d4d6f6469666965642d53696e63653a205468752c2031392041707220323031322030393a35313a323020474d540d0a0d0a
+2017-05-06 04:25:25,507 INFO [com.carPature.action.DataReceiver] - 数据位5420687474703a2f2f7777772e62616964752e636f6d2f63616368652f676c6f62616c2f696d672f67732e67696620485454502f312e310d0a486f73743a207777772e62616964752e636f6d0d0a557365722d4167656e743a204d6f7a696c6c610d0a49662d4d6f6469666965642d53696e63653a205468752c2031392041707220323031322030393a35313a323020474d54
+2017-05-06 04:25:25,507 ERROR [com.carPature.action.DataReceiver] - 校验失败 消息损坏
+2017-05-06 04:25:25,507 INFO [com.carPature.action.DataReceiver] - 返回结果：657863657074696f6e
+2017-05-06 05:53:02,757 INFO [com.carPature.action.DataReceiver] - New connection accepted /10.105.1.200:61234
+2017-05-06 07:20:39,850 INFO [com.carPature.action.DataReceiver] - New connection accepted /10.105.1.200:50468
+2017-05-06 08:08:50,653 INFO [com.carPature.action.DataReceiver] - New connection accepted /10.105.1.200:58470
+2017-05-06 08:08:51,036 INFO [com.carPature.action.DataReceiver] - New connection accepted /10.105.1.200:49093
+2017-05-06 08:08:51,036 INFO [com.carPature.action.DataReceiver] - 接受结果：47455420687474703a2f2f7777772e62616964752e636f6d2f63616368652f676c6f62616c2f696d672f67732e67696620485454502f312e310d0a486f73743a207777772e62616964752e636f6d0d0a557365722d4167656e743a204d6f7a696c6c610d0a49662d4d6f6469666965642d53696e63653a205468752c2031392041707220323031322030393a35313a323020474d540d0a0d0a
+2017-05-06 08:08:51,036 INFO [com.carPature.action.DataReceiver] - 数据位5420687474703a2f2f7777772e62616964752e636f6d2f63616368652f676c6f62616c2f696d672f67732e67696620485454502f312e310d0a486f73743a207777772e62616964752e636f6d0d0a557365722d4167656e743a204d6f7a696c6c610d0a49662d4d6f6469666965642d53696e63653a205468752c2031392041707220323031322030393a35313a323020474d54
+2017-05-06 08:08:51,036 ERROR [com.carPature.action.DataReceiver] - 校验失败 消息损坏
+2017-05-06 08:08:51,037 INFO [com.carPature.action.DataReceiver] - 返回结果：657863657074696f6e
+2017-05-06 10:15:18,053 INFO [com.carPature.action.DataReceiver] - New connection accepted /10.105.1.200:58022
+2017-05-06 10:15:18,410 INFO [com.carPature.action.DataReceiver] - New connection accepted /10.105.1.200:50949
+2017-05-06 10:15:18,717 INFO [com.carPature.action.DataReceiver] - 接受结果：474554202f20485454502f312e310d0a486f73743a203230322e3132312e3139372e3131313a38310d0a4163636570742d456e636f64696e673a206964656e746974790d0a4163636570743a20746578742f68746d6c2c6170706c69636174696f6e2f7868746d6c2b786d6c2c6170706c69636174696f6e2f786d6c3b713d302e392c2a2f2a3b713d302e380d0a557365722d4167656e743a204d6f7a696c6c612f352e30202857696e646f7773204e5420362e3129204170706c655765624b69742f3533372e333620284b48544d4c2c206c696b65204765636b6f29204368726f6d652f34312e302e323232382e30205361666172692f3533372e33360d0a0d0a
+2017-05-06 10:15:18,717 INFO [com.carPature.action.DataReceiver] - 数据位54202f20485454502f312e310d0a486f73743a203230322e3132312e3139372e3131313a38310d0a4163636570742d456e636f64696e673a206964656e746974790d0a4163636570743a20746578742f68746d6c2c6170706c69636174696f6e2f7868746d6c2b786d6c2c6170706c69636174696f6e2f786d6c3b713d302e392c2a2f2a3b713d302e380d0a557365722d4167656e743a204d6f7a696c6c612f352e30202857696e646f7773204e5420362e3129204170706c655765624b69742f3533372e333620284b48544d4c2c206c696b65204765636b6f29204368726f6d652f34312e302e323232382e30205361666172692f3533372e3336
+2017-05-06 10:15:18,717 ERROR [com.carPature.action.DataReceiver] - 校验失败 消息损坏
+2017-05-06 10:15:18,717 INFO [com.carPature.action.DataReceiver] - 返回结果：657863657074696f6e
